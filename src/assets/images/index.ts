@@ -1,0 +1,10 @@
+export { default as ArrowIcon } from "@assets/images/arrow.svg?react";
+export { default as EscalationsIcon } from "@assets/images/escalations.svg?react";
+export { default as EventClosingIcon } from "@assets/images/eventClosing.svg?react";
+export { default as FavoriteIcon } from "@assets/images/favorite.svg?react";
+export { default as MessageIcon } from "@assets/images/message.svg?react";
+export { default as NoofRFPsIcon } from "@assets/images/noofRFPs.svg?react";
+export { default as NudgeIcon } from "@assets/images/nudge_logo.svg?react";
+export { default as RemainderIcon } from "@assets/images/remainder.svg?react";
+export { default as StatsBackground } from "@assets/images/stats-background.svg?react";
+export { default as WarningIcon } from "@assets/images/warning.svg?react";

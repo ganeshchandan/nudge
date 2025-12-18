@@ -1,0 +1,17 @@
+* {
+    .stats-dashboard {
+        padding: var(--nudge-padding-margin-xxl);
+        background-image: url("@assets/images/stats-background.png");
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: grid;
+        grid-template-columns: 5.25rem 1fr;
+        grid-gap: var(--nudge-spacing-lg);
+    }
+}

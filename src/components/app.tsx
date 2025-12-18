@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/stats-dashboard" element={<StatsDashboard />} />
+        <Route path="/" element={<StatsDashboard />} />
       </Routes>
     </BrowserRouter>
   );

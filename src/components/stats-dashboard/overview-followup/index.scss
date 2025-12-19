@@ -5,7 +5,7 @@
                 var(--nudge-padding-margin-xxl);
             display: grid;
             grid-template-columns: 1fr 5.5rem;
-            grid-gap: var(--nudge-spacing-xs);
+            grid-gap: var(--nudge-spacing-xl);
             .stats-dashboard-overview,
             .stats-dashboard-followup {
                 height: 5.5rem;
@@ -13,6 +13,7 @@
                 border-radius: 1rem;
                 display: grid;
                 align-items: center;
+                box-shadow: var(--nudge-box-shadow);
                 .overview-item-details {
                     width: max-content;
                     display: grid;

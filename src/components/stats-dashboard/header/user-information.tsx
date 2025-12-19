@@ -3,7 +3,7 @@ export const UserInformation = () => {
     <div className="user-information">
       <div className="user-information-title">Good Morning, Manish Gupta</div>
       <div className="user-information-subtitle">
-        <div className="user-information-subtitle-indicator"></div>
+        <div className="user-information-subtitle-indicator" />
         <span>Nudge Command Center</span>
       </div>
     </div>

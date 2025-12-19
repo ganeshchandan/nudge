@@ -1,0 +1,14 @@
+* {
+    .stats-dashboard-summary-nudge {
+        .stats-dashboard-summary {
+            padding-top: calc(var(--nudge-padding-margin-xxl) + var(--nudge-padding-margin-sm));
+            padding-left: var(--nudge-padding-margin-xxl);
+            .stats-dashboard-summary-header {
+                font-weight: 500;
+                font-size: var(--nudge-text-md);
+                line-height: 1rem;
+                color: var(--nudge-color-black-shade01);
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+* {
+    .nudge-widget {
+        width: 100%;
+        height: auto;
+        box-shadow: var(--nudge-box-shadow);
+        background-color: var(--nudge-color-white);
+        border-radius: 1rem;
+        padding: var(--nudge-padding-margin-xl-plus);
+    }
+}

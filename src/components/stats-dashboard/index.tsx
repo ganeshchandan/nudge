@@ -2,6 +2,7 @@ import { LeftPanel } from "@components/common/left-panel";
 import "@components/stats-dashboard/index.scss";
 import { StatsDashboardHeader } from "@components/stats-dashboard/header";
 import { StatsDashboardOverviewFollowup } from "@components/stats-dashboard/overview-followup";
+import { StatsSummaryNudge } from "@components/stats-dashboard/summary-nudge";
 
 export const StatsDashboard = () => {
   return (
@@ -10,6 +11,7 @@ export const StatsDashboard = () => {
       <div className="stats-dashboard-content">
         <StatsDashboardHeader />
         <StatsDashboardOverviewFollowup />
+        <StatsSummaryNudge />
       </div>
     </div>
   );

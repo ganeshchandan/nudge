@@ -19,8 +19,8 @@ export const StatsContentTabItem: FC<StatsContentTabItemProps> = ({
 
   return (
     <div
-      className={`stats-content-tab ${
-        isSelected ? "stats-content-tab-selected" : ""
+      className={`stats-dashboard-option ${
+        isSelected ? "stats-dashboard-option-selected" : ""
       }`}
       onClick={onTabClick}
     >

@@ -3,12 +3,12 @@ import { StatsContentTabItem } from "./tab-item";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
 
-export const StatsContentTabs = () => {
+export const StatsDashboardOptions = () => {
   const selectedStatsTab = useSelector(
     (state: RootState) => state.statsDashbaord.selectedStatsTab
   );
   return (
-    <div className="stats-content-tabs">
+    <div className="stats-dashboard-options">
       {STATS_DASHBOARD_TABS.map((statsDashboardTab) => {
         const { id } = statsDashboardTab;
         return (

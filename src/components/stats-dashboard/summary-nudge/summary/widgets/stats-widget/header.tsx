@@ -12,8 +12,8 @@ export const SummaryStatsWidgetHeader: FC<SummaryStatsWidgetHeaderPorps> = ({
 }) => {
   const { WidgetIcon, label } = WIDGET_ICON_STYLES[widgetKey];
   return (
-    <div className="summary-stats-widget-header">
-      <WidgetIcon className="summary-stats-widget-icon" />
+    <div className="summary-widget-header">
+      <WidgetIcon className="summary-widget-icon" />
       <div className="summary-stats">
         <div className="summary-stats-value">{value}</div>
         <div className="summary-stats-name">{label}</div>

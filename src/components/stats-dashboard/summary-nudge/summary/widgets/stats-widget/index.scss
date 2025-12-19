@@ -1,16 +1,16 @@
 * {
     .stats-dashboard-summary-nudge {
         .stats-dashboard-summary {
-            .summary-stats-widget {
-                .summary-stats-widget-header {
+            .summary-widget {
+                .summary-widget-header {
                     display: flex;
                     height: 2.75rem;
                     grid-gap: var(--nudge-spacing-md);
                 }
-                &.executive-metrics {
+                &.executive-metrics-widget {
                     width: 24.125rem;
-                    .summary-stats-widget-header {
-                        .summary-stats-widget-icon {
+                    .summary-widget-header {
+                        .summary-widget-icon {
                             width: 3.25rem;
                         }
                     }
@@ -22,11 +22,13 @@
                         font-weight: 700;
                         font-size: calc(var(--nudge-text-sm) * 2);
                         line-height: 100%;
+                        color: var(--nudge-color-black-shade01);
                     }
                     .summary-stats-name {
                         font-weight: 400;
                         font-size: var(--nudge-text-xs);
                         line-height: 0.625rem;
+                        color: var(--nudge-color-black-shade02);
                     }
                 }
             }

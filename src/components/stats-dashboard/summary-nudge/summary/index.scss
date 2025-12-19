@@ -9,6 +9,17 @@
                 line-height: 1rem;
                 color: var(--nudge-color-black-shade01);
             }
+            .stats-dashboard-summary-content {
+                margin-top: var(--nudge-padding-margin-xxl);
+                display: grid;
+                grid-template-columns: 24.125rem 15rem 23.625rem;
+                justify-content: space-between;
+                .summary-content-column {
+                    display: grid;
+                    grid-gap: var(--nudge-spacing-lg);
+                    grid-template-rows: max-content max-content;
+                }
+            }
         }
     }
 }

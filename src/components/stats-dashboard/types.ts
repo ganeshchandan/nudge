@@ -13,3 +13,8 @@ export interface StatsDashboardOverview {
     status: "danger" | "onTrack" | "warning";
   };
 }
+
+export interface SummaryExecutiveMetric {
+  name: string;
+  value: string;
+}

@@ -18,22 +18,13 @@
                     margin: auto;
                     background: linear-gradient(180deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
                 }
-                .executive-metric {
-                    display: flex;
-                    height: 100%;
-                    grid-template-rows: 1fr max-content;
-                    padding: var(--nudge-padding-margin-md);
-                    justify-content: space-between;
-                    flex-flow: column;
-                    grid-gap: var(--nudge-spacing-xs);
-                    border-image-slice: 1;
-
+                .summary-lists {
                     &.engageement {
                         border-bottom: 1px solid transparent;
                         border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 100%);
                         border-image-slice: 1;
-                        .executive-metric-list {
-                            .executive-metric-list-item {
+                        .summary-lists-items {
+                            .summary-list-item {
                                 &:nth-child(odd) {
                                     background: linear-gradient(89.92deg, #ffffff 0.07%, #64f288 345.4%);
                                 }
@@ -44,8 +35,8 @@
                         border-bottom: 1px solid transparent;
                         border-image-source: linear-gradient(270deg, #ffffff 0%, #c9b8ff 100%);
                         border-image-slice: 1;
-                        .executive-metric-list {
-                            .executive-metric-list-item {
+                        .summary-lists-items {
+                            .summary-list-item {
                                 &:nth-child(odd) {
                                     background: linear-gradient(90.01deg, #ffffff 2.85%, #cceaff 99.99%);
                                 }
@@ -53,8 +44,8 @@
                         }
                     }
                     &.strategic {
-                        .executive-metric-list {
-                            .executive-metric-list-item {
+                        .summary-lists-items {
+                            .summary-list-item {
                                 &:nth-child(odd) {
                                     background: linear-gradient(89.92deg, #ffffff 0.07%, #fcba7d 345.4%);
                                 }
@@ -62,8 +53,8 @@
                         }
                     }
                     &.business {
-                        .executive-metric-list {
-                            .executive-metric-list-item {
+                        .summary-lists-items {
+                            .summary-list-item {
                                 &:nth-child(odd) {
                                     background: linear-gradient(90.01deg, #ffffff 2.85%, #ffdbf6 99.99%);
                                 }
@@ -72,41 +63,13 @@
                     }
 
                     &:nth-child(odd) {
-                        .executive-metric-header {
+                        .summary-lists-header {
                             text-align: right;
                         }
                     }
                     &:nth-child(3),
                     &:nth-child(4) {
                         flex-flow: column-reverse;
-                    }
-
-                    .executive-metric-list {
-                        height: calc(100% - 0.875rem);
-                        .executive-metric-list-item {
-                            height: 1.375rem;
-                            font-weight: 400;
-                            font-size: 0.656rem;
-                            line-height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            padding: 0 var(--nudge-padding-margin-md);
-                            border-radius: 0.188rem;
-                            .executive-metric-value {
-                                font-weight: 500;
-                                color: var(--nudge-color-black);
-                            }
-                            .executive-metric-name {
-                                color: var(--nudge-color-black-shade02);
-                            }
-                        }
-                    }
-                    .executive-metric-header {
-                        font-weight: 400;
-                        font-size: 0.656rem;
-                        color: var(--nudge-color-black-shade01);
-                        text-transform: uppercase;
                     }
                 }
             }

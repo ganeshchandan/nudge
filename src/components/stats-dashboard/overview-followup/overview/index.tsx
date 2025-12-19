@@ -10,9 +10,11 @@ export const StatsDashboardOverview = () => {
   return (
     <div className="stats-dashboard-overview">
       {statsDashboardOverviews.map((statsDashboardOverview) => {
+        const { type } = statsDashboardOverview;
         return (
           <StatsDashboardOverviewItem
             statsDashboardOverview={statsDashboardOverview}
+            key={type}
           />
         );
       })}

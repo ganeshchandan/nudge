@@ -14,7 +14,7 @@ export interface StatsDashboardOverview {
   };
 }
 
-export interface SummaryExecutiveMetric {
+export interface SummaryStatsList {
   name: string;
   value: string;
 }

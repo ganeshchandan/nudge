@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { ExecutiveMetric } from "./metric";
 import type { RootState } from "@stores";
 import "@components/stats-dashboard/summary-nudge/summary/widgets/executive-metrics/index.scss";
+import { SummaryLists } from "../../lists";
 
 export const ExecutiveMetricsContent = () => {
   const { engageement, relationship, strategic, business } = useSelector(
@@ -9,26 +9,22 @@ export const ExecutiveMetricsContent = () => {
   );
   return (
     <div className="executive-metrics">
-      <ExecutiveMetric
+      <SummaryLists
         metrics={engageement}
         header="engageement"
         className="engageement"
       />
-      <ExecutiveMetric
+      <SummaryLists
         metrics={relationship}
         header="relationship"
         className="relationship"
       />
-      <ExecutiveMetric
+      <SummaryLists
         metrics={strategic}
         header="strategic"
         className="strategic"
       />
-      <ExecutiveMetric
-        metrics={business}
-        header="business"
-        className="business"
-      />
+      <SummaryLists metrics={business} header="business" className="business" />
     </div>
   );
 };

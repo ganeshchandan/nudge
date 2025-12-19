@@ -1,6 +1,6 @@
 import type {
   StatsDashboardOverview,
-  SummaryExecutiveMetric,
+  SummaryStatsList,
 } from "@components/stats-dashboard/types";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -10,11 +10,13 @@ export interface StatsDashboardState {
   followUp: string;
   accountSummary: {
     executiveMetrics: {
-      engageement: SummaryExecutiveMetric[];
-      relationship: SummaryExecutiveMetric[];
-      strategic: SummaryExecutiveMetric[];
-      business: SummaryExecutiveMetric[];
+      engageement: SummaryStatsList[];
+      relationship: SummaryStatsList[];
+      strategic: SummaryStatsList[];
+      business: SummaryStatsList[];
     };
+    accountLevelScore: SummaryStatsList[];
+    programLevelScore: SummaryStatsList[];
   };
 }
 
@@ -111,6 +113,58 @@ const initialState: StatsDashboardState = {
         },
       ],
     },
+    accountLevelScore: [
+      {
+        name: "Average Executive Score",
+        value: "25.38",
+      },
+      {
+        name: "Engagement Effort Score",
+        value: "12.6",
+      },
+      {
+        name: "Business Impact Score",
+        value: "9.6",
+      },
+      {
+        name: "NPS (0–10)",
+        value: "7",
+      },
+      {
+        name: "Powercentre Count",
+        value: "6.67",
+      },
+      {
+        name: "Influencer Count",
+        value: "2.67",
+      },
+    ],
+    programLevelScore: [
+      {
+        name: "Average Account Score",
+        value: "23.52",
+      },
+      {
+        name: "Powercentre Coverage",
+        value: "5.42",
+      },
+      {
+        name: "Influencer Coverage",
+        value: "2.5",
+      },
+      {
+        name: "Engagement Effort",
+        value: "12.01",
+      },
+      {
+        name: "Business Impact",
+        value: "8.25",
+      },
+      {
+        name: "NPS",
+        value: "6.75",
+      },
+    ],
   },
 };
 

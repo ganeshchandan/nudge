@@ -1,6 +1,9 @@
 * {
     .stats-dashboard-summary-nudge {
         .stats-dashboard-summary {
+            display: grid;
+            grid-template-rows: max-content 1fr;
+            overflow: hidden;
             .summary-widget {
                 .summary-widget-header {
                     display: flex;

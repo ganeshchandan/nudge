@@ -14,10 +14,44 @@
                 display: grid;
                 grid-template-columns: 24.125rem 15rem 23.625rem;
                 justify-content: space-between;
+                overflow: auto;
                 .summary-content-column {
                     display: grid;
                     grid-gap: var(--nudge-spacing-lg);
                     grid-template-rows: max-content max-content;
+                    .summary-widget {
+                        &.account-level-score,
+                        &.program-level-score {
+                            .summary-lists {
+                                margin-top: var(--nudge-padding-margin-xxl);
+                                .summary-lists-items {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                        &.account-level-score {
+                            .summary-lists {
+                                .summary-lists-items {
+                                    .summary-list-item {
+                                        &:nth-child(odd) {
+                                            background: linear-gradient(90.01deg, #ffffff 2.85%, #cceaff 99.99%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.program-level-score {
+                            .summary-lists {
+                                .summary-lists-items {
+                                    .summary-list-item {
+                                        &:nth-child(odd) {
+                                            background: linear-gradient(90.01deg, #ffffff 2.85%, #aef4f8 99.99%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

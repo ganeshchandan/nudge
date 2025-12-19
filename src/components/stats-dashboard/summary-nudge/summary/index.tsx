@@ -1,9 +1,12 @@
 import "@components/stats-dashboard/summary-nudge/summary/index.scss";
-import { SummaryStatsWidget } from "./widgets/stats-widget";
-import { ExecutiveMetricsContent } from "./widgets/executive-metrics";
-import { SummaryLists } from "./lists";
+import { SummaryLists } from "@components/stats-dashboard/summary-nudge/summary/lists";
 import type { RootState } from "@stores";
 import { useSelector } from "react-redux";
+import {
+  TopPerformers,
+  SummaryStatsWidget,
+  ExecutiveMetricsContent,
+} from "@components/stats-dashboard/summary-nudge/summary/widgets";
 
 export const StatsDashboardSummary = () => {
   const { accountLevelScore, programLevelScore } = useSelector(
@@ -33,6 +36,9 @@ export const StatsDashboardSummary = () => {
               className={"accountLevelScore"}
             />
           </SummaryStatsWidget>
+        </div>
+        <div className="summary-content-column">
+          <TopPerformers />
         </div>
       </div>
     </div>

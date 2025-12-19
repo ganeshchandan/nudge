@@ -1,0 +1,59 @@
+* {
+    .stats-dashboard-summary-nudge {
+        .stats-dashboard-summary {
+            .top-performer-widget {
+                .top-performer-header {
+                    font-weight: 400;
+                    font-size: var(--nudge-text-xs);
+                    color: var(--nudge-color-black-shade01);
+                }
+                .top-performers {
+                    display: grid;
+                    grid-template-columns: max-content max-content max-content;
+                    justify-content: space-around;
+                    justify-items: center;
+                    padding: var(--nudge-padding-margin-xl-plus) var(--nudge-padding-margin-md);
+                    .top-performer {
+                        display: grid;
+                        grid-gap: var(--nudge-spacing-xxs);
+                        justify-items: center;
+                        .top-performer-image {
+                            width: 5.375rem;
+                            height: 5.625rem;
+                        }
+                        .top-performer-details {
+                            font-weight: 400;
+                            display: grid;
+                            justify-items: center;
+                            .top-performer-name {
+                                font-size: var(--nudge-text-xs);
+                                color: var(--nudge-color-black-shade01);
+                            }
+                            .top-performer-award-name {
+                                font-size: 0.656rem;
+                                color: var(--nudge-color-black-shade02);
+                            }
+                        }
+                    }
+                }
+                .performance-report-link {
+                    font-weight: 600;
+                    font-size: 0.656rem;
+                    line-height: 100%;
+                    letter-spacing: 1px;
+                    text-decoration: underline;
+                    text-decoration-thickness: 0%;
+                    text-decoration-skip-ink: auto;
+                    text-transform: uppercase;
+                    padding-top: var(--nudge-padding-margin-xl-plus);
+                    color: var(--nudge-color-blue);
+                    cursor: pointer;
+                    transition: all 0.1s ease-in-out;
+                    &:hover {
+                        transform: scaleX(1.005);
+                    }
+                }
+            }
+        }
+    }
+}

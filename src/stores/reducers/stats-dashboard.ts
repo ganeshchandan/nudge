@@ -1,6 +1,7 @@
 import type {
   StatsDashboardOverview,
   SummaryStatsList,
+  TopPerformerDetail,
 } from "@components/stats-dashboard/types";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -17,6 +18,7 @@ export interface StatsDashboardState {
     };
     accountLevelScore: SummaryStatsList[];
     programLevelScore: SummaryStatsList[];
+    topPerformers: TopPerformerDetail[];
   };
 }
 
@@ -163,6 +165,23 @@ const initialState: StatsDashboardState = {
       {
         name: "NPS",
         value: "6.75",
+      },
+    ],
+    topPerformers: [
+      {
+        name: "Alexa",
+        awardName: "Maverick Award",
+        personImage: "topPerformers1",
+      },
+      {
+        name: "Bran",
+        awardName: "Northstar Award",
+        personImage: "topPerformers2",
+      },
+      {
+        name: "Alan",
+        awardName: "Zenith Star Award",
+        personImage: "topPerformers3",
       },
     ],
   },

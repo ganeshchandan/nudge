@@ -18,3 +18,9 @@ export interface SummaryStatsList {
   name: string;
   value: string;
 }
+
+export interface TopPerformerDetail {
+  name: string;
+  awardName: string;
+  personImage: string;
+}

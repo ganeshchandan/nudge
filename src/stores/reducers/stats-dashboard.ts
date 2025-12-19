@@ -19,6 +19,12 @@ export interface StatsDashboardState {
     accountLevelScore: SummaryStatsList[];
     programLevelScore: SummaryStatsList[];
     topPerformers: TopPerformerDetail[];
+    programView: {
+      personImage: string;
+      powerCentres: string;
+      actionsTaken: string;
+      scores: string;
+    }[];
   };
 }
 
@@ -182,6 +188,26 @@ const initialState: StatsDashboardState = {
         name: "Alan",
         awardName: "Zenith Star Award",
         personImage: "topPerformers3",
+      },
+    ],
+    programView: [
+      {
+        personImage: "userIcon2",
+        powerCentres: "15",
+        actionsTaken: "10",
+        scores: "67%",
+      },
+      {
+        personImage: "userIcon3",
+        powerCentres: "8",
+        actionsTaken: "4",
+        scores: "50%",
+      },
+      {
+        personImage: "userIcon4",
+        powerCentres: "5",
+        actionsTaken: "2",
+        scores: "40%",
       },
     ],
   },

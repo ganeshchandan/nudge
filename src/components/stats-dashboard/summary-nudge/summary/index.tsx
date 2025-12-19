@@ -7,6 +7,7 @@ import {
   SummaryStatsWidget,
   ExecutiveMetricsContent,
   ContactWidget,
+  ProgramView,
 } from "@components/stats-dashboard/summary-nudge/summary/widgets";
 
 export const StatsDashboardSummary = () => {
@@ -41,6 +42,7 @@ export const StatsDashboardSummary = () => {
         </div>
         <div className="summary-content-column">
           <TopPerformers />
+          <ProgramView />
         </div>
       </div>
     </div>

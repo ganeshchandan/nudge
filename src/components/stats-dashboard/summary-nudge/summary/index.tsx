@@ -6,6 +6,7 @@ import {
   TopPerformers,
   SummaryStatsWidget,
   ExecutiveMetricsContent,
+  ContactWidget,
 } from "@components/stats-dashboard/summary-nudge/summary/widgets";
 
 export const StatsDashboardSummary = () => {
@@ -22,6 +23,7 @@ export const StatsDashboardSummary = () => {
           <SummaryStatsWidget widgetKey={"executiveMetrics"} value={"56.375"}>
             <ExecutiveMetricsContent />
           </SummaryStatsWidget>
+          <ContactWidget />
         </div>
         <div className="summary-content-column">
           <SummaryStatsWidget widgetKey={"accountLevelScore"} value={"56.375"}>

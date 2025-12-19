@@ -1,0 +1,67 @@
+* {
+    .stats-dashboard-summary-nudge {
+        .stats-dashboard-summary {
+            .contact-widget {
+                display: grid;
+                grid-template-columns: max-content max-content 1fr;
+                position: relative;
+                .others-contact {
+                    position: absolute;
+                    height: 1.125rem;
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+                    font-size: var(--nudge-text-sm);
+                    line-height: 100%;
+                    letter-spacing: 1px;
+                    text-decoration-thickness: 0%;
+                    text-decoration-skip-ink: auto;
+                    text-decoration: underline;
+                    color: var(--nudge-color-blue);
+                    right: 0.75rem;
+                    top: 0.75rem;
+                    width: fit-content;
+                    cursor: pointer;
+                }
+                .contact-details {
+                    padding-left: var(--nudge-padding-margin-md);
+                    .contact-person-name {
+                        font-weight: 500;
+                        font-size: var(--nudge-text-sm);
+                        line-height: 100%;
+                        color: var(--nudge-color-black-shade01);
+                    }
+                    .contact-person-position {
+                        font-weight: 400;
+                        font-size: 0.656rem;
+                        color: var(--nudge-color-black-shade02);
+                        padding-top: var(--nudge-padding-margin-sm);
+                        padding-bottom: var(--nudge-padding-margin-md);
+                    }
+                    .pulished-days {
+                        background-color: var(--nudge-color-red-shaed-01);
+                        font-size: 0.656rem;
+                        height: 1rem;
+                        width: max-content;
+                        padding: 0 var(--nudge-padding-margin-md);
+                        display: flex;
+                        align-items: center;
+                        border-radius: 1rem;
+                        line-height: 100%;
+                    }
+                }
+                .contact-connect-media {
+                    display: flex;
+                    grid-gap: var(--nudge-spacing-xl);
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    width: 100%;
+                    img {
+                        height: 1.875rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

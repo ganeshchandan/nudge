@@ -2,7 +2,7 @@
     .stats-dashboard-content {
         .stats-dashboard-summary-nudge {
             display: grid;
-            grid-template-columns: 1fr 4.25rem;
+            grid-template-columns: 1fr max-content;
             overflow: hidden;
             height: 100%;
         }

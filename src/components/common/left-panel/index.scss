@@ -6,6 +6,7 @@
         grid-template-rows: max-content 1fr max-content;
         grid-gap: var(--nudge-spacing-5xl);
         overflow: hidden;
+        padding-bottom: var(--nudge-padding-margin-xxl);
         .left-panel-app-log {
             padding: 1rem 0;
             display: flex;

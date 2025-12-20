@@ -2,19 +2,30 @@
     .stats-dashboard-summary-nudge {
         .stats-dashboard-summary {
             padding-top: calc(var(--nudge-padding-margin-xxl) + var(--nudge-padding-margin-sm));
-            padding-left: var(--nudge-padding-margin-xxl);
+            position: relative;
             .stats-dashboard-summary-header {
                 font-weight: 500;
                 font-size: var(--nudge-text-md);
-                line-height: 1rem;
+                height: 1.5rem;
                 color: var(--nudge-color-black-shade01);
+                padding-left: var(--nudge-padding-margin-xxl);
             }
             .stats-dashboard-summary-content {
-                margin-top: var(--nudge-padding-margin-xxl);
+                padding-left: var(--nudge-padding-margin-xxl);
+                padding-right: 0.625rem;
+                padding-top: var(--nudge-padding-margin-xl-plus);
+                padding-bottom: var(--nudge-padding-margin-xl);
                 display: grid;
                 grid-template-columns: 35% 24% 37%;
                 justify-content: space-between;
                 overflow: auto;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                }
                 .summary-content-column {
                     display: grid;
                     grid-gap: var(--nudge-spacing-lg);

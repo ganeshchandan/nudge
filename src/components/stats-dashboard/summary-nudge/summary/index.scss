@@ -3,12 +3,31 @@
         .stats-dashboard-summary {
             padding-top: calc(var(--nudge-padding-margin-xxl) + var(--nudge-padding-margin-sm));
             position: relative;
+
             .stats-dashboard-summary-header {
                 font-weight: 500;
                 font-size: var(--nudge-text-md);
                 height: 1.5rem;
                 color: var(--nudge-color-black-shade01);
                 padding-left: var(--nudge-padding-margin-xxl);
+            }
+            .scroll-div {
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+                // &::before {
+                //     content: "";
+                //     // background: radial-gradient(circle, #e7ecf8 0%, #e3e4f4 50%, #ebf7f9 100%);
+                //     backdrop-filter: comparable($number1: 1, $number2: 2);
+
+                //     position: absolute;
+                //     width: 100%;
+                //     min-height: 25px;
+                //     top: 0px;
+                //     left: 0px;
+                //     z-index: 3;
+                //     // backdrop-filter: blur(5px);
+                // }
             }
             .stats-dashboard-summary-content {
                 padding-left: var(--nudge-padding-margin-xxl);
@@ -19,6 +38,8 @@
                 grid-template-columns: 35% 24% 37%;
                 justify-content: space-between;
                 overflow: auto;
+                position: relative;
+                height: 100%;
 
                 .summary-content-column {
                     display: grid;

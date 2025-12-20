@@ -2,7 +2,7 @@ import "@components/stats-dashboard/summary-nudge/summary/widgets/program-view/i
 import { NudgeWidget } from "@components/common/widget";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
-import { TOP_PERFROMER } from "@assets/images/top_performers";
+import { APP_IMAGES } from "@assets/images/app_image";
 
 export const ProgramView = () => {
   const programView = useSelector(
@@ -23,10 +23,7 @@ export const ProgramView = () => {
             ({ personImage, powerCentres, actionsTaken, scores }) => (
               <div className="program-view-table-content-row">
                 <div className="program-view-table-row-cell person-image-cell">
-                  <img
-                    src={TOP_PERFROMER[personImage]}
-                    className="person-image"
-                  />
+                  <img src={APP_IMAGES[personImage]} className="person-image" />
                 </div>
                 <div className="program-view-table-row-cell">
                   {powerCentres}

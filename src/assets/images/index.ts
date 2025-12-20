@@ -6,7 +6,6 @@ export { default as MessageIcon } from "@assets/images/message.svg?react";
 export { default as NoofRFPsIcon } from "@assets/images/noofRFPs.svg?react";
 export { default as NudgeIcon } from "@assets/images/nudge_logo.svg?react";
 export { default as RemainderIcon } from "@assets/images/remainder.svg?react";
-export { default as StatsBackground } from "@assets/images/stats-background.svg?react";
 export { default as WarningIcon } from "@assets/images/warning.svg?react";
 export { default as ExecutiveMetricsIcon } from "@assets/images/executive_metrics.svg?react";
 export { default as HandShakeIcon } from "@assets/images/handshake.svg?react";

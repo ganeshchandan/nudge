@@ -10,6 +10,7 @@ interface NudgeInput {
   placeholder: string;
   type?: string;
   onChange?: React.ChangeEventHandler;
+  isInvalid?: boolean;
 }
 
 export const NudgeInput: FC<NudgeInput> = ({

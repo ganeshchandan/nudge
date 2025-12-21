@@ -1,6 +1,6 @@
 import { NudgeButton } from "@components/common/button";
 import { NudgeInput } from "@components/common/input";
-import { type FC } from "react";
+import { useState, type FC } from "react";
 
 interface LoginPopupFromProps {
   setRegisteredEmail: React.Dispatch<React.SetStateAction<string>>;
@@ -13,7 +13,17 @@ export const LoginPopupFrom: FC<LoginPopupFromProps> = ({
   registeredEmail,
   setIsMagicCodeSent,
 }) => {
+  const [isValid, setIsValid] = useState<boolean>(true);
+
   const onRegisteredEmail = (event: any) => {
+    const value = event.target.value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (value !== "") {
+      setIsValid(emailRegex.test(value));
+    } else {
+      setIsValid(true);
+    }
     setRegisteredEmail(event.target.value);
   };
 
@@ -29,10 +39,12 @@ export const LoginPopupFrom: FC<LoginPopupFromProps> = ({
         placeholder="Registered Email Id"
         className="registered-email-id"
         onChange={onRegisteredEmail}
+        type="email"
+        isInvalid={!isValid}
       />
       <NudgeButton
         className="login-proced"
-        isDisabled={registeredEmail.trim() === ""}
+        isDisabled={registeredEmail.trim() === "" || !isValid}
         onClick={proceedClick}
       >
         PROCEED

@@ -1,0 +1,15 @@
+* {
+    .login-page {
+        height: 100%;
+        width: 100%;
+        background-image: url("@assets/images/app_image/login_background.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        .login-page-icon {
+            position: absolute;
+            top: 3.75rem;
+            left: 3.75rem;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+* {
+    .nudge-input-container {
+        &.form-floating {
+            border-radius: 0.5rem;
+            border: 1px solid var(--nudge-color-input-border);
+            height: 2.875rem;
+            outline: none;
+            box-shadow: none;
+            label {
+                font-weight: 400;
+                font-size: var(--nudge-text-sm);
+                padding: 0.625rem 0.75rem;
+                line-height: normal;
+                display: flex;
+                align-items: center;
+                color: var(--nudge-color-white);
+            }
+            .form-control {
+                height: 2.75rem;
+                min-height: unset;
+                padding: 1rem 0.75rem;
+                font-weight: 500;
+                font-size: var(--nudge-text-sm);
+                outline: none;
+                background-color: transparent;
+                box-shadow: none;
+                color: var(--nudge-color-white);
+
+                &:not(:placeholder-shown),
+                &:focus {
+                    padding-top: 1.625rem;
+                    padding-bottom: 0.625rem;
+                    outline: none;
+                    border: 1px solid var(--nudge-color-input-border);
+                }
+                &:not(:placeholder-shown) ~ label,
+                &:focus ~ label {
+                    font-size: var(--nudge-text-xs);
+                    outline: none;
+                    padding: 0.625rem 0.75rem;
+                }
+            }
+        }
+    }
+}

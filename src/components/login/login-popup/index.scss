@@ -1,0 +1,117 @@
+* {
+    .login-page {
+        .login-popup {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 6.375rem;
+            margin: auto;
+            height: max-content;
+            color: var(--nudge-color-white);
+            .login-popup-header {
+                font-weight: 400;
+                font-size: var(--nudge-text-lg);
+                letter-spacing: 0.25rem;
+                text-transform: uppercase;
+            }
+            .login-popup-content {
+                backdrop-filter: blur(16px);
+                width: 25rem;
+                height: 20rem;
+                border-radius: 1rem;
+                box-shadow: 0px 1px 8px 0px #0000001a;
+                margin-top: var(--nudge-padding-margin-2xl);
+                margin-bottom: var(--nudge-padding-margin-xl);
+                padding: var(--nudge-padding-margin-sm) 0;
+                border: 0.0625rem solid #ffffff3d;
+                background: #ffffff3d;
+                // background: #17171775;
+
+                .login-instructions {
+                    width: calc(100% - 0.75rem);
+                    margin: auto;
+                    padding: var(--nudge-padding-margin-xl-plus)
+                        calc(var(--nudge-padding-margin-xl) + var(--nudge-padding-margin-xs));
+                    font-weight: 400;
+                    font-size: var(--nudge-text-xs);
+                    line-height: 1.75rem;
+                    border-bottom: 1px solid #ffffff3d;
+                }
+                .registered-email-id {
+                    width: calc(100% - 3rem);
+                    margin: var(--nudge-padding-margin-xl-plus) auto;
+                    label {
+                        color: var(--nudge-color-white);
+                    }
+                }
+                .login-proced {
+                    width: calc(100% - 3rem);
+                    margin: auto;
+                    margin-bottom: var(--nudge-padding-margin-xl-plus);
+                    margin-top: calc(var(--nudge-padding-margin-xs) + var(--nudge-padding-margin-md));
+                }
+                .login-magic-code-form {
+                    &.is-code-error {
+                        .inavlid-codes {
+                            visibility: visible;
+                        }
+                        .login-magic-codes {
+                            .login-magic-code {
+                                border-color: var(--nudge-color-red-shaed-02);
+                                background: var(--nudge-color-white);
+                                color: var(--nudge-color-black);
+                            }
+                        }
+                    }
+                    .login-magic-codes {
+                        display: flex;
+                        grid-gap: var(--nudge-spacing-xl);
+                        padding-top: var(--nudge-padding-margin-xl-plus);
+                        padding-bottom: var(--nudge-padding-margin-md);
+                        justify-content: center;
+                        .login-magic-code {
+                            height: 2.875rem;
+                            width: 2.875rem;
+                            border: 0.0625rem solid var(--nudge-color-white);
+                            outline: none;
+                            background: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                            color: var(--nudge-color-white);
+                            border-radius: 0.25rem;
+                            padding: 0 1.125rem;
+                            &:focus {
+                                outline: none;
+                            }
+                            &::placeholder {
+                                color: var(--nudge-color-white);
+                            }
+                        }
+                    }
+                    .inavlid-codes {
+                        font-weight: 400;
+                        font-size: 0.688rem;
+                        color: var(--nudge-color-black);
+                        padding-bottom: var(--nudge-padding-margin-lg);
+                        text-align: center;
+                        visibility: hidden;
+                        line-height: 0.625rem;
+                    }
+
+                    .submit-magic-code {
+                        width: calc(100% - 3rem);
+                        margin: auto;
+                        margin-bottom: var(--nudge-padding-margin-xl-plus);
+                    }
+                }
+            }
+            .login-popup-footer {
+                font-weight: 400;
+                font-size: var(--nudge-text-xs);
+                line-height: 1.25rem;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -8,6 +8,7 @@ import userIcon5 from "@assets/images/app_image/user_icon_5.png";
 import outlook from "@assets/images/app_image/outlook.png";
 import teams from "@assets/images/app_image/teams.png";
 import loginBackground from "@assets/images/app_image/login_background.png";
+import loginPageIcon from "@assets/images/app_image/login_page_icon.png";
 
 export const APP_IMAGES: Record<string, string> = {
   topPerformers1,
@@ -20,4 +21,5 @@ export const APP_IMAGES: Record<string, string> = {
   outlook,
   teams,
   loginBackground,
+  loginPageIcon,
 };

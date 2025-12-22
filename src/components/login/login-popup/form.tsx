@@ -1,5 +1,4 @@
 import { NudgeButton } from "@components/common/button";
-import { CTA_VARIANT } from "@components/common/button/constants";
 import { NudgeInput } from "@components/common/input";
 import { useState, type FC } from "react";
 
@@ -47,7 +46,6 @@ export const LoginPopupFrom: FC<LoginPopupFromProps> = ({
         className="login-proced"
         isDisabled={registeredEmail.trim() === "" || !isValid}
         onClick={proceedClick}
-        variant={CTA_VARIANT}
       >
         PROCEED
       </NudgeButton>

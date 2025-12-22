@@ -19,7 +19,7 @@
     /*button*/
     --nudge-primary-button-bg: var(--nudge-color-black-shade01);
     --nudge-primary-button-color: var(--nudge-color-white);
-    --nudge-primary-button-hover-bg: rgba(25, 100, 200, 0.5);
+    --nudge-primary-button-hover-bg: #343434cc; // need to change
     --nudge-primary-button-disabled-bg: #{$superGrey};
     --nudge-primary-button-disabled-color: var(--nudge-color-black-shade03);
 

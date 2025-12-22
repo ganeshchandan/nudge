@@ -1,4 +1,6 @@
 * {
+    $superGrey: #999999;
+
     --nudge-color-white: #fff;
     --nudge-color-black: #000;
     --nudge-color-black-shade01: #343434;
@@ -13,6 +15,26 @@
     --nudge-color-purple-shade-01: #a588ff;
     --nudge-color-blue: #1e53ff;
     --nudge-color-input-border: #d9e8f6;
+
+    /*button*/
+    --nudge-primary-button-bg: var(--nudge-color-black-shade01);
+    --nudge-primary-button-color: var(--nudge-color-white);
+    --nudge-primary-button-hover-bg: rgba(25, 100, 200, 0.5);
+    --nudge-primary-button-disabled-bg: #{$superGrey};
+    --nudge-primary-button-disabled-color: var(--nudge-color-black-shade03);
+
+    --nudge-cta-button-bg: var(--nudge-color-blue);
+    --nudge-cta-button-color: var(--nudge-color-white);
+    --nudge-cta-button-hover-bg: rgba(25, 100, 200, 0.5);
+    --nudge-cta-button-disabled-bg: #{$superGrey};
+    --nudge-cta-button-disabled-color: var(--nudge-color-black-shade03);
+
+    --nudge-outline-primary-button-bg: transparent;
+    --nudge-outline-primary-button-border: var(--nudge-color-black-shade01);
+    --nudge-outline-primary-button-color: var(--nudge-color-black-shade01);
+    --nudge-outline-primary-button-hover-bg: rgba(25, 100, 200, 0.5);
+    --nudge-outline-primary-button-disabled-bg: #{$superGrey};
+    --nudge-outline-primary-button-disabled-color: var(--nudge-color-black-shade03);
 
     --nudge-box-shadow: 0px 6px 8px 5px rgba(0, 0, 0, 0.0392156863);
 }

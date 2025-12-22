@@ -5,7 +5,7 @@ interface NudgeButtonProps {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   isDisabled?: boolean;
-  variant?: "primary";
+  variant?: "primary" | "outline-primary" | "cta";
 }
 
 export const NudgeButton: FC<PropsWithChildren<NudgeButtonProps>> = ({

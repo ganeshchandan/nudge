@@ -39,7 +39,7 @@ export const LoginMagicCode: FC<LoginMagicCodeProps> = () => {
 
   const onSubmitMagicCode = () => {
     if (magicCodes.join("") === "2304") {
-      navigate("/");
+      navigate("/dashboard");
       dispatch(setUserAuthenticated(true));
     } else {
       setIsError(true);

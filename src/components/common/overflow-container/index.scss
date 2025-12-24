@@ -3,6 +3,14 @@
     height: calc(100% - 0.625rem);
     overflow: hidden;
 
+    &.has-overflow {
+        &:hover {
+            .scroll-bar {
+                display: block;
+            }
+        }
+    }
+
     .overflow-content {
         overflow-y: auto;
         height: 100%;
@@ -19,6 +27,7 @@
         height: 100%;
         border-radius: 0.25rem;
         overflow: hidden;
+        display: none;
 
         .thumb {
             width: 100%;

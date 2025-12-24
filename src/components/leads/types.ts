@@ -1,6 +1,14 @@
-export interface ConferenceIntelligence {
+export interface ExecutiveCapitalDetailStat {
   name: string;
-  progress: "up" | "down";
+  progress?: "up" | "down";
+}
+
+export interface ExecutiveCapitalDetailsStats {
+  personaQuadrant: ExecutiveCapitalDetailStat[];
+  behaviouralTrait: ExecutiveCapitalDetailStat[];
+  influenceMapping: number;
+  networkIntelligence: number;
+  conferenceIntelligence: ExecutiveCapitalDetailStat[];
 }
 
 export interface ExecutiveCapital {
@@ -8,12 +16,8 @@ export interface ExecutiveCapital {
   image: string;
   name: string;
   teamName: string;
-  personaQuadrant: string;
-  behaviouralTrait: string[];
-  influenceMapping: number;
-  networkIntelligence: number;
-  conferenceIntelligence: ConferenceIntelligence;
-  tags: string[];
+  detailsStats: ExecutiveCapitalDetailsStats;
+  tags?: string[];
 }
 
 export type ExecutiveCapitals = ExecutiveCapital[];

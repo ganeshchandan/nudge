@@ -24,13 +24,20 @@ const initialState: LeadsDashboardState = {
         image: "userIcon2",
         name: "Murdo Gordon",
         teamName: "EVP Global Commercial Ops | Amgen",
-        personaQuadrant: "Change Agent",
-        behaviouralTrait: ["Risk Appetite", "Openness to Innovation"],
-        influenceMapping: 3,
-        networkIntelligence: 2,
-        conferenceIntelligence: {
-          name: "Panelist",
-          progress: "up",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 2,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
         },
         tags: ["Nudge Recommended", "Influencer"],
       },
@@ -39,13 +46,106 @@ const initialState: LeadsDashboardState = {
         image: "userIcon3",
         name: "Murdo Gordon",
         teamName: "EVP Global Commercial Ops | Amgen",
-        personaQuadrant: "Change Agent",
-        behaviouralTrait: ["Risk Appetite", "Openness to Innovation"],
-        influenceMapping: 3,
-        networkIntelligence: 2,
-        conferenceIntelligence: {
-          name: "Panelist",
-          progress: "up",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 3,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
+        },
+        tags: ["Nudge Recommended", "Influencer"],
+      },
+      {
+        id: 126,
+        image: "userIcon2",
+        name: "Murdo Gordon",
+        teamName: "EVP Global Commercial Ops | Amgen",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 2,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
+        },
+      },
+      {
+        id: 127,
+        image: "userIcon3",
+        name: "Murdo Gordon",
+        teamName: "EVP Global Commercial Ops | Amgen",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 3,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
+        },
+        tags: ["Nudge Recommended", "Influencer"],
+      },
+      {
+        id: 128,
+        image: "userIcon2",
+        name: "Murdo Gordon",
+        teamName: "EVP Global Commercial Ops | Amgen",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 2,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
+        },
+      },
+      {
+        id: 129,
+        image: "userIcon3",
+        name: "Murdo Gordon",
+        teamName: "EVP Global Commercial Ops | Amgen",
+        detailsStats: {
+          personaQuadrant: [{ name: "Change Agent" }],
+          behaviouralTrait: [
+            { name: "Risk Appetite" },
+            { name: "Openness to Innovation" },
+          ],
+          influenceMapping: 3,
+          networkIntelligence: 2,
+          conferenceIntelligence: [
+            {
+              name: "Panelist",
+              progress: "up",
+            },
+          ],
         },
         tags: ["Nudge Recommended", "Influencer"],
       },

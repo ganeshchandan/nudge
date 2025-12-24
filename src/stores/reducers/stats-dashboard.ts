@@ -213,7 +213,7 @@ const initialState: StatsDashboardState = {
   },
 };
 
-export const statsDashbaordConfig = createSlice({
+export const statsDashboardConfig = createSlice({
   name: "statsDashbaordConfig",
   initialState,
   reducers: {
@@ -223,6 +223,6 @@ export const statsDashbaordConfig = createSlice({
   },
 });
 
-export const { updateSelectedStatsTab } = statsDashbaordConfig.actions;
+export const { updateSelectedStatsTab } = statsDashboardConfig.actions;
 
-export const StatsDashbaordReducer = statsDashbaordConfig.reducer;
+export const StatsDashboardReducer = statsDashboardConfig.reducer;

@@ -5,7 +5,7 @@ import type { RootState } from "@stores";
 
 export const StatsDashboardOptions = () => {
   const selectedStatsTab = useSelector(
-    (state: RootState) => state.statsDashbaord.selectedStatsTab
+    (state: RootState) => state.statsDashboard.selectedStatsTab
   );
   return (
     <div className="stats-dashboard-options">

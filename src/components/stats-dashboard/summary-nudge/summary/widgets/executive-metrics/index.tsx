@@ -5,7 +5,7 @@ import { SummaryLists } from "../../lists";
 
 export const ExecutiveMetricsContent = () => {
   const { engageement, relationship, strategic, business } = useSelector(
-    (state: RootState) => state.statsDashbaord.accountSummary.executiveMetrics
+    (state: RootState) => state.statsDashboard.accountSummary.executiveMetrics
   );
   return (
     <div className="executive-metrics">

@@ -1,0 +1,32 @@
+.overflow-container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .overflow-content {
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 1rem;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .scroll-bar {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0.375rem;
+        height: 100%;
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        .thumb {
+            width: 100%;
+            background: #ccc;
+            border-radius: 4px;
+            position: relative;
+            top: 0;
+        }
+    }
+}

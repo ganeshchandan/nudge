@@ -3,6 +3,7 @@ import { StatsDashboard } from "@components/stats-dashboard";
 import { LoginPage } from "@components/login";
 import { AuthGuard, PublicRoute } from "@components/router-guards";
 import { NudgeDashboard } from "./dashboard";
+import { Leads } from "./leads";
 
 export const router = createBrowserRouter([
   {
@@ -12,9 +13,9 @@ export const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <AuthGuard>
-        <NudgeDashboard />
-      </AuthGuard>
+      // <AuthGuard>
+      <NudgeDashboard />
+      // </AuthGuard>
     ),
     children: [
       {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "leads",
-        element: <>Leads Page</>,
+        element: <Leads />,
       },
       {
         path: "line",

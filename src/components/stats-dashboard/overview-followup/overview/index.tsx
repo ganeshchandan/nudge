@@ -5,7 +5,7 @@ import type { RootState } from "@stores";
 
 export const StatsDashboardOverview = () => {
   const statsDashboardOverviews = useSelector(
-    (state: RootState) => state.statsDashbaord.statsDashboardOverviews
+    (state: RootState) => state.statsDashboard.statsDashboardOverviews
   );
   return (
     <div className="stats-dashboard-overview">

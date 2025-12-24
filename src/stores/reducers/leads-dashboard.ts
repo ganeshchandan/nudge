@@ -21,7 +21,7 @@ const initialState: LeadsDashboardState = {
     executiveCapitals: [
       {
         id: 124,
-        image: "person_1",
+        image: "userIcon2",
         name: "Murdo Gordon",
         teamName: "EVP Global Commercial Ops | Amgen",
         personaQuadrant: "Change Agent",
@@ -36,7 +36,7 @@ const initialState: LeadsDashboardState = {
       },
       {
         id: 125,
-        image: "person_1",
+        image: "userIcon3",
         name: "Murdo Gordon",
         teamName: "EVP Global Commercial Ops | Amgen",
         personaQuadrant: "Change Agent",

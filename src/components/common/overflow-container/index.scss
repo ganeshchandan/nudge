@@ -35,6 +35,8 @@
             border-radius: 4px;
             position: relative;
             top: 0;
+            cursor: pointer;
+            user-select: none;
         }
     }
 }

@@ -1,6 +1,9 @@
 import type { FC } from "react";
-import { COMPONENT_TYPE_MAPPER, ExecutiveCapitalDetailItem } from "./item";
-import { EXECUTIVE_CAPITAL_DETAILS } from "./constants";
+import {
+  COMPONENT_TYPE_MAPPER,
+  ExecutiveCapitalDetailItem,
+} from "@components/leads/executive-capital/lists/card/details/item";
+import { EXECUTIVE_CAPITAL_DETAILS } from "@components/leads/executive-capital/lists/card/details/constants";
 import type { ExecutiveCapitalDetailsStats } from "@components/leads/types";
 
 export interface ExecutiveCapitalDetailsProps {

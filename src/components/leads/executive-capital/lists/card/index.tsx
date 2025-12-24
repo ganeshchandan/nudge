@@ -1,8 +1,8 @@
 import type { ExecutiveCapital } from "@components/leads/types";
 import type { FC } from "react";
-import { OverallDetails } from "./overall-details";
-import { ExecutiveCapitalDetails } from "./details";
-import { ExecutiveCapitalTags } from "./tags";
+import { OverallDetails } from "@components/leads/executive-capital/lists/card/overall-details";
+import { ExecutiveCapitalDetails } from "@components/leads/executive-capital/lists/card/details";
+import { ExecutiveCapitalTags } from "@components/leads/executive-capital/lists/card/tags";
 
 interface ExecutiveCapitalCardProps {
   executiveCapital: ExecutiveCapital;

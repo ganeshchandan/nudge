@@ -1,5 +1,5 @@
 import { OverflowContainer } from "@components/common";
-import { ExecutiveCapitalCard } from "./card";
+import { ExecutiveCapitalCard } from "@components/leads/executive-capital/lists/card";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
 

@@ -1,5 +1,5 @@
 import "@components/leads/index.scss";
-import { ExecutiveCapital } from "./executive-capital";
+import { ExecutiveCapital } from "@components/leads/executive-capital";
 
 export const Leads = () => {
   return (

@@ -16,16 +16,13 @@ export const OverallDetails: FC<OverallDetailsProps> = ({
 }) => {
   return (
     <div className="overall-details">
-      <img
-        src={APP_IMAGES[image]}
-        className="executive-capital-list-card-image"
-      />
-      <div className="executive-details-action">
-        <div className="executive-name-details">
-          <div className="executive-name">{name}</div>
-          <div className="executive-team">{teamName}</div>
+      <img src={APP_IMAGES[image]} className="leads-list-card-image" />
+      <div className="leads-details-action">
+        <div className="leads-name-details">
+          <div className="leads-name">{name}</div>
+          <div className="leads-team">{teamName}</div>
         </div>
-        <div className="executive-actions">
+        <div className="leads-actions">
           <NudgeButton variant={OUTLINE_PRIMARY_VARIANT}>Bookmark</NudgeButton>
           <NudgeButton>VIEW DETAILS</NudgeButton>
         </div>

@@ -1,18 +1,18 @@
 import type { FC } from "react";
 
-interface ExecutiveCapitalDetailRatingsProps {
+interface LeadsDetailRatingsProps {
   executiveCapitalDetails: number;
 }
 
-export const ExecutiveCapitalDetailRatings: FC<
-  ExecutiveCapitalDetailRatingsProps
-> = ({ executiveCapitalDetails }) => {
+export const LeadsDetailRatings: FC<LeadsDetailRatingsProps> = ({
+  executiveCapitalDetails,
+}) => {
   console.log(executiveCapitalDetails);
   return (
-    <div className="executive-capital-detail-ratings">
+    <div className="leads-capital-detail-ratings">
       {[1, 2, 3].map((id) => (
         <div
-          className={`executive-capital-detail-rate-indictor ${
+          className={`leads-capital-detail-rate-indictor ${
             id <= executiveCapitalDetails ? "rate-indictor-selected" : ""
           }`}
           key={id}

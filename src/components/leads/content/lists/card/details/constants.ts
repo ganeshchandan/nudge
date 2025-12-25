@@ -1,8 +1,8 @@
-import type { ExecutiveCapitalDetailsStats } from "@components/leads/types";
+import type { LeadsDetailsStats } from "@components/leads/types";
 
 export const EXECUTIVE_CAPITAL_DETAILS: {
   name: string;
-  id: keyof ExecutiveCapitalDetailsStats;
+  id: keyof LeadsDetailsStats;
   showProgress?: boolean;
 }[] = [
   {

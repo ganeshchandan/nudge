@@ -1,10 +1,10 @@
 import "@components/leads/index.scss";
-import { ExecutiveCapital } from "@components/leads/executive-capital";
+import { LeadsContent } from "@components/leads/content";
 
 export const Leads = () => {
   return (
     <div className="leads-dashboard">
-      <ExecutiveCapital />
+      <LeadsContent />
     </div>
   );
 };

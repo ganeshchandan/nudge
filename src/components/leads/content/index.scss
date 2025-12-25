@@ -1,5 +1,5 @@
 * {
-    .executive-capital-stats {
+    .leads-stats {
         height: 100%;
         overflow: hidden;
         box-shadow: 0px 2px 10px 6px #00000005;
@@ -7,38 +7,38 @@
         border-radius: 1rem;
         display: grid;
         grid-template-rows: max-content 1fr;
-        .executive-overall-stats {
+        .leads-overall-stats {
             display: flex;
             padding-left: calc(var(--nudge-padding-margin-2xl) - var(--nudge-padding-margin-xs));
             padding-top: calc(var(--nudge-padding-margin-xl-plus) + var(--nudge-padding-margin-xs));
             padding-bottom: var(--nudge-padding-margin-xl);
             grid-gap: calc(var(--nudge-spacing-lg) + var(--nudge-spacing-xxs));
-            .executive-overall-stat {
+            .leads-overall-stat {
                 display: flex;
                 height: 1.125rem;
                 align-items: flex-end;
                 grid-gap: var(--nudge-spacing-sm);
-                .executive-overall-stat-value {
+                .leads-overall-stat-value {
                     font-weight: 500;
                     font-style: Medium;
                     font-size: var(--nudge-text-xxl);
                     line-height: 1.125rem;
                 }
-                .executive-overall-stat-label {
+                .leads-overall-stat-label {
                     font-weight: 400;
                     font-size: 0.656rem;
                     line-height: 0.625rem;
                 }
             }
         }
-        .executive-capital-lists {
+        .leads-lists {
             padding: var(--nudge-padding-margin-xl);
             padding-top: 0px;
             height: 100%;
             display: grid;
             grid-gap: var(--nudge-spacing-lg);
             align-content: flex-start;
-            .executive-capital-list-card {
+            .leads-list-card {
                 padding-top: var(--nudge-padding-margin-lg);
                 background: var(--nudge-color-beautiful-white);
                 border-radius: 0.5rem;
@@ -52,31 +52,31 @@
                     border-bottom: 1px solid var(--nudge-color-light-gray);
                     width: calc(100% - 1.5rem);
                     margin: auto;
-                    .executive-capital-list-card-image {
+                    .leads-list-card-image {
                         height: 3.438rem;
                         width: 3.438rem;
                     }
-                    .executive-details-action {
+                    .leads-details-action {
                         display: flex;
                         justify-content: space-between;
-                        .executive-name-details {
+                        .leads-name-details {
                             display: grid;
                             align-items: center;
                             height: fit-content;
                             grid-gap: var(--nudge-spacing-xs);
 
-                            .executive-name {
+                            .leads-name {
                                 font-weight: 500;
                                 font-size: var(--nudge-text-sm);
                                 line-height: 0.625rem;
                             }
-                            .executive-team {
+                            .leads-team {
                                 font-weight: 400;
                                 font-size: var(--nudge-text-xs);
                                 line-height: 0.625rem;
                             }
                         }
-                        .executive-actions {
+                        .leads-actions {
                             height: 1.75rem;
                             display: flex;
                             align-items: center;
@@ -90,21 +90,21 @@
                         }
                     }
                 }
-                .executive-capital-details {
+                .leads-card-details {
                     width: calc(100% - 1.5rem);
                     margin: auto;
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                    .executive-capital-detail-item {
+                    .leads-capital-detail-item {
                         padding: var(--nudge-padding-margin-lg);
                         color: var(--nudge-color-black-shade01);
-                        .executive-capital-detail-item-header {
+                        .leads-capital-detail-item-header {
                             font-weight: 400;
                             font-size: var(--nudge-text-xxs);
                             line-height: 0.625rem;
                             color: var(--nudge-color-black-shade02);
                         }
-                        .executive-capital-detail-list {
+                        .leads-capital-detail-list {
                             font-weight: 500;
                             font-size: var(--nudge-text-xs);
                             display: grid;
@@ -113,22 +113,22 @@
                             margin: 0;
                             padding: 0;
                             padding-top: var(--nudge-padding-margin-lg);
-                            .executive-capital-detail-list-item {
+                            .leads-capital-detail-list-item {
                                 display: flex;
                                 align-items: center;
                                 height: 0.625rem;
                                 grid-gap: var(--nudge-spacing-xxs);
-                                .executive-capital-stats-up-icon {
+                                .leads-stats-up-icon {
                                     height: 0.5rem;
                                     width: 0.5rem;
                                 }
                             }
                         }
-                        .executive-capital-detail-ratings {
+                        .leads-capital-detail-ratings {
                             display: flex;
                             grid-gap: var(--nudge-spacing-xxs);
                             padding-top: var(--nudge-padding-margin-lg);
-                            .executive-capital-detail-rate-indictor {
+                            .leads-capital-detail-rate-indictor {
                                 height: 0.375rem;
                                 width: 0.375rem;
                                 border-radius: 50%;
@@ -140,12 +140,12 @@
                         }
                     }
                 }
-                .executive-capital-tags {
+                .leads-capital-tags {
                     display: flex;
                     grid-gap: var(--nudge-spacing-xs);
                     padding: var(--nudge-padding-margin-lg) var(--nudge-padding-margin-xxl);
                     border-top: 0.0625rem solid var(--nudge-color-white);
-                    .executive-capital-tag {
+                    .leads-card-tags {
                         height: 1rem;
                         font-weight: 400;
                         font-size: 0.625rem;

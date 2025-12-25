@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { StatsDashboard } from "@components/stats-dashboard";
 import { LoginPage } from "@components/login";
 import { AuthGuard, PublicRoute } from "@components/router-guards";
-import { NudgeDashboard } from "./dashboard";
+import { NudgeDashboard } from "@components/dashboard";
 import { Leads } from "./leads";
 
 export const router = createBrowserRouter([

@@ -1,28 +1,28 @@
-export interface ExecutiveCapitalDetailStat {
+export interface LeadsDetailStat {
   name: string;
   progress?: "up" | "down";
 }
 
-export interface ExecutiveCapitalDetailsStats {
-  personaQuadrant: ExecutiveCapitalDetailStat[];
-  behaviouralTrait: ExecutiveCapitalDetailStat[];
+export interface LeadsDetailsStats {
+  personaQuadrant: LeadsDetailStat[];
+  behaviouralTrait: LeadsDetailStat[];
   influenceMapping: number;
   networkIntelligence: number;
-  conferenceIntelligence: ExecutiveCapitalDetailStat[];
+  conferenceIntelligence: LeadsDetailStat[];
 }
 
-export interface ExecutiveCapital {
+export interface Leads {
   id: number;
   image: string;
   name: string;
   teamName: string;
-  detailsStats: ExecutiveCapitalDetailsStats;
+  detailsStats: LeadsDetailsStats;
   tags?: string[];
 }
 
-export type ExecutiveCapitals = ExecutiveCapital[];
+export type Leadss = Leads[];
 
-export interface ExecutiveCapitalStats {
+export interface LeadsOverallStats {
   atRisk: string;
   topConnections: string;
   performingVerticals: string;

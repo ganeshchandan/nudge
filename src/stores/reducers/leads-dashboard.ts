@@ -1,13 +1,10 @@
-import type {
-  ExecutiveCapitals,
-  ExecutiveCapitalStats,
-} from "@components/leads/types";
+import type { Leadss, LeadsOverallStats } from "@components/leads/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface LeadsDashboardState {
   executiveCapitalDetails: {
-    executiveCapitals: ExecutiveCapitals;
-    overallStats: ExecutiveCapitalStats;
+    executiveCapitals: Leadss;
+    overallStats: LeadsOverallStats;
   };
 }
 

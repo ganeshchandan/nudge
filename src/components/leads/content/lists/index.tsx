@@ -1,17 +1,17 @@
 import { OverflowContainer } from "@components/common";
-import { ExecutiveCapitalCard } from "@components/leads/executive-capital/lists/card";
+import { LeadsListCard } from "@components/leads/content/lists/card";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
 
-export const ExecutiveCapitalList = () => {
+export const LeadsList = () => {
   const { executiveCapitals } = useSelector(
     (state: RootState) => state.leadsDashboard.executiveCapitalDetails
   );
   return (
     <OverflowContainer>
-      <div className="executive-capital-lists">
+      <div className="leads-lists">
         {executiveCapitals.map((executiveCapital) => (
-          <ExecutiveCapitalCard
+          <LeadsListCard
             executiveCapital={executiveCapital}
             key={executiveCapital.id}
           />

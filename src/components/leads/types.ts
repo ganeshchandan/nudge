@@ -11,7 +11,7 @@ export interface LeadsDetailsStats {
   conferenceIntelligence: LeadsDetailStat[];
 }
 
-export interface Leads {
+export interface LeadStats {
   id: number;
   image: string;
   name: string;
@@ -20,10 +20,29 @@ export interface Leads {
   tags?: string[];
 }
 
-export type Leadss = Leads[];
+export type Leads = LeadStats[];
 
 export interface LeadsOverallStats {
   atRisk: string;
   topConnections: string;
   performingVerticals: string;
+}
+
+export interface EngagementScores {
+  activeEngagements: string;
+  engagementScore: string;
+}
+
+export interface OneMinuteSummary {
+  header: string;
+  content: string;
+}
+
+export interface DetailedViewStats {
+  id: number;
+  image: string;
+  name: string;
+  teamName: string;
+  engagementScores: EngagementScores;
+  oneMinuteSummary: OneMinuteSummary[];
 }

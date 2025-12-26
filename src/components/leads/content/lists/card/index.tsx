@@ -1,11 +1,11 @@
-import type { Leads } from "@components/leads/types";
+import type { LeadStats } from "@components/leads/types";
 import type { FC } from "react";
 import { OverallDetails } from "@components/leads/content/lists/overall-details";
 import { LeadsCardDetails } from "@components/leads/content/lists/card/details";
 import { LeadsCardTags } from "@components/leads/content/lists/card/tags";
 
 interface LeadsListCardProps {
-  executiveCapital: Leads;
+  executiveCapital: LeadStats;
 }
 
 export const LeadsListCard: FC<LeadsListCardProps> = ({ executiveCapital }) => {

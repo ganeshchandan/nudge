@@ -1,14 +1,30 @@
-import type { Leadss, LeadsOverallStats } from "@components/leads/types";
+import type {
+  DetailedViewStats,
+  Leads,
+  LeadsOverallStats,
+} from "@components/leads/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface LeadsDashboardState {
   executiveCapitalDetails: {
-    executiveCapitals: Leadss;
+    executiveCapitals: Leads;
     overallStats: LeadsOverallStats;
   };
+  detailedViewStats: DetailedViewStats;
 }
 
 const initialState: LeadsDashboardState = {
+  detailedViewStats: {
+    id: 124,
+    image: "userIcon2",
+    name: "Murdo Gordon",
+    teamName: "EVP Global Commercial Ops | Amgen",
+    engagementScores: {
+      activeEngagements: "02",
+      engagementScore: "82%",
+    },
+    oneMinuteSummary: [],
+  },
   executiveCapitalDetails: {
     overallStats: {
       atRisk: "04",

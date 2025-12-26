@@ -1,0 +1,32 @@
+* {
+    .leads-detailed-view {
+        .detailed-view-content {
+            .detailed-view-one-minute-summary {
+                .one-minute-summary-header {
+                    padding: var(--nudge-padding-margin-2xl);
+                    padding-bottom: var(--nudge-padding-margin-xl);
+                    font-weight: 600;
+                    font-size: var(--nudge-text-md);
+                    color: var(--nudge-color-black-shade01);
+                }
+                .one-minute-summaries {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    padding: 0 var(--nudge-padding-margin-2xl);
+                    // flex-wrap: wrap;
+                    .one-minute-summary {
+                        // max-width: 16.875rem;
+                        border-radius: 0.25rem;
+                        background: linear-gradient(90deg, rgba(251, 250, 255, 1) 0%, rgba(232, 227, 245, 1) 30%);
+                        padding: var(--nudge-padding-margin-xl);
+                        border-bottom: 0.188rem solid var(--nudge-color-white);
+                        border-left: 0.188rem solid var(--nudge-color-white);
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        color: var(--nudge-color-black);
+                    }
+                }
+            }
+        }
+    }
+}

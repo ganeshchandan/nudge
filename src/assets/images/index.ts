@@ -15,3 +15,4 @@ export { default as SuitcaseIcon } from "@assets/images/suitcase.svg?react";
 export { default as AccountLevelScoreIcon } from "@assets/images/account-level-score.svg?react";
 export { default as ProgramLevelScoreIcon } from "@assets/images/program-level-score.svg?react";
 export { default as StatsUpIcon } from "@assets/images/stats-up.svg?react";
+export { default as LeftIcon } from "@assets/images/left.svg?react";

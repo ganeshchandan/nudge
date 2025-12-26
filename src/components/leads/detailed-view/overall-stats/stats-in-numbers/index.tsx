@@ -1,7 +1,7 @@
-import { DETAILED_EXECUTIVE_CAPITAL_ENGAGEMENT_FIELDS } from "../constants";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
-import "@components/leads/detailed-view/stats-in-number/index.scss";
+import "@components/leads/detailed-view/overall-stats/stats-in-numbers/index.scss";
+import { DETAILED_EXECUTIVE_CAPITAL_ENGAGEMENT_FIELDS } from "@components/leads/detailed-view/constants";
 
 export const StatsInNumbers = () => {
   const { engagementScores } = useSelector(

@@ -23,7 +23,32 @@ const initialState: LeadsDashboardState = {
       activeEngagements: "02",
       engagementScore: "82%",
     },
-    oneMinuteSummary: [],
+    oneMinuteSummary: [
+      {
+        header: "",
+        content:
+          "Need to make an impression in 1 go we may not get many chances",
+      },
+      { header: "", content: "Must avoid over indexing on USA only thinking" },
+      {
+        header: "",
+        content:
+          "Summarize thoughts in first 10 min (insight → opportunity → implication for Amgen) then elaborate",
+      },
+      {
+        header: "",
+        content:
+          "Driven by numbers and quantifiable actions– Looks for “Financial Sense”",
+      },
+      {
+        header: "",
+        content:
+          "Quick Turnarounds / Bold Decisions (he is known for his bold pricing strategies)",
+      },
+      { header: "", content: "Believes in scale – APAC focused for growth on his mind & seems his personal agenda" },
+      { header: "", content: "Favouritism with empowerment of close trusted team" },
+      { header: "", content: "Measured & Purposeful Talking ? Too much jargons , fluff may put him off Keen observer" },
+    ],
   },
   executiveCapitalDetails: {
     overallStats: {

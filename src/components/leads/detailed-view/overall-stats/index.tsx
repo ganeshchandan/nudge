@@ -2,7 +2,7 @@ import { APP_IMAGES } from "@assets/images/app_image";
 import { NudgeButton } from "@components/common/button";
 import { useSelector } from "react-redux";
 import type { RootState } from "@stores";
-import { StatsInNumbers } from "./stats-in-number";
+import { StatsInNumbers } from "./stats-in-numbers";
 
 export const DetailedOverallStats = () => {
   const { name, teamName, image } = useSelector(

@@ -13,7 +13,7 @@ export const ExecutiveView: FC<ExecutiveViewProps> = ({
 }) => {
   const { overallStats, executiveCapitals } = executiveCapitalDetails;
   return (
-    <div className="executive-stats">
+    <div className="executive-stats smooth-content-load">
       <OverallStatsLists overallStats={overallStats} />
       <ExecutiveViewList executiveCapitals={executiveCapitals} />
     </div>

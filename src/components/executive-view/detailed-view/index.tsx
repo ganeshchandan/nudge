@@ -18,7 +18,7 @@ export const ExecutiveDetailedView: FC<ExecutiveDetailedViewProps> = ({
   const onExecutiveIdSelect = () => onExecutiveSelect(-1);
 
   return (
-    <div className="executive-detailed-view">
+    <div className="executive-detailed-view smooth-content-load">
       <div className="detailed-view-back-button" onClick={onExecutiveIdSelect}>
         <LeftIcon className="detailed-view-back-button-icon" />
       </div>

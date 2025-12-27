@@ -16,9 +16,9 @@ const initialState: LineDashboardState = {
     executiveCapitals: [
       {
         id: 124,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company1",
+        name: "J&J",
+        teamName: "Med Tech",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },
@@ -42,9 +42,9 @@ const initialState: LineDashboardState = {
       },
       {
         id: 125,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company2",
+        name: "Amgen",
+        teamName: "Oncology and Hematology",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },
@@ -68,9 +68,9 @@ const initialState: LineDashboardState = {
       },
       {
         id: 126,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company3",
+        name: "GSK",
+        teamName: "Specialty Medicines",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },
@@ -93,9 +93,9 @@ const initialState: LineDashboardState = {
       },
       {
         id: 127,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company4",
+        name: "Sanofi",
+        teamName: "Specialty Care",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },
@@ -119,9 +119,9 @@ const initialState: LineDashboardState = {
       },
       {
         id: 128,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company3",
+        name: "GSK",
+        teamName: "Specialty Medicines",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },
@@ -144,9 +144,9 @@ const initialState: LineDashboardState = {
       },
       {
         id: 129,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
+        image: "company4",
+        name: "Sanofi",
+        teamName: "Specialty Care",
         detailsStats: {
           strategicPosture: [
             { name: "Transformation-Led" },

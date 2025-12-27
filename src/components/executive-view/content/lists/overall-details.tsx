@@ -1,8 +1,9 @@
 import { APP_IMAGES } from "@assets/images/app_image";
 import { NudgeButton } from "@components/common/button";
 import { OUTLINE_PRIMARY_VARIANT } from "@components/common/button/constants";
+import { ExecutiveContext } from "@components/executive-view/context/setup";
 import { useExecutiveAction } from "@components/executive-view/hooks";
-import type { FC } from "react";
+import { useContext, type FC } from "react";
 
 interface OverallDetailsProps {
   image: string;
@@ -17,6 +18,8 @@ export const OverallDetails: FC<OverallDetailsProps> = ({
   teamName,
   id,
 }) => {
+  const { executiveViewUIFields } = useContext(ExecutiveContext);
+  const { viewDetailsButtonLabel } = executiveViewUIFields;
   const { onExecutiveIdSelect } = useExecutiveAction();
 
   const onViewDetailsClick = () => onExecutiveIdSelect(id);
@@ -31,7 +34,9 @@ export const OverallDetails: FC<OverallDetailsProps> = ({
         </div>
         <div className="executive-actions">
           <NudgeButton variant={OUTLINE_PRIMARY_VARIANT}>Bookmark</NudgeButton>
-          <NudgeButton onClick={onViewDetailsClick}>VIEW DETAILS</NudgeButton>
+          <NudgeButton onClick={onViewDetailsClick}>
+            {viewDetailsButtonLabel}
+          </NudgeButton>
         </div>
       </div>
     </div>

@@ -1,10 +1,7 @@
-import type { FC } from "react";
-import {
-  COMPONENT_TYPE_MAPPER,
-  ExecutiveViewDetailItem,
-} from "@components/executive-view/content/lists/card/details/item";
-import { EXECUTIVE_CAPITAL_DETAILS } from "@components/executive-view/content/lists/card/details/constants";
+import { useContext, type FC } from "react";
+import { ExecutiveViewDetailItem } from "@components/executive-view/content/lists/card/details/item";
 import type { ExecutiveStatsDetail } from "@components/executive-view/types";
+import { ExecutiveContext } from "@components/executive-view/context/setup";
 
 export interface ExecutiveViewCardDetailsProps {
   detailsStats: ExecutiveStatsDetail;
@@ -13,10 +10,16 @@ export interface ExecutiveViewCardDetailsProps {
 export const ExecutiveViewCardDetails: FC<ExecutiveViewCardDetailsProps> = ({
   detailsStats,
 }) => {
+  const { executiveViewUIFields } = useContext(ExecutiveContext);
+  const { cardCapitalDetails } = executiveViewUIFields;
   return (
-    <div className="executive-card-details">
-      {EXECUTIVE_CAPITAL_DETAILS.map(({ name, id, showProgress }) => {
-        const Component = COMPONENT_TYPE_MAPPER[id];
+    <div
+      className="executive-card-details"
+      style={{
+        gridTemplateColumns: `repeat(${cardCapitalDetails.length}, 1fr)`,
+      }}
+    >
+      {cardCapitalDetails.map(({ name, id, showProgress, Component }) => {
         return (
           <ExecutiveViewDetailItem label={name} key={id}>
             {Component && (
@@ -31,3 +34,6 @@ export const ExecutiveViewCardDetails: FC<ExecutiveViewCardDetailsProps> = ({
     </div>
   );
 };
+
+export { ExecutiveViewDetailList } from "./list-component";
+export { ExecutiveViewDetailRatings } from "./ratings";

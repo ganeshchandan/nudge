@@ -5,6 +5,7 @@ import type { FC } from "react";
 import type {
   DetailedViewStats,
   ExecutiveCapitalDetails,
+  ExecutiveViewUIFields,
   OnExecutiveSelect,
 } from "@components/executive-view/types";
 import { ExecutiveContextProvider } from "@components/executive-view/context";
@@ -14,6 +15,7 @@ interface ExecutiveDashboardProps {
   executiveCapitalDetails: ExecutiveCapitalDetails;
   onExecutiveSelect: OnExecutiveSelect;
   selectedExecutiveID: number;
+  executiveViewUIFields: ExecutiveViewUIFields;
 }
 
 export const ExecutiveDashboard: FC<ExecutiveDashboardProps> = ({
@@ -21,9 +23,13 @@ export const ExecutiveDashboard: FC<ExecutiveDashboardProps> = ({
   executiveCapitalDetails,
   onExecutiveSelect,
   selectedExecutiveID,
+  executiveViewUIFields,
 }) => {
   return (
-    <ExecutiveContextProvider onExecutiveSelect={onExecutiveSelect}>
+    <ExecutiveContextProvider
+      onExecutiveSelect={onExecutiveSelect}
+      executiveViewUIFields={executiveViewUIFields}
+    >
       <div className="executive-dashboard">
         {selectedExecutiveID !== -1 ? (
           <ExecutiveDetailedView detailedViewStats={detailedViewStats} />

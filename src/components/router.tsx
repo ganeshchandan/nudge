@@ -3,7 +3,8 @@ import { StatsDashboard } from "@components/stats-dashboard";
 import { LoginPage } from "@components/login";
 import { AuthGuard, PublicRoute } from "@components/router-guards";
 import { NudgeDashboard } from "@components/dashboard";
-import { Leads } from "./leads";
+import { Leads } from "@components/leads";
+import { Lines } from "@components/line";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "line",
-        element: <>Line Page</>,
+        element: <Lines />,
       },
       {
         path: "lens",

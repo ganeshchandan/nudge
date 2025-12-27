@@ -1,0 +1,45 @@
+* {
+    .executive-detailed-view {
+        .detailed-view-overall-stats {
+            .stats-in-numbers {
+                display: grid;
+                grid-template-columns: max-content max-content;
+                grid-gap: 3.125rem;
+                justify-content: flex-end;
+                padding-right: 6.875rem;
+                align-items: center;
+                .stats-in-number {
+                    display: grid;
+                    grid-gap: var(--nudge-spacing-xxs);
+                    justify-items: flex-end;
+
+                    &.stats-in-number-clickable {
+                        .stats-in-number-value {
+                            text-decoration: underline;
+                            color: var(--nudge-color-blue);
+                        }
+                    }
+                    .stats-in-number-header {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xxs);
+                        line-height: 0.625rem;
+                        color: var(--nudge-color-black-shade02);
+                    }
+                    .stats-in-number-value {
+                        height: 1.375rem;
+                        width: fit-content;
+                        padding: 0 var(--nudge-padding-margin-sm);
+                        display: flex;
+                        align-items: center;
+                        border-radius: 0.188rem;
+                    }
+                    &.stats-in-number-percentage {
+                        .stats-in-number-value {
+                            background: var(--nudge-color-clear-green);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,20 +1,17 @@
 import type {
   DetailedViewStats,
-  Leads,
-  LeadsOverallStats,
-} from "@components/leads/types";
+  ExecutiveCapitalDetails,
+} from "@components/executive-view/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface LeadsDashboardState {
-  executiveCapitalDetails: {
-    executiveCapitals: Leads;
-    overallStats: LeadsOverallStats;
-  };
+  executiveCapitalDetails: ExecutiveCapitalDetails;
   detailedViewStats: DetailedViewStats;
-  selectedID: string | null;
+  selectedExecutiveID: number;
 }
 
 const initialState: LeadsDashboardState = {
+  selectedExecutiveID: -1,
   executiveCapitalDetails: {
     executiveCapitals: [
       {
@@ -178,30 +175,56 @@ const initialState: LeadsDashboardState = {
       {
         header: "",
         content:
-          "Driven by numbers and quantifiable actions– Looks for “Financial Sense”",
+          "Driven by numbers and quantifiable actions- Looks for “Financial Sense”",
       },
       {
         header: "",
         content:
           "Quick Turnarounds / Bold Decisions (he is known for his bold pricing strategies)",
       },
-      { header: "", content: "Believes in scale – APAC focused for growth on his mind & seems his personal agenda" },
-      { header: "", content: "Favouritism with empowerment of close trusted team" },
-      { header: "", content: "Measured & Purposeful Talking ? Too much jargons , fluff may put him off Keen observer" },
+      {
+        header: "",
+        content:
+          "Believes in scale - APAC focused for growthon his mind & seems his personal agenda",
+      },
+      {
+        header: "",
+        content: "Favouritism with empowerment of close trusted team",
+      },
+      {
+        header: "",
+        content:
+          "Measured & Purposeful Talking ? Too much jargons , fluff may put him off Keen observer",
+      },
     ],
   },
-  selectedID: null,
 };
 
 export const leadDashboardConfig = createSlice({
   name: "leadsDashboardConfig",
   initialState,
   reducers: {
-    selectedID: (state, action) => {
-      state.selectedID = action.payload;
+    setSelectedExecutiveID: (state, { payload }) => {
+      state.selectedExecutiveID = payload;
+      if (payload !== -1) {
+        const {
+          name = "",
+          teamName = "",
+          image = "",
+        } = state.executiveCapitalDetails.executiveCapitals.find(
+          ({ id }) => id === payload
+        ) || {};
+        state.detailedViewStats = {
+          ...state.detailedViewStats,
+          name,
+          id: payload,
+          teamName,
+          image,
+        };
+      }
     },
   },
 });
 
-export const { selectedID } = leadDashboardConfig.actions;
+export const { setSelectedExecutiveID } = leadDashboardConfig.actions;
 export const LeadsDashboardReducer = leadDashboardConfig.reducer;

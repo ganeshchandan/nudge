@@ -1,0 +1,9 @@
+* {
+    .executive-dashboard {
+        height: 100%;
+        overflow: hidden;
+        padding: calc(var(--nudge-padding-margin-md) + var(--nudge-padding-margin-xs)) var(--nudge-padding-margin-sm)
+            var(--nudge-padding-margin-xxl) var(--nudge-padding-margin-xl-plus);
+        position: relative;
+    }
+}

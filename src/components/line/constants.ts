@@ -3,6 +3,7 @@ import {
   ExecutiveViewDetailRatings,
 } from "@components/executive-view/content/lists/card/details";
 import type {
+  EngagementField,
   ExecutiveCardCapitalDetail,
   OverallStatsField,
 } from "@components/executive-view/types";
@@ -42,5 +43,20 @@ export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
     name: "Account Relationship",
     id: "accountRelationship",
     Component: ExecutiveViewDetailRatings,
+  },
+];
+
+export const ENGAGEMENT_FIELDS: EngagementField[] = [
+  {
+    type: "text",
+    id: "sentiment",
+    name: "Sentiment",
+    isClickAble: false,
+  },
+  {
+    type: "status-text",
+    id: "accountRelationship",
+    name: "Account Relationship",
+    isClickAble: false,
   },
 ];

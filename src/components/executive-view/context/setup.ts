@@ -15,5 +15,6 @@ export const ExecutiveContext = createContext<ExecutiveContextProp>({
     overallStatsFields: [],
     viewDetailsButtonLabel: "",
     cardCapitalDetails: [],
+    engagementFields: [],
   },
 });

@@ -181,8 +181,8 @@ const initialState: LineDashboardState = {
     name: "Murdo Gordon",
     teamName: "EVP Global Commercial Ops | Amgen",
     engagementScores: {
-      activeEngagements: "02",
-      engagementScore: "82%",
+      sentiment: "none",
+      accountRelationship: "weak",
     },
     oneMinuteSummary: [
       {

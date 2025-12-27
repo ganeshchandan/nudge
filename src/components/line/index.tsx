@@ -1,10 +1,9 @@
-// import { LeadsContent } from "@components/leads/content";
-// import { LeadsDetailedView } from "@components/leads/detailed-view";
 import { ExecutiveDashboard } from "@components/executive-view";
 import type { RootState } from "@stores";
 import { useDispatch, useSelector } from "react-redux";
 import { setLineSelectedExecutiveID } from "@stores/reducers";
 import {
+  ENGAGEMENT_FIELDS,
   EXECUTIVE_CAPITAL_DETAILS,
   OVERALL_STATS_FIELDS,
 } from "@components/line/constants";
@@ -19,10 +18,6 @@ export const Lines = () => {
   };
 
   return (
-    // <div className="leads-dashboard">
-    //   {/* <LeadsContent /> */}
-    //   <LeadsDetailedView />
-    // </div>
     <ExecutiveDashboard
       detailedViewStats={detailedViewStats}
       executiveCapitalDetails={executiveCapitalDetails}
@@ -32,6 +27,7 @@ export const Lines = () => {
         overallStatsFields: OVERALL_STATS_FIELDS,
         viewDetailsButtonLabel: "View Full Dossier",
         cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
+        engagementFields: ENGAGEMENT_FIELDS,
       }}
     />
   );

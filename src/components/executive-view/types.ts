@@ -43,8 +43,10 @@ export interface ExecutiveOverallStats {
 }
 
 export interface EngagementScores {
-  activeEngagements: string;
-  engagementScore: string;
+  activeEngagements?: string;
+  engagementScore?: string;
+  accountRelationship?: string;
+  sentiment?: string;
 }
 
 export interface OneMinuteSummary {
@@ -69,6 +71,7 @@ export interface ExecutiveViewUIFields {
   overallStatsFields: OverallStatsField[];
   viewDetailsButtonLabel: string;
   cardCapitalDetails: ExecutiveCardCapitalDetail[];
+  engagementFields: EngagementField[];
 }
 
 export interface ExecutiveCardCapitalDetail {
@@ -76,4 +79,11 @@ export interface ExecutiveCardCapitalDetail {
   id: keyof ExecutiveStatsDetail;
   showProgress?: boolean;
   Component: FC<any>;
+}
+
+export interface EngagementField {
+  type: string;
+  id: keyof EngagementScores;
+  name: string;
+  isClickAble: boolean;
 }

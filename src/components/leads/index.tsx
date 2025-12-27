@@ -5,6 +5,7 @@ import type { RootState } from "@stores";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedExecutiveID } from "@stores/reducers";
 import {
+  ENGAGEMENT_FIELDS,
   EXECUTIVE_CAPITAL_DETAILS,
   OVERALL_STATS_FIELDS,
 } from "@components/leads/constants";
@@ -32,6 +33,7 @@ export const Leads = () => {
         overallStatsFields: OVERALL_STATS_FIELDS,
         viewDetailsButtonLabel: "VIEW DETAILS",
         cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
+        engagementFields: ENGAGEMENT_FIELDS,
       }}
     />
   );

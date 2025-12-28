@@ -1,3 +1,4 @@
+import type { QuickLink } from "@components/common";
 import type { FC } from "react";
 
 export interface ExecutiveStatDetail {
@@ -72,6 +73,10 @@ export interface ExecutiveViewUIFields {
   viewDetailsButtonLabel: string;
   cardCapitalDetails: ExecutiveCardCapitalDetail[];
   engagementFields: EngagementField[];
+  quickLinks: {
+    headerName: string;
+    links: QuickLink[];
+  };
 }
 
 export interface ExecutiveCardCapitalDetail {

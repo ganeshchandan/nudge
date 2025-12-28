@@ -8,6 +8,7 @@ import {
   ENGAGEMENT_FIELDS,
   EXECUTIVE_CAPITAL_DETAILS,
   OVERALL_STATS_FIELDS,
+  QUICK_LINKS,
 } from "@components/leads/constants";
 
 export const Leads = () => {
@@ -34,6 +35,10 @@ export const Leads = () => {
         viewDetailsButtonLabel: "VIEW DETAILS",
         cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
         engagementFields: ENGAGEMENT_FIELDS,
+        quickLinks: {
+          headerName: "Profile Category",
+          links: QUICK_LINKS,
+        },
       }}
     />
   );

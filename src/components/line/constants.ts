@@ -1,3 +1,4 @@
+import type { QuickLink } from "@components/common";
 import {
   ExecutiveViewDetailList,
   ExecutiveViewDetailRatings,
@@ -58,5 +59,44 @@ export const ENGAGEMENT_FIELDS: EngagementField[] = [
     id: "accountRelationship",
     name: "Account Relationship",
     isClickAble: false,
+  },
+];
+
+export const QUICK_LINKS: QuickLink[] = [
+  {
+    name: "1 Minute Summary",
+    id: "1MinuteSummary",
+  },
+  {
+    name: "Personal Life",
+    id: "Personal Life",
+  },
+  {
+    name: "Summits he attends",
+    id: "Summits he attends",
+  },
+  {
+    name: "Him at Amgen",
+    id: "",
+  },
+  {
+    name: "Personality Traits",
+    id: "",
+  },
+  {
+    name: "Themes of interest",
+    id: "",
+  },
+  {
+    name: "Who influences him ?",
+    id: "",
+  },
+  {
+    name: "Version History",
+    id: "",
+  },
+  {
+    name: "Notes",
+    id: "",
   },
 ];

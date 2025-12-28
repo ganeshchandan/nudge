@@ -1,6 +1,11 @@
 * {
     .executive-detailed-view {
         .detailed-view-content {
+            display: grid;
+            grid-template-columns: 10fr 2fr;
+            height: 100%;
+            overflow: hidden;
+
             .detailed-view-one-minute-summary {
                 .one-minute-summary-header {
                     padding: var(--nudge-padding-margin-2xl);

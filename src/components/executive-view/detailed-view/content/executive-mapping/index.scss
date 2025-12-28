@@ -1,0 +1,32 @@
+* {
+    .executive-detailed-view {
+        .detailed-view-content {
+            .executive-mapping {
+                padding: var(--nudge-padding-margin-2xl);
+                .executive-mapping-header {
+                    font-weight: 600;
+                    font-size: var(--nudge-text-md);
+                    display: grid;
+                    grid-template-columns: max-content max-content;
+                    grid-gap: var(--nudge-spacing-sm);
+                    label {
+                        line-height: normal;
+                    }
+                    .executive-mapping-actions {
+                        display: grid;
+                        grid-template-columns: max-content max-content;
+                        align-items: flex-end;
+                        grid-gap: var(--nudge-spacing-lg);
+                        .executive-mapping-action-icon {
+                            height: 0.75rem;
+                            cursor: pointer;
+                            path {
+                                fill: var(--nudge-color-blue);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

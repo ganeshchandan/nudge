@@ -144,18 +144,6 @@
                     grid-gap: var(--nudge-spacing-xs);
                     padding: var(--nudge-padding-margin-lg) var(--nudge-padding-margin-xxl);
                     border-top: 0.0625rem solid var(--nudge-color-white);
-                    .executive-card-tags {
-                        height: 1rem;
-                        font-weight: 400;
-                        font-size: 0.625rem;
-                        line-height: var(--nudge-text-xxs);
-                        color: var(--nudge-color-lady-blue);
-                        background: var(--nudge-color-blue-chalk);
-                        display: flex;
-                        align-items: center;
-                        border-radius: 1rem;
-                        padding: 0 var(--nudge-padding-margin-md);
-                    }
                 }
             }
         }

@@ -14,3 +14,7 @@ export { default as RectangleIcon } from "@assets/images/rectangle.svg?react";
 export { default as SuitcaseIcon } from "@assets/images/suitcase.svg?react";
 export { default as AccountLevelScoreIcon } from "@assets/images/account-level-score.svg?react";
 export { default as ProgramLevelScoreIcon } from "@assets/images/program-level-score.svg?react";
+export { default as StatsUpIcon } from "@assets/images/stats-up.svg?react";
+export { default as LeftIcon } from "@assets/images/left.svg?react";
+export { default as EditIcon } from "@assets/images/edit_icon.svg?react";
+export { default as ExpandIcon } from "@assets/images/expand.svg";

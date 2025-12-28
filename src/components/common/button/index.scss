@@ -11,19 +11,51 @@
         font-size: var(--nudge-text-sm);
         text-transform: uppercase;
         transition: all 0.3s ease-in-out;
-
-        &.nudge-button-primary {
-            background-color: var(--nudge-color-blue);
-            color: var(--nudge-color-white);
-            &:hover {
-                background-color: rgba(25, 100, 200, 0.5); /* static color */
-            }
+        background-color: var(--nudge-button-bg);
+        color: var(--nudge-button-color);
+        border: 0.0625rem solid var(--nudge-button-border);
+        &:hover {
+            background-color: var(--nudge-button-hover-bg); /* static color */
+            border-color: var(--nudge-button-hover-border);
+        }
+        &.nudge-button-disabled {
+            background: var(--nudge-button-disabled-bg);
+            pointer-events: none;
+            color: var(--nudge-button-disabled-color);
+            border-color: var(--nudge-button-disabled-border);
         }
 
-        &.nudge-button-disabled {
-            background: #999999;
-            pointer-events: none;
-            color: var(--nudge-color-black-shade03);
+        &.nudge-button-primary {
+            --nudge-button-bg: var(--nudge-primary-button-bg);
+            --nudge-button-color: var(--nudge-primary-button-color);
+            --nudge-button-border: var(--nudge-primary-button-bg);
+            --nudge-button-hover-bg: var(--nudge-primary-button-hover-bg);
+            --nudge-button-hover-border: var(--nudge-primary-button-hover-bg);
+            --nudge-button-disabled-bg: var(--nudge-primary-button-disabled-bg);
+            --nudge-button-disabled-color: var(--nudge-primary-button-disabled-color);
+            --nudge-button-disabled-border: var(--nudge-primary-button-disabled-bg);
+        }
+
+        &.nudge-button-cta {
+            --nudge-button-bg: var(--nudge-cta-button-bg);
+            --nudge-button-color: var(--nudge-cta-button-color);
+            --nudge-button-border: var(--nudge-cta-button-bg);
+            --nudge-button-hover-bg: var(--nudge-cta-button-hover-bg);
+            --nudge-button-hover-border: var(--nudge-cta-button-hover-bg);
+            --nudge-button-disabled-bg: var(--nudge-cta-button-disabled-bg);
+            --nudge-button-disabled-color: var(--nudge-cta-button-disabled-color);
+            --nudge-button-disabled-border: var(--nudge-cta-button-disabled-bg);
+        }
+
+        &.nudge-button-outline-primary {
+            --nudge-button-bg: var(--nudge-outline-primary-button-bg);
+            --nudge-button-color: var(--nudge-outline-primary-button-color);
+            --nudge-button-border: var(--nudge-outline-primary-button-border);
+            --nudge-button-hover-bg: var(--nudge-outline-primary-button-bg);
+            --nudge-button-hover-border: var(--nudge-outline-primary-button-border);
+            --nudge-button-disabled-bg: var(--nudge-primary-button-disabled-bg);
+            --nudge-button-disabled-color: var(--nudge-primary-button-disabled-color);
+            --nudge-button-disabled-border: var(--nudge-primary-button-disabled-bg);
         }
     }
 }

@@ -6,7 +6,7 @@ import { APP_IMAGES } from "@assets/images/app_image";
 
 export const ProgramView = () => {
   const programView = useSelector(
-    (state: RootState) => state.statsDashbaord.accountSummary.programView
+    (state: RootState) => state.statsDashboard.accountSummary.programView
   );
   return (
     <NudgeWidget className="program-view-widget">

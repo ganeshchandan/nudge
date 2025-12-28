@@ -1,4 +1,5 @@
 import { NudgeButton } from "@components/common/button";
+import { CTA_VARIANT } from "@components/common/button/constants";
 import { setUserAuthenticated } from "@stores/reducers";
 import { type FC, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -39,7 +40,7 @@ export const LoginMagicCode: FC<LoginMagicCodeProps> = () => {
 
   const onSubmitMagicCode = () => {
     if (magicCodes.join("") === "2304") {
-      navigate("/");
+      navigate("/dashboard");
       dispatch(setUserAuthenticated(true));
     } else {
       setIsError(true);
@@ -88,6 +89,7 @@ export const LoginMagicCode: FC<LoginMagicCodeProps> = () => {
         className="submit-magic-code"
         isDisabled={!allFilled || isError}
         onClick={onSubmitMagicCode}
+        variant={CTA_VARIANT}
       >
         submit magic code
       </NudgeButton>

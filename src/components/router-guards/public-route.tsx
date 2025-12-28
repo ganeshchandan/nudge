@@ -9,7 +9,7 @@ interface PublicRouteProps {
 
 export const PublicRoute: FC<PropsWithChildren<PublicRouteProps>> = ({
   children,
-  redirectTo = "/",
+  redirectTo = "/dashboard",
 }) => {
   const { isAuthenticated } = useSelector(
     (state: RootState) => state.applicationConfig.user

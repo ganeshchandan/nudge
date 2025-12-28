@@ -12,7 +12,7 @@ import {
 
 export const StatsDashboardSummary = () => {
   const { accountLevelScore, programLevelScore } = useSelector(
-    (state: RootState) => state.statsDashbaord.accountSummary
+    (state: RootState) => state.statsDashboard.accountSummary
   );
   return (
     <div className="stats-dashboard-summary">

@@ -1,11 +1,18 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { AppConfigReducer, StatsDashbaordReducer } from "@stores/reducers";
+import {
+  AppConfigReducer,
+  StatsDashboardReducer,
+  LeadsDashboardReducer,
+  LineDashboardReducer,
+} from "@stores/reducers";
 
 export type RootState = ReturnType<typeof store.getState>;
 
 const reducer = combineReducers({
   applicationConfig: AppConfigReducer,
-  statsDashbaord: StatsDashbaordReducer,
+  statsDashboard: StatsDashboardReducer,
+  leadsDashboard: LeadsDashboardReducer,
+  lineDashboard: LineDashboardReducer,
 });
 
 export const setupStore = (preloadedState: Partial<RootState>) =>

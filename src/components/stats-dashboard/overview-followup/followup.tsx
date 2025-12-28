@@ -4,7 +4,7 @@ import type { RootState } from "@stores";
 
 export const StatsDashboardFollowp = () => {
   const followUp = useSelector(
-    (state: RootState) => state.statsDashbaord.followUp
+    (state: RootState) => state.statsDashboard.followUp
   );
   return (
     <div className="stats-dashboard-followup">

@@ -6,7 +6,7 @@ import "@components/stats-dashboard/summary-nudge/summary/widgets/top-performers
 
 export const TopPerformers = () => {
   const topPerformers = useSelector(
-    (state: RootState) => state.statsDashbaord.accountSummary.topPerformers
+    (state: RootState) => state.statsDashboard.accountSummary.topPerformers
   );
   return (
     <NudgeWidget className="top-performer-widget">

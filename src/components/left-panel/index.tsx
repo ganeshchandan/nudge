@@ -1,7 +1,7 @@
-import "@components/common/left-panel/index.scss";
+import "@components/left-panel/index.scss";
 import { NudgeIcon } from "@assets/images";
-import { OptionsList } from "@components/common/left-panel/options";
-import { UsersProfile } from "@components/common/left-panel/user-profile";
+import { OptionsList } from "@components/left-panel/options";
+import { UsersProfile } from "@components/left-panel/user-profile";
 
 export const LeftPanel = () => {
   return (

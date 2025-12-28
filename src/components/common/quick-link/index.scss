@@ -47,6 +47,10 @@
                 align-items: center;
                 padding: 0 var(--nudge-padding-margin-xl-plus);
                 cursor: pointer;
+                &.active {
+                    font-weight: 500;
+                    color: var(--nudge-color-black-shade01);
+                }
                 &:hover {
                     background-color: var(--nudge-color-blue-chalk);
                 }

@@ -1,0 +1,37 @@
+* {
+    .nudge-tabs-container {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1.125rem 1fr;
+        .nudge-tabs {
+            display: flex;
+            font-weight: 400;
+            font-size: var(--nudge-text-xs);
+            line-height: 0.625rem;
+            grid-gap: var(--nudge-spacing-lg);
+            justify-content: center;
+            .nudge-tab {
+                position: relative;
+                cursor: pointer;
+                &::before {
+                    content: " ";
+                    position: absolute;
+                    left: 0px;
+                    bottom: 0px;
+                    height: 0.188rem;
+                    width: 1rem;
+                    border-radius: 13px;
+                    opacity: 0;
+                    background: var(--nudge-color-purple-shade-02);
+                }
+                &.nudge-selected-tab {
+                    font-weight: 500;
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+* {
+    .nudge-tag {
+        height: 1rem;
+        font-weight: 400;
+        font-size: 0.625rem;
+        line-height: var(--nudge-text-xxs);
+        color: var(--nudge-color-lady-blue);
+        background: var(--nudge-color-blue-chalk);
+        display: flex;
+        align-items: center;
+        border-radius: 1rem;
+        padding: 0 var(--nudge-padding-margin-md);
+    }
+}

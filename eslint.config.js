@@ -23,6 +23,7 @@ export default defineConfig([
       "react-hooks/exhaustive-deps": ["off"],
       "@typescript-eslint/no-empty-object-type": ["off"],
       "@typescript-eslint/no-explicit-any": ["off"],
+      "react-hooks/set-state-in-effect": ["off"],
     },
   },
 ]);

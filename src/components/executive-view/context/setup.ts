@@ -16,5 +16,9 @@ export const ExecutiveContext = createContext<ExecutiveContextProp>({
     viewDetailsButtonLabel: "",
     cardCapitalDetails: [],
     engagementFields: [],
+    quickLinks: {
+      headerName: "",
+      links: [],
+    },
   },
 });

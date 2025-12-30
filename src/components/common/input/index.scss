@@ -6,6 +6,7 @@
             height: 2.875rem;
             outline: none;
             box-shadow: none;
+
             label {
                 font-weight: 400;
                 font-size: var(--nudge-text-sm);
@@ -13,7 +14,7 @@
                 line-height: normal;
                 display: flex;
                 align-items: center;
-                color: var(--nudge-color-white);
+                color: var(--nudge-color-black-shade02);
             }
             .form-control {
                 height: 2.875rem;
@@ -24,7 +25,8 @@
                 outline: none;
                 background-color: transparent;
                 box-shadow: none;
-                color: var(--nudge-color-white);
+                color: var(--nudge-color-black-shade01);
+                border-color: var(--nudge-color-input-border);
 
                 &:not(:placeholder-shown),
                 &:focus {

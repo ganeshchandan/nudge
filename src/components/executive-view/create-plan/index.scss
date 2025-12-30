@@ -1,0 +1,118 @@
+* {
+    .executive-detailed-view {
+        .detailed-view-overall-stats {
+            .detailed-view-executive-actions {
+                .create-plan-button {
+                    height: 2rem;
+                    font-weight: 600;
+                    font-size: var(--nudge-text-xxs);
+                }
+            }
+        }
+    }
+    .create-plan-modal {
+        &.nudge-modal {
+            .modal-dialog {
+                width: 52.125rem;
+                .create-plan-modal-content {
+                    .create-plan-modal-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: var(--nudge-padding-margin-xxl);
+                        padding-bottom: 0.0625rem;
+                        .create-plan-modal-header-text {
+                            font-weight: 600;
+                            font-size: var(--nudge-text-md);
+                            color: var(--nudge-color-black-shade01);
+                        }
+                        .create-plan-modal-actions {
+                            display: flex;
+                            grid-gap: var(--nudge-spacing-lg);
+                            .nudge-button {
+                                height: 2rem;
+                                font-weight: 600;
+                                font-size: var(--nudge-text-xxs);
+                            }
+                        }
+                    }
+                    .creator-details {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        padding: 0 var(--nudge-padding-margin-xxl);
+                        line-height: normal;
+                    }
+                    .create-plan-engagement-details {
+                        padding: var(--nudge-padding-margin-xxl);
+                        display: grid;
+                        grid-template-columns: 3fr 6fr;
+                        grid-gap: var(--nudge-spacing-xl);
+                    }
+                    .create-plan-action-cards {
+                        padding: 0 var(--nudge-padding-margin-xxl);
+                        padding-bottom: var(--nudge-padding-margin-xxl);
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-gap: var(--nudge-spacing-md);
+
+                        .create-action-assign-card {
+                            position: relative;
+                            background: var(--nudge-color-pale-silver);
+                            padding: var(--nudge-padding-margin-xxl) 0;
+                            display: grid;
+                            justify-content: center;
+                            border-radius: 1rem;
+                            border: 1px solid var(--nudge-color-pale-silver);
+                            background: var(--nudge-color-tech-white);
+                            .assignee-edit-icon {
+                                position: absolute;
+                                right: 0.625rem;
+                                bottom: 0.625rem;
+                                path {
+                                    fill: var(--nudge-color-blue-shade-01);
+                                }
+                            }
+                            .assignees-image {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                height: 9.75rem;
+                                width: 100%;
+                                padding: 0 var(--nudge-padding-margin-xl);
+                                grid-gap: var(--nudge-spacing-xxs);
+                                img {
+                                    width: 100%;
+                                    aspect-ratio: 1;
+                                }
+                                &.single-assignee {
+                                    grid-template-columns: 1fr;
+                                    img {
+                                        height: 100%;
+                                        aspect-ratio: 1;
+                                    }
+                                }
+                            }
+                            .assignees-details {
+                                margin-top: var(--nudge-padding-margin-lg);
+                                display: grid;
+                                justify-items: center;
+                                .create-action-type {
+                                    font-weight: 400;
+                                    font-size: var(--nudge-text-xs);
+                                    line-height: 0.625rem;
+                                    color: var(--nudge-color-black-shade02);
+                                }
+                                .create-action-name {
+                                    margin-top: var(--nudge-padding-margin-lg);
+                                    font-weight: 600;
+                                    font-size: var(--nudge-text-sm);
+                                    line-height: 0.625rem;
+                                    color: var(--nudge-color-black-shade01);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

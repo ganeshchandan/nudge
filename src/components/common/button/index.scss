@@ -14,6 +14,7 @@
         background-color: var(--nudge-button-bg);
         color: var(--nudge-button-color);
         border: 0.0625rem solid var(--nudge-button-border);
+        line-height: normal;
         &:hover {
             background-color: var(--nudge-button-hover-bg); /* static color */
             border-color: var(--nudge-button-hover-border);

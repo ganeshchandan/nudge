@@ -13,7 +13,12 @@ export const NudgeModal: FC<PropsWithChildren<NudgeModal>> = ({
   ...props
 }) => {
   return (
-    <Modal className={`nudge-modal ${className}`} {...props}>
+    <Modal
+      className={`nudge-modal ${className}`}
+      {...props}
+      autoFocus={false}
+      restoreFocus={false}
+    >
       {children}
     </Modal>
   );

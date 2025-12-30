@@ -1,5 +1,5 @@
 import { useContext, type FC } from "react";
-import { ExecutiveViewDetailItem } from "@components/executive-view/content/lists/card/details/item";
+import { ExecutiveViewDetailItem } from "@components/executive-view/profile-lists/card/details/item";
 import type { ExecutiveStatsDetail } from "@components/executive-view/types";
 import { ExecutiveContext } from "@components/executive-view/context/setup";
 

@@ -1,6 +1,8 @@
 import type { FC, PropsWithChildren } from "react";
 import "@components/common/button/index.scss";
 
+export * from "@components/common/button/constants";
+
 interface NudgeButtonProps {
   className?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;

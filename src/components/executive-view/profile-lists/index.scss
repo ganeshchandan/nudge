@@ -43,50 +43,26 @@
                 background: var(--nudge-color-beautiful-white);
                 border-radius: 0.5rem;
 
-                .overall-details {
-                    display: grid;
-                    grid-template-columns: max-content 1fr;
+                .executive-view-card-header {
+                    display: flex;
+                    justify-content: space-between;
                     grid-gap: var(--nudge-spacing-md);
                     align-items: center;
                     padding-bottom: var(--nudge-padding-margin-lg);
                     border-bottom: 1px solid var(--nudge-color-light-gray);
                     width: calc(100% - 1.5rem);
                     margin: auto;
-                    .executive-list-card-image {
-                        height: 3.438rem;
-                        width: 3.438rem;
-                    }
-                    .executive-details-action {
-                        display: flex;
-                        justify-content: space-between;
-                        .executive-name-details {
-                            display: grid;
-                            align-items: center;
-                            height: fit-content;
-                            grid-gap: var(--nudge-spacing-xs);
 
-                            .executive-name {
-                                font-weight: 500;
-                                font-size: var(--nudge-text-sm);
-                                line-height: 0.625rem;
-                            }
-                            .executive-team {
-                                font-weight: 400;
-                                font-size: var(--nudge-text-xs);
-                                line-height: 0.625rem;
-                            }
-                        }
-                        .executive-actions {
-                            height: 1.75rem;
-                            display: flex;
-                            align-items: center;
-                            grid-gap: var(--nudge-spacing-md);
-                            .nudge-button {
-                                height: 100%;
-                                font-weight: 400;
-                                font-size: 0.656rem;
-                                line-height: 0.625rem;
-                            }
+                    .executive-actions {
+                        height: 1.75rem;
+                        display: flex;
+                        align-items: center;
+                        grid-gap: var(--nudge-spacing-md);
+                        .nudge-button {
+                            height: 100%;
+                            font-weight: 400;
+                            font-size: 0.656rem;
+                            line-height: 0.625rem;
                         }
                     }
                 }

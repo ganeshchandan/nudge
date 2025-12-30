@@ -1,5 +1,5 @@
-import { ExecutiveContext } from "../context/setup";
-import type { ExecutiveOverallStats } from "../types";
+import { ExecutiveContext } from "@components/executive-view/context/setup";
+import type { ExecutiveOverallStats } from "@components/executive-view/types";
 import { useContext, type FC } from "react";
 
 interface OverallStatsListsProps {

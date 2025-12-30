@@ -2,7 +2,7 @@ import type { QuickLink } from "@components/common";
 import {
   ExecutiveViewDetailList,
   ExecutiveViewDetailRatings,
-} from "@components/executive-view/content/lists/card/details";
+} from "@components/executive-view/profile-lists/card/details";
 import type {
   OverallStatsField,
   ExecutiveCardCapitalDetail,

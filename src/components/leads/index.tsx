@@ -10,6 +10,7 @@ import {
   OVERALL_STATS_FIELDS,
   QUICK_LINKS,
 } from "@components/leads/constants";
+import { NudgeModal } from "@components/common/modal";
 
 export const Leads = () => {
   const dispatch = useDispatch();
@@ -25,21 +26,26 @@ export const Leads = () => {
     //   {/* <LeadsContent /> */}
     //   <LeadsDetailedView />
     // </div>
-    <ExecutiveDashboard
-      detailedViewStats={detailedViewStats}
-      executiveCapitalDetails={executiveCapitalDetails}
-      selectedExecutiveID={selectedExecutiveID}
-      onExecutiveSelect={onExecutiveSelect}
-      executiveViewUIFields={{
-        overallStatsFields: OVERALL_STATS_FIELDS,
-        viewDetailsButtonLabel: "VIEW DETAILS",
-        cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
-        engagementFields: ENGAGEMENT_FIELDS,
-        quickLinks: {
-          headerName: "Profile Category",
-          links: QUICK_LINKS,
-        },
-      }}
-    />
+    <>
+      {/* <NudgeModal show={true} centered={true}>
+        Ganesh
+      </NudgeModal> */}
+      <ExecutiveDashboard
+        detailedViewStats={detailedViewStats}
+        executiveCapitalDetails={executiveCapitalDetails}
+        selectedExecutiveID={selectedExecutiveID}
+        onExecutiveSelect={onExecutiveSelect}
+        executiveViewUIFields={{
+          overallStatsFields: OVERALL_STATS_FIELDS,
+          viewDetailsButtonLabel: "VIEW DETAILS",
+          cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
+          engagementFields: ENGAGEMENT_FIELDS,
+          quickLinks: {
+            headerName: "Profile Category",
+            links: QUICK_LINKS,
+          },
+        }}
+      />
+    </>
   );
 };

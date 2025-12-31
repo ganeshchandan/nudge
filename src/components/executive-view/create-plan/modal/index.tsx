@@ -1,11 +1,18 @@
 import { CreatePlanModalHeader } from "@components/executive-view/create-plan/modal/header";
 import { EngagementDetails } from "@components/executive-view/create-plan/modal/engagement-details";
 import { CreatePlanActions } from "@components/executive-view/create-plan/modal/action-assigns";
+import type { FC } from "react";
 
-export const CreatePlanModal = () => {
+interface CreatePlanModalProps {
+  setShowCreatePlanModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const CreatePlanModal: FC<CreatePlanModalProps> = ({
+  setShowCreatePlanModal,
+}) => {
   return (
     <div className="create-plan-modal-content">
-      <CreatePlanModalHeader />
+      <CreatePlanModalHeader setShowCreatePlanModal={setShowCreatePlanModal} />
       <div className="creator-details">
         Owner | <strong>You</strong>
       </div>

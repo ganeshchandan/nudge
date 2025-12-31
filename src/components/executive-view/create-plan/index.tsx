@@ -4,7 +4,8 @@ import "@components/executive-view/create-plan/index.scss";
 import { CreatePlanModal } from "@components/executive-view/create-plan/modal";
 
 export const CreatePlan = () => {
-  const [showCreatePlanModal, setShowCreatePlanModal] = useState<boolean>(true);
+  const [showCreatePlanModal, setShowCreatePlanModal] =
+    useState<boolean>(false);
 
   const createPlanClick = () => setShowCreatePlanModal(true);
 
@@ -18,7 +19,7 @@ export const CreatePlan = () => {
         centered
         className="create-plan-modal"
       >
-        <CreatePlanModal />
+        <CreatePlanModal setShowCreatePlanModal={setShowCreatePlanModal} />
       </NudgeModal>
     </>
   );

@@ -1,0 +1,34 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-plan-header {
+                display: flex;
+                align-items: center;
+                border-bottom: 0.0625rem solid var(--nudge-color-medium-seashell);
+                padding: 0 var(--nudge-padding-margin-xl-plus);
+                justify-content: space-between;
+                .pause-and-timer-details {
+                    display: flex;
+                    align-items: center;
+                    grid-gap: var(--nudge-spacing-lg);
+                    color: var(--nudge-color-black);
+                    .remaining-timer {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        line-height: 0.625rem;
+                    }
+                    .pause-timer-button {
+                        grid-gap: var(--nudge-spacing-xs);
+                        .pause-timer-icon {
+                            height: 1rem;
+                            margin-bottom: 0.125rem;
+                        }
+                        height: 2rem;
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xxs);
+                    }
+                }
+            }
+        }
+    }
+}

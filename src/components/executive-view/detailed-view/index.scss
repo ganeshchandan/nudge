@@ -44,24 +44,5 @@
                 align-items: center;
             }
         }
-        .detailed-view-back-button {
-            position: absolute;
-            width: 2.625rem;
-            height: 2.625rem;
-            border: 0.313rem solid var(--nudge-color-white);
-            border-radius: 50%;
-            left: 0px;
-            top: 0px;
-            bottom: 0px;
-            margin: auto;
-            background-color: var(--nudge-color-blue-chalk);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            .detailed-view-back-button-icon {
-                height: 0.625rem;
-            }
-        }
     }
 }

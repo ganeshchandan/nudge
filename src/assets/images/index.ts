@@ -18,3 +18,6 @@ export { default as StatsUpIcon } from "@assets/images/stats-up.svg?react";
 export { default as LeftIcon } from "@assets/images/left.svg?react";
 export { default as EditIcon } from "@assets/images/edit_icon.svg?react";
 export { default as ExpandIcon } from "@assets/images/expand.svg?react";
+export { default as TimerIcon } from "@assets/images/timer.svg?react";
+export { default as PlusIcon } from "@assets/images/plus.svg?react";
+export { default as NotificationIcon } from "@assets/images/notification.svg?react";

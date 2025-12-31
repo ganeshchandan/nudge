@@ -10,7 +10,6 @@ import {
   OVERALL_STATS_FIELDS,
   QUICK_LINKS,
 } from "@components/leads/constants";
-import { NudgeModal } from "@components/common/modal";
 
 export const Leads = () => {
   const dispatch = useDispatch();
@@ -27,9 +26,6 @@ export const Leads = () => {
     //   <LeadsDetailedView />
     // </div>
     <>
-      {/* <NudgeModal show={true} centered={true}>
-        Ganesh
-      </NudgeModal> */}
       <ExecutiveDashboard
         detailedViewStats={detailedViewStats}
         executiveCapitalDetails={executiveCapitalDetails}

@@ -5,3 +5,4 @@ export * from "@components/common/profile-details";
 export * from "@components/common/button";
 export * from "@components/common/modal";
 export * from "@components/common/input";
+export * from "@components/common/back-button";

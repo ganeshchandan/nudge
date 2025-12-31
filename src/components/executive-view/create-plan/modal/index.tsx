@@ -1,7 +1,8 @@
+import { useState, type FC } from "react";
 import { CreatePlanModalHeader } from "@components/executive-view/create-plan/modal/header";
 import { EngagementDetails } from "@components/executive-view/create-plan/modal/engagement-details";
 import { CreatePlanActions } from "@components/executive-view/create-plan/modal/action-assigns";
-import type { FC } from "react";
+import type { CreatePlanDetails } from "@components/executive-view/create-plan/types";
 
 interface CreatePlanModalProps {
   setShowCreatePlanModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,13 +11,25 @@ interface CreatePlanModalProps {
 export const CreatePlanModal: FC<CreatePlanModalProps> = ({
   setShowCreatePlanModal,
 }) => {
+  const [createPlanDetails, setCreatePlanDetails] = useState<CreatePlanDetails>(
+    {
+      engagementName: "",
+      opportunityType: "",
+    }
+  );
   return (
     <div className="create-plan-modal-content">
-      <CreatePlanModalHeader setShowCreatePlanModal={setShowCreatePlanModal} />
+      <CreatePlanModalHeader
+        setShowCreatePlanModal={setShowCreatePlanModal}
+        createPlanDetails={createPlanDetails}
+      />
       <div className="creator-details">
         Owner | <strong>You</strong>
       </div>
-      <EngagementDetails />
+      <EngagementDetails
+        createPlanDetails={createPlanDetails}
+        setCreatePlanDetails={setCreatePlanDetails}
+      />
       <CreatePlanActions
         createPlanActions={[
           {

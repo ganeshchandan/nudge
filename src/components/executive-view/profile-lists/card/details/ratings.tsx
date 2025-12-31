@@ -7,7 +7,6 @@ interface ExecutiveViewDetailRatingsProps {
 export const ExecutiveViewDetailRatings: FC<
   ExecutiveViewDetailRatingsProps
 > = ({ executiveCapitalDetails }) => {
-  console.log(executiveCapitalDetails);
   return (
     <div className="executive-capital-detail-ratings">
       {[1, 2, 3].map((id) => (

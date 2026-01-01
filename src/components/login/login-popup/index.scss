@@ -111,6 +111,10 @@
                         width: calc(100% - 3rem);
                         margin: auto;
                         margin-bottom: var(--nudge-padding-margin-xl-plus);
+                        &:not(.nudge-button-disabled) {
+                            background-color: var(--nudge-color-shocking-blue);
+                            border-color: var(--nudge-color-shocking-blue);
+                        }
                     }
                 }
             }

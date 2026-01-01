@@ -81,8 +81,11 @@
                                         display: flex;
                                         grid-gap: var(--nudge-spacing-sm);
                                         align-items: center;
-                                        img {
-                                            height: 1.5rem;
+                                        height: 1.5rem;
+                                        .profile-details-name {
+                                            font-weight: 400;
+                                            font-size: var(--nudge-text-xs);
+                                            line-height: 100%;
                                         }
                                     }
                                     .notify-text {

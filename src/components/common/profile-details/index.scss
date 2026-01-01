@@ -3,9 +3,9 @@
         display: flex;
         grid-gap: var(--nudge-padding-margin-lg);
         align-items: center;
+        height: 3.438rem;
         .profile-details-image {
-            height: 3.438rem;
-            width: 3.438rem;
+            height: 100%;
         }
         .profile-details-name-company {
             display: grid;

@@ -30,8 +30,9 @@
                                 overflow: hidden;
                                 display: grid;
                                 grid-template-rows: 1fr max-content;
-                                padding: var(--nudge-padding-margin-md);
+                                padding: var(--nudge-padding-margin-md) 0;
                                 .engagement-plan-assets-list {
+                                    padding: 0 var(--nudge-padding-margin-md);
                                     .engagement-plan-asset {
                                         display: grid;
                                         grid-template-columns: max-content 1fr max-content;

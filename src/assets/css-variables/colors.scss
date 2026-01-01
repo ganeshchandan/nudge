@@ -1,5 +1,4 @@
 * {
-    $superGrey: #999999;
     $beautifulWhite: #f7f7f7;
 
     --nudge-color-white: #fff;
@@ -29,26 +28,28 @@
     --nudge-color-tech-white: #f5f5f5;
     --nudge-color-medium-seashell: #f1f1f1;
     --nudge-color-sweet-grey: #d9d9d9;
+    --nudge-color-sea-glass: #dfdfdf;
+    --nudge-color-moccasin: #ffe0b9;
 
     /*button*/
     --nudge-primary-button-bg: var(--nudge-color-black-shade01);
     --nudge-primary-button-color: var(--nudge-color-white);
     --nudge-primary-button-hover-bg: #343434cc; // need to change
-    --nudge-primary-button-disabled-bg: #{$superGrey};
-    --nudge-primary-button-disabled-color: var(--nudge-color-black-shade03);
+    --nudge-primary-button-disabled-bg: var(--nudge-color-sea-glass);
+    --nudge-primary-button-disabled-color: var(--nudge-color-black-shade02);
 
     --nudge-cta-button-bg: var(--nudge-color-blue);
     --nudge-cta-button-color: var(--nudge-color-white);
     --nudge-cta-button-hover-bg: rgba(25, 100, 200, 0.5);
-    --nudge-cta-button-disabled-bg: #{$superGrey};
+    --nudge-cta-button-disabled-bg: var(--nudge-color-sea-glass);
     --nudge-cta-button-disabled-color: var(--nudge-color-black-shade03);
 
     --nudge-outline-primary-button-bg: transparent;
     --nudge-outline-primary-button-border: var(--nudge-color-black-shade01);
     --nudge-outline-primary-button-color: var(--nudge-color-black-shade01);
     --nudge-outline-primary-button-hover-bg: rgba(25, 100, 200, 0.5);
-    --nudge-outline-primary-button-disabled-bg: #{$superGrey};
-    --nudge-outline-primary-button-disabled-color: var(--nudge-color-black-shade03);
+    --nudge-outline-primary-button-disabled-bg: var(--nudge-color-sea-glass);
+    --nudge-outline-primary-button-disabled-color: var(--nudge-color-black-shade02);
 
     --nudge-box-shadow: 0px 6px 8px 5px rgba(0, 0, 0, 0.0392156863);
 }

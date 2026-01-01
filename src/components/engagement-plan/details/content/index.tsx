@@ -39,7 +39,7 @@ export const EngagementDetailsContent = () => {
             id: "assets",
           },
         ]}
-        selectedTab="assets"
+        selectedTab="manageTasks"
         contents={contents}
         isContentRequired={true}
       />

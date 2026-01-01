@@ -4,6 +4,8 @@ export interface TaskListColumn {
   className?: string;
 }
 
+export type TaskListStatus = "none" | "danger" | "completed";
+
 export interface TaskListRowData {
   taskId: number;
   taskName: string;
@@ -11,6 +13,7 @@ export interface TaskListRowData {
   completion: number;
   owner: string;
   imageName: string;
+  status?: TaskListStatus;
 }
 
 export type TaskListColumns = TaskListColumn[];

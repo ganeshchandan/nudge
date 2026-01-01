@@ -54,6 +54,22 @@
                                         width: 1.25rem;
                                         display: grid;
                                         justify-content: center;
+                                        align-content: space-between;
+                                        grid-gap: var(--nudge-spacing-sm);
+                                        .task-status-icon {
+                                            width: 1rem;
+                                            line-height: normal;
+                                            &.danger-icon {
+                                                path {
+                                                    fill: var(--nudge-color-red);
+                                                }
+                                            }
+                                            &.completed-icon {
+                                                rect {
+                                                    stroke: var(--nudge-color-green);
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                                 &.task-owner-cell {

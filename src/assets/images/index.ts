@@ -21,3 +21,5 @@ export { default as ExpandIcon } from "@assets/images/expand.svg?react";
 export { default as TimerIcon } from "@assets/images/timer.svg?react";
 export { default as PlusIcon } from "@assets/images/plus.svg?react";
 export { default as NotificationIcon } from "@assets/images/notification.svg?react";
+export { default as SuccessIcon } from "@assets/images/success.svg?react";
+export { default as ErrorIcon } from "@assets/images/error.svg?react";

@@ -3,6 +3,8 @@ import type {
   TaskListRowData,
 } from "@components/engagement-plan/types";
 
+export const NONE_STRING = "none";
+
 export const TASK_LIST_COLUMNS: TaskListColumns = [
   {
     headerName: "Task Name",
@@ -40,6 +42,7 @@ export const SAMPLE_TASK_DATA: TaskListRowData[] = [
     completion: 24,
     owner: "Jasper",
     imageName: "assignee2",
+    status: "danger",
   },
   {
     taskId: 3,
@@ -57,6 +60,7 @@ export const SAMPLE_TASK_DATA: TaskListRowData[] = [
     completion: 100,
     owner: "Ritesh Dogra",
     imageName: "assignee4",
+    status: "completed",
   },
   {
     taskId: 5,

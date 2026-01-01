@@ -4,6 +4,7 @@
             .engagement-details-tabs {
                 .engagement-plan-meeting-notes {
                     padding: var(--nudge-padding-margin-xl-plus) var(--nudge-padding-margin-xxl);
+                    padding-right: 0;
                     display: grid;
                     grid-template-rows: 1fr max-content;
                     grid-gap: var(--nudge-spacing-xxs);

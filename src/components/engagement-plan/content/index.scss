@@ -1,0 +1,56 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-plan-content {
+                height: 100%;
+                display: grid;
+                grid-template-rows: max-content 1fr;
+                overflow: hidden;
+                .task-list-header {
+                    padding: var(--nudge-padding-margin-2xl);
+                    padding-bottom: var(--nudge-padding-margin-xl);
+                    width: 60%;
+                    .task-list-header-text {
+                        font-weight: 600;
+                        font-size: var(--nudge-text-md);
+                        line-height: 100%;
+                        color: var(--nudge-color-black-shade01);
+                    }
+                    .task-list-actions {
+                        margin-top: var(--nudge-padding-margin-md);
+                        display: flex;
+                        grid-gap: var(--nudge-spacing-2xl);
+                        .add-task-button {
+                            font-weight: 400;
+                            font-size: var(--nudge-text-xxs);
+                            line-height: 0.625rem;
+                            color: var(--nudge-color-black-shade01);
+                            height: 1.625rem;
+                            grid-gap: var(--nudge-spacing-xs);
+                            border-radius: 0.25rem;
+                            text-transform: capitalize;
+                            .add-taks-button-icon {
+                                height: 0.625rem;
+                                width: 0.625rem;
+                                path {
+                                    fill: var(--nudge-color-black-shade01);
+                                }
+                            }
+                        }
+                        .notification-social {
+                            display: flex;
+                            align-items: center;
+                            grid-gap: calc(var(--nudge-spacing-lg) + var(--nudge-spacing-xxs));
+                            .teams-icon {
+                                height: 1.25rem;
+                            }
+                            .notification-icon {
+                                height: 1.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+* {
+    .profile-details {
+        display: flex;
+        grid-gap: var(--nudge-padding-margin-lg);
+        align-items: center;
+        height: 3.438rem;
+        .profile-details-image {
+            height: 100%;
+        }
+        .profile-details-name-company {
+            display: grid;
+            align-items: center;
+            height: fit-content;
+            grid-gap: var(--nudge-spacing-xs);
+
+            .profile-details-name {
+                font-weight: 500;
+                font-size: var(--nudge-text-sm);
+                line-height: 0.625rem;
+            }
+            .profile-details-name-team {
+                font-weight: 400;
+                font-size: var(--nudge-text-xs);
+                line-height: 0.625rem;
+            }
+        }
+    }
+}

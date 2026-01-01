@@ -24,6 +24,7 @@ export default defineConfig([
       "@typescript-eslint/no-empty-object-type": ["off"],
       "@typescript-eslint/no-explicit-any": ["off"],
       "react-hooks/set-state-in-effect": ["off"],
+      "react-refresh/only-export-components": ["off"],
     },
   },
 ]);

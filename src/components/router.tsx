@@ -5,6 +5,7 @@ import { AuthGuard, PublicRoute } from "@components/router-guards";
 import { NudgeDashboard } from "@components/dashboard";
 import { Leads } from "@components/leads";
 import { Lines } from "@components/line";
+import { EngagementPlan } from "@components/engagement-plan";
 
 export const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "lens",
-        element: <>Lens Page</>,
+        element: <EngagementPlan />,
       },
     ],
   },

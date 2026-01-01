@@ -25,21 +25,23 @@ export const Leads = () => {
     //   {/* <LeadsContent /> */}
     //   <LeadsDetailedView />
     // </div>
-    <ExecutiveDashboard
-      detailedViewStats={detailedViewStats}
-      executiveCapitalDetails={executiveCapitalDetails}
-      selectedExecutiveID={selectedExecutiveID}
-      onExecutiveSelect={onExecutiveSelect}
-      executiveViewUIFields={{
-        overallStatsFields: OVERALL_STATS_FIELDS,
-        viewDetailsButtonLabel: "VIEW DETAILS",
-        cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
-        engagementFields: ENGAGEMENT_FIELDS,
-        quickLinks: {
-          headerName: "Profile Category",
-          links: QUICK_LINKS,
-        },
-      }}
-    />
+    <>
+      <ExecutiveDashboard
+        detailedViewStats={detailedViewStats}
+        executiveCapitalDetails={executiveCapitalDetails}
+        selectedExecutiveID={selectedExecutiveID}
+        onExecutiveSelect={onExecutiveSelect}
+        executiveViewUIFields={{
+          overallStatsFields: OVERALL_STATS_FIELDS,
+          viewDetailsButtonLabel: "VIEW DETAILS",
+          cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
+          engagementFields: ENGAGEMENT_FIELDS,
+          quickLinks: {
+            headerName: "Profile Category",
+            links: QUICK_LINKS,
+          },
+        }}
+      />
+    </>
   );
 };

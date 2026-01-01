@@ -1,6 +1,6 @@
 import "@components/executive-view/index.scss";
 import { ExecutiveDetailedView } from "@components/executive-view/detailed-view";
-import { ExecutiveView } from "@components/executive-view/content";
+import { ExecutiveView } from "@components/executive-view/profile-lists";
 import type { FC } from "react";
 import type {
   DetailedViewStats,

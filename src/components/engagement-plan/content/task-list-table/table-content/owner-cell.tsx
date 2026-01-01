@@ -9,8 +9,11 @@ interface OwnerCellProps {
 export const OwnerCell: FC<OwnerCellProps> = ({ owner, imageName }) => {
   return (
     <div className="table-content-row-cell header-content-row-cell task-owner-cell">
-      <img src={APP_IMAGES[imageName]} />
-      <div className="task-owner-name">{owner}</div>
+      <div className="owner-details">
+        <img src={APP_IMAGES[imageName]} />
+        <div className="task-owner-name">{owner}</div>
+      </div>
+      <div className="notify-text">NOTIFY</div>
     </div>
   );
 };

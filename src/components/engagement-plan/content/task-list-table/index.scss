@@ -55,7 +55,7 @@
                                         display: grid;
                                         justify-content: center;
                                         align-content: space-between;
-                                        grid-gap: var(--nudge-spacing-sm);
+                                        grid-gap: var(--nudge-spacing-xs);
                                         .task-status-icon {
                                             width: 1rem;
                                             line-height: normal;
@@ -73,11 +73,27 @@
                                     }
                                 }
                                 &.task-owner-cell {
-                                    grid-gap: var(--nudge-spacing-sm);
-                                    height: 1.5rem;
+                                    display: grid;
+                                    grid-template-rows: 1.5rem 1fr;
                                     align-items: center;
-                                    img {
-                                        height: 1.5rem;
+                                    .owner-details {
+                                        display: flex;
+                                        grid-gap: var(--nudge-spacing-sm);
+                                        align-items: center;
+                                        img {
+                                            height: 1.5rem;
+                                        }
+                                    }
+                                    .notify-text {
+                                        height: 100%;
+                                        display: flex;
+                                        grid-gap: var(--nudge-spacing-sm);
+                                        align-items: flex-end;
+                                        justify-content: flex-end;
+                                        font-weight: 600;
+                                        font-size: var(--nudge-text-xxs);
+                                        line-height: 100%;
+                                        color: var(--nudge-color-shocking-blue);
                                     }
                                 }
                                 &.completion-cell {

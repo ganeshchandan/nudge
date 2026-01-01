@@ -41,6 +41,29 @@
                             padding: var(--nudge-padding-margin-lg) 0;
                             background: var(--nudge-color-beautiful-white);
                             border-radius: 0.5rem;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            label {
+                                cursor: inherit;
+                            }
+                            &::after {
+                                content: " ";
+                                position: absolute;
+                                width: 10%;
+                                height: 100%;
+                                background-color: transparent;
+                                left: 99%;
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                            &.selected-task-row {
+                                background-color: var(--nudge-color-magnolia-heart);
+                                border-radius: 0.5rem 0 0 0.5rem;
+                                position: relative;
+                                &::after {
+                                    background-color: var(--nudge-color-magnolia-heart);
+                                }
+                            }
 
                             .table-content-row-cell {
                                 font-weight: 400;

@@ -6,7 +6,7 @@ import { AssetsItem } from "./item";
 export const Assets = () => {
   const assets = ASSETS_SAMPLE;
   return (
-    <div className="engagement-plan-assets">
+    <div className="engagement-plan-assets smooth-content-load">
       <OverflowContainer>
         <NudgeLists
           items={assets}

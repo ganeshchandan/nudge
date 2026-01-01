@@ -153,16 +153,91 @@ export const SAMPLE_MEETING_NOTES: PlanMeetingNote[] = [
   {
     _id: 1,
     date: "Nov  22, 2025",
-    notes: [],
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
   {
     _id: 2,
     date: "Oct 23, 2025",
-    notes: [],
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
   {
     _id: 3,
     date: "June 25, 2025",
-    notes: [],
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
 ];

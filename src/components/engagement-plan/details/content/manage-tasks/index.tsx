@@ -4,7 +4,7 @@ import { AssineeDetails } from "./assinee-details";
 
 export const ManageTasks = () => {
   return (
-    <div className="engagement-plan-manage-tasks">
+    <div className="engagement-plan-manage-tasks smooth-content-load">
       <AssineeDetails />
       <ReviewerDetails />
     </div>

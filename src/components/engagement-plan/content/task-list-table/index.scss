@@ -5,12 +5,12 @@
                 .engagement-plan-task-list {
                     display: grid;
                     grid-template-rows: 2.5rem 1fr;
-                    padding-left: var(--nudge-padding-margin-2xl);
                     padding-bottom: var(--nudge-padding-margin-lg);
                     overflow: hidden;
                     .header-content-row-common {
                         display: grid;
                         grid-template-columns: 3fr 1fr 7.875rem 1.5fr;
+
                         .header-content-row-cell {
                             padding: 0 var(--nudge-padding-margin-lg);
                         }
@@ -25,7 +25,7 @@
                         font-size: var(--nudge-text-xs);
                         line-height: 100%;
                         color: var(--nudge-color-black-shade02);
-
+                        padding-left: var(--nudge-padding-margin-2xl);
                         .header-row-cell {
                             display: flex;
                             align-items: center;
@@ -36,6 +36,7 @@
                         align-content: flex-start;
                         width: 60%;
                         grid-gap: var(--nudge-spacing-sm);
+                        padding-left: var(--nudge-padding-margin-2xl);
                         .table-content-row {
                             padding: var(--nudge-padding-margin-lg) 0;
                             background: var(--nudge-color-beautiful-white);

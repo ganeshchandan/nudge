@@ -23,3 +23,4 @@ export { default as PlusIcon } from "@assets/images/plus.svg?react";
 export { default as NotificationIcon } from "@assets/images/notification.svg?react";
 export { default as SuccessIcon } from "@assets/images/success.svg?react";
 export { default as ErrorIcon } from "@assets/images/error.svg?react";
+export { default as CalendarIcon } from "@assets/images/calendar.svg?react";

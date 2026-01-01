@@ -1,0 +1,63 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-plan-content {
+                position: relative;
+                .engagement-plan-details {
+                    position: absolute;
+                    height: 100%;
+                    padding: var(--nudge-padding-margin-lg);
+                    width: calc(40% - 1.125rem);
+                    right: 1rem;
+                    .daily-catch-up {
+                        height: 3.25rem;
+                        background: linear-gradient(180deg, #ffffff 0%, #aac7ff 369.23%);
+                        border-radius: 0.25rem;
+                        padding: var(--nudge-padding-margin-md)
+                            calc(var(--nudge-padding-margin-md) + var(--nudge-padding-margin-xs));
+                        display: grid;
+                        grid-template-columns: max-content max-content 1fr;
+                        .daily-catch-up-icon {
+                            padding-top: var(--nudge-padding-margin-xs);
+                        }
+                        .daily-catch-up-details {
+                            padding-left: var(--nudge-padding-margin-md);
+                            display: grid;
+                            align-items: center;
+
+                            .daily-catch-up-label {
+                                font-weight: 500;
+                                font-size: var(--nudge-text-sm);
+                                line-height: 100%;
+                                color: var(--nudge-color-black-shade01);
+                            }
+                            .daily-catch-up-time {
+                                font-weight: 400;
+                                font-size: var(--nudge-text-xs);
+                                line-height: 100%;
+                                color: var(--nudge-color-black-shade02);
+                            }
+                        }
+                        .daily-catch-up-meeting-link {
+                            cursor: pointer;
+                            display: grid;
+                            align-items: center;
+                            font-weight: 500;
+                            font-size: var(--nudge-text-sm);
+                            line-height: 100%;
+                            text-align: right;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-decoration-thickness: 0%;
+                            text-decoration-skip-ink: auto;
+                            color: var(--nudge-color-shocking-blue);
+                            &:hover {
+                                color: var(--nudge-color-blue);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

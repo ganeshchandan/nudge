@@ -26,3 +26,6 @@ export { default as ErrorIcon } from "@assets/images/error.svg?react";
 export { default as CalendarIcon } from "@assets/images/calendar.svg?react";
 export { default as DownloadIcon } from "@assets/images/download.svg?react";
 export { default as FolderIcon } from "@assets/images/folder.svg?react";
+export { default as MicrosoftwordIcon } from "@assets/images/microsoftword.svg?react";
+export { default as PowerpointIcon } from "@assets/images/powerpoint.svg?react";
+export { default as VideoIcon } from "@assets/images/video.svg?react";

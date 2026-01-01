@@ -1,0 +1,54 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-details-tabs {
+                .engagement-plan-meeting-notes {
+                    padding: var(--nudge-padding-margin-xl-plus) var(--nudge-padding-margin-xxl);
+                    display: grid;
+                    grid-template-rows: 1fr max-content;
+                    grid-gap: var(--nudge-spacing-xxs);
+                    height: 100%;
+                    .meeting-notes {
+                        padding: 0 var(--nudge-padding-margin-md);
+                        .meeting-note {
+                            .meeting-note-header {
+                                display: grid;
+                                grid-template-columns: max-content 1fr;
+                                align-items: center;
+                                height: 2.875rem;
+                                padding: 0 var(--nudge-padding-margin-xl);
+                                color: var(--nudge-color-black-shade01);
+                                .meeting-note-date-text {
+                                    padding: 0 var(--nudge-padding-margin-lg);
+                                    font-weight: 400;
+                                    font-size: var(--nudge-text-xs);
+                                    line-height: 0.625rem;
+                                }
+                            }
+                        }
+                    }
+                    .upload-documents {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        line-height: 0.625rem;
+                        color: var(--nudge-color-black-shade01);
+                        padding-bottom: var(--nudge-padding-margin-md);
+                        display: flex;
+                        grid-gap: var(--nudge-padding-margin-lg);
+                        align-items: center;
+                        .meeting-notes-doucments-icon {
+                            height: 0.875rem;
+                            transform: rotate(180deg);
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                            path {
+                                fill: var(--nudge-color-blue);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

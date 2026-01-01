@@ -4,6 +4,7 @@ import type {
 } from "@components/engagement-plan/types";
 
 export const NONE_STRING = "none";
+export const DANGER_STRING = "danger";
 
 export const TASK_LIST_COLUMNS: TaskListColumns = [
   {

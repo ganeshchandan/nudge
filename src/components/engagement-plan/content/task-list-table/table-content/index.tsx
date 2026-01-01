@@ -29,7 +29,7 @@ export const TaskListTableContent = () => {
               <TaskName taskName={taskName} status={status} />
               <DueDate dueDate={dueDate} />
               <Completion completion={completion} />
-              <OwnerCell owner={owner} imageName={imageName} />
+              <OwnerCell owner={owner} imageName={imageName} status={status} />
             </div>
           )
         )}

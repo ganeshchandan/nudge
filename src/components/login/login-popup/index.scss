@@ -53,6 +53,8 @@
                     margin: auto;
                     margin-bottom: var(--nudge-padding-margin-xl-plus);
                     margin-top: calc(var(--nudge-padding-margin-xs) + var(--nudge-padding-margin-md));
+                    background-color: var(--nudge-color-shocking-blue);
+                    border-color: var(--nudge-color-shocking-blue);
                 }
                 .login-magic-code-form {
                     &.is-code-error {

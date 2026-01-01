@@ -3,8 +3,12 @@
         .engagement-plan {
             .engagement-plan-content {
                 height: 100%;
+                display: grid;
+                grid-template-rows: max-content 1fr;
+                overflow: hidden;
                 .task-list-header {
                     padding: var(--nudge-padding-margin-2xl);
+                    padding-bottom: var(--nudge-padding-margin-xl);
                     width: 60%;
                     .task-list-header-text {
                         font-weight: 600;

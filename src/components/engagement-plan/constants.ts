@@ -1,5 +1,6 @@
 import type {
   EngagementPlanDetailsAssest,
+  PlanMeetingNote,
   TaskListColumns,
   TaskListRowData,
 } from "@components/engagement-plan/types";
@@ -93,23 +94,150 @@ export const SAMPLE_TASK_DATA: TaskListRowData[] = [
 
 export const ASSETS_SAMPLE: EngagementPlanDetailsAssest[] = [
   {
-    _id: 1,
-    fileName: "Executive Brief.Pdf",
+    id: 1,
+    name: "Executive Brief.Pdf",
     type: "file",
+    value: "1",
+  },
+  {
+    id: 2,
+    name: "Dossier.Pdf",
+    type: "file",
+    value: "1",
+  },
+  {
+    id: 3,
+    name: "Scenario Cards.Pdf",
+    type: "file",
+    value: "1",
+  },
+  {
+    id: 4,
+    name: "Opportunity Map.Pdf",
+    type: "file",
+    value: "1",
+  },
+];
+
+export const SAMPLE_MEETING_NOTES: PlanMeetingNote[] = [
+  {
+    _id: 5,
+    date: "Nov 23, 2025",
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
+  },
+  {
+    _id: 1,
+    date: "Nov  22, 2025",
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
   {
     _id: 2,
-    fileName: "Dossier.Pdf",
-    type: "file",
+    date: "Oct 23, 2025",
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
   {
     _id: 3,
-    fileName: "Scenario Cards.Pdf",
-    type: "file",
-  },
-  {
-    _id: 4,
-    fileName: "Opportunity Map.Pdf",
-    type: "file",
+    date: "June 25, 2025",
+    notes: [
+      {
+        id: 1,
+        name: "Q4 Planning Sync.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 2,
+        name: "Client Review.mp4",
+        type: "video",
+        value: "",
+      },
+      {
+        id: 3,
+        name: "Feature Prioritization.doc",
+        type: "doc",
+        value: "",
+      },
+      {
+        id: 4,
+        name: "Capacity Planning.ppt",
+        type: "ppt",
+        value: "",
+      },
+    ],
   },
 ];

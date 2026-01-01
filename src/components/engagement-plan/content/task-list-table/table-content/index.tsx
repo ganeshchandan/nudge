@@ -7,8 +7,16 @@ import {
   NONE_STRING,
   SAMPLE_TASK_DATA,
 } from "@components/engagement-plan/constants";
+import { useState } from "react";
 
 export const TaskListTableContent = () => {
+  const [selectedTask, setSelectedTask] = useState<number>(1);
+
+  const handleSelectTask: React.MouseEventHandler<HTMLDivElement> = (event) => {
+    const id = Number(event.currentTarget.dataset.taskid);
+    setSelectedTask(id);
+  };
+
   return (
     <OverflowContainer>
       <div className="task-list-table-content">
@@ -23,8 +31,12 @@ export const TaskListTableContent = () => {
             status = NONE_STRING,
           }) => (
             <div
-              className="table-content-row header-content-row-common"
+              className={`table-content-row header-content-row-common ${
+                selectedTask === taskId ? "selected-task-row" : ""
+              }`}
               key={taskId}
+              data-taskId={taskId}
+              onClick={handleSelectTask}
             >
               <TaskName taskName={taskName} status={status} />
               <DueDate dueDate={dueDate} />

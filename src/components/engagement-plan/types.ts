@@ -19,7 +19,21 @@ export interface TaskListRowData {
 export type TaskListColumns = TaskListColumn[];
 
 export interface EngagementPlanDetailsAssest {
-  _id: number;
-  fileName: string;
+  id: number;
+  name: string;
+  value: string;
   type: "file" | "dir";
+}
+
+export interface MeetingNote {
+  id: number;
+  name: string;
+  value: string;
+  type: "doc" | "video" | "ppt";
+}
+
+export interface PlanMeetingNote {
+  _id: number;
+  date: string;
+  notes: MeetingNote[];
 }

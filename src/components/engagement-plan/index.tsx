@@ -5,7 +5,7 @@ import { EngagementPlanContent } from "@components/engagement-plan/content";
 
 export const EngagementPlan = () => {
   return (
-    <div className="engagement-plan-dashboard">
+    <div className="engagement-plan-dashboard smooth-content-load">
       <DetailedViewBackButton />
       <div className="engagement-plan">
         <EngagementPlanHeader />

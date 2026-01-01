@@ -7,3 +7,4 @@ export * from "@components/common/modal";
 export * from "@components/common/input";
 export * from "@components/common/back-button";
 export * from "@components/common/checkbox";
+export * from "@components/common/lists";

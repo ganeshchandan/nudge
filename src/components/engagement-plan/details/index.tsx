@@ -4,7 +4,7 @@ import { EngagementDetailsContent } from "./content";
 
 export const EngagementDetails = () => {
   return (
-    <div className="engagement-plan-details">
+    <div className="engagement-plan-details smooth-content-load">
       <DailyCatchup />
       <EngagementDetailsContent />
     </div>

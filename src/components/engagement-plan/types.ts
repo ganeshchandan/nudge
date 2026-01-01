@@ -17,3 +17,9 @@ export interface TaskListRowData {
 }
 
 export type TaskListColumns = TaskListColumn[];
+
+export interface EngagementPlanDetailsAssest {
+  _id: number;
+  fileName: string;
+  type: "file" | "dir";
+}

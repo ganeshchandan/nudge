@@ -1,4 +1,5 @@
 import type {
+  EngagementPlanDetailsAssest,
   TaskListColumns,
   TaskListRowData,
 } from "@components/engagement-plan/types";
@@ -87,5 +88,28 @@ export const SAMPLE_TASK_DATA: TaskListRowData[] = [
     completion: 0,
     owner: "John",
     imageName: "assignee6",
+  },
+];
+
+export const ASSETS_SAMPLE: EngagementPlanDetailsAssest[] = [
+  {
+    _id: 1,
+    fileName: "Executive Brief.Pdf",
+    type: "file",
+  },
+  {
+    _id: 2,
+    fileName: "Dossier.Pdf",
+    type: "file",
+  },
+  {
+    _id: 3,
+    fileName: "Scenario Cards.Pdf",
+    type: "file",
+  },
+  {
+    _id: 4,
+    fileName: "Opportunity Map.Pdf",
+    type: "file",
   },
 ];

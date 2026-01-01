@@ -24,3 +24,5 @@ export { default as NotificationIcon } from "@assets/images/notification.svg?rea
 export { default as SuccessIcon } from "@assets/images/success.svg?react";
 export { default as ErrorIcon } from "@assets/images/error.svg?react";
 export { default as CalendarIcon } from "@assets/images/calendar.svg?react";
+export { default as DownloadIcon } from "@assets/images/download.svg?react";
+export { default as FolderIcon } from "@assets/images/folder.svg?react";

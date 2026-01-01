@@ -17,6 +17,7 @@
                             calc(var(--nudge-padding-margin-md) + var(--nudge-padding-margin-xs));
                         display: grid;
                         grid-template-columns: max-content max-content 1fr;
+                        margin-bottom: var(--nudge-padding-margin-xs);
                         .daily-catch-up-icon {
                             padding-top: var(--nudge-padding-margin-xs);
                         }

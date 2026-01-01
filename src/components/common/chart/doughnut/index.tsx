@@ -40,9 +40,8 @@ export const Doughnut: FC<PropsWithChildren<DoughnutProps>> = ({
         textAnchor="middle"
         x="50%"
         y="50%"
-        text-anchor="middle"
-        dominant-baseline="middle"
-        font-size="10.5"
+        dominantBaseline="middle"
+        fontSize="10.5"
         fill={storke}
       >{`${value}%`}</text>
       <circle className="doughnut-chart-track" {...commonCircleStyle}></circle>

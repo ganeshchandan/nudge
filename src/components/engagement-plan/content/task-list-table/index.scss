@@ -43,6 +43,7 @@
                             border-radius: 0.5rem;
                             cursor: pointer;
                             transition: all 0.3s ease-in-out;
+                            position: relative;
                             label {
                                 cursor: inherit;
                             }
@@ -59,7 +60,6 @@
                             &.selected-task-row {
                                 background-color: var(--nudge-color-magnolia-heart);
                                 border-radius: 0.5rem 0 0 0.5rem;
-                                position: relative;
                                 &::after {
                                     background-color: var(--nudge-color-magnolia-heart);
                                 }

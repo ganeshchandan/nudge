@@ -15,6 +15,7 @@
                 position: relative;
                 height: 100%;
                 overflow: hidden;
+                margin-top: var(--nudge-padding-margin-sm);
                 // &::before {
                 //     content: "";
                 //     // background: radial-gradient(circle, #e7ecf8 0%, #e3e4f4 50%, #ebf7f9 100%);
@@ -32,7 +33,7 @@
             .stats-dashboard-summary-content {
                 padding-left: var(--nudge-padding-margin-xxl);
                 padding-right: 0.625rem;
-                padding-top: var(--nudge-padding-margin-xl-plus);
+                padding-top: var(--nudge-padding-margin-lg);
                 padding-bottom: var(--nudge-padding-margin-xl);
                 display: grid;
                 grid-template-columns: 35% 24% 37%;

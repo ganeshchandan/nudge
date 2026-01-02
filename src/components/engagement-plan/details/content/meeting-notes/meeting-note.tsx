@@ -39,7 +39,7 @@ export const MeetingNote: FC<MeetingNoteProps> = ({
 
       <div className="meeting-note-content">
         <NudgeLists
-          items={notes}
+          items={notes as any[]}
           Component={MeetingNoteItems}
           className="meeting-note-lists"
         />

@@ -9,7 +9,7 @@ export const Assets = () => {
     <div className="engagement-plan-assets smooth-content-load">
       <OverflowContainer>
         <NudgeLists
-          items={assets}
+          items={assets as any[]}
           Component={AssetsItem}
           className="engagement-plan-assets-list"
         />

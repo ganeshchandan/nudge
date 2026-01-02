@@ -1,15 +1,17 @@
 import type { FC } from "react";
 
+export interface ListItem {
+  id: number;
+  value: string | number;
+  name: string;
+  [key: string]: unknown;
+}
+
 interface NudgeListsProps {
   className?: string;
-  items: {
-    id: number;
-    value: string | number;
-    name: string;
-    [key: string]: any;
-  }[];
-  onClick?: (params: { [key: string]: any }) => void;
-  Component: FC<any>;
+  items: ListItem[];
+  onClick?: (params: ListItem) => void;
+  Component: FC<{ item: ListItem }>;
 }
 
 export const NudgeLists: FC<NudgeListsProps> = ({

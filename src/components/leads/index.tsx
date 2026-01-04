@@ -41,7 +41,9 @@ export const Leads = () => {
             links: QUICK_LINKS,
           },
         }}
-      />
+        typeOfView="leads"
+      ></ExecutiveDashboard>
+      {/* <NudgeAI /> */}
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface AppConfigState {
   selectedOption: string;
@@ -16,11 +16,11 @@ export const applicationConfig = createSlice({
   name: "applicationConfig",
   initialState,
   reducers: {
-    updateSelectedOption: (state, { payload }) => {
-      state.selectedOption = payload;
+    updateSelectedOption: (state, action: PayloadAction<string>) => {
+      state.selectedOption = action.payload;
     },
-    setUserAuthenticated: (state, { payload }) => {
-      state.user.isAuthenticated = payload;
+    setUserAuthenticated: (state, action: PayloadAction<boolean>) => {
+      state.user.isAuthenticated = action.payload;
     },
   },
 });

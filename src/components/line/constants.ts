@@ -49,7 +49,7 @@ export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
 
 export const ENGAGEMENT_FIELDS: EngagementField[] = [
   {
-    type: "text",
+    type: "sentiment",
     id: "sentiment",
     name: "Sentiment",
     isClickAble: false,

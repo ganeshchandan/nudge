@@ -29,3 +29,6 @@ export { default as FolderIcon } from "@assets/images/folder.svg?react";
 export { default as MicrosoftwordIcon } from "@assets/images/microsoftword.svg?react";
 export { default as PowerpointIcon } from "@assets/images/powerpoint.svg?react";
 export { default as VideoIcon } from "@assets/images/video.svg?react";
+export { default as MicIcon } from "@assets/images/mic.svg?react";
+export { default as SpeechIcon } from "@assets/images/speech.svg?react";
+export { default as ClusterIcon } from "@assets/images/cluster.svg?react";

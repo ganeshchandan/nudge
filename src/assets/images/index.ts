@@ -18,3 +18,6 @@ export { default as StatsUpIcon } from "@assets/images/stats-up.svg?react";
 export { default as LeftIcon } from "@assets/images/left.svg?react";
 export { default as EditIcon } from "@assets/images/edit_icon.svg?react";
 export { default as ExpandIcon } from "@assets/images/expand.svg?react";
+export { default as ChatIcon } from "@assets/images/chat.svg?react";
+export { default as SpeechIcon } from "@assets/images/speech.svg?react";
+export { default as MicIcon } from "@assets/images/mic.svg?react";

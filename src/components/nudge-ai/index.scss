@@ -1,12 +1,13 @@
 * {
     .nudge-ai {
+        font-family: IBM Plex Sans;
         height: 100%;
         overflow: hidden;
         padding: calc(var(--nudge-padding-margin-md) + var(--nudge-padding-margin-xs)) var(--nudge-padding-margin-sm)
             var(--nudge-padding-margin-xxl) var(--nudge-padding-margin-xl-plus);
         position: inherit;
         .nudge-ai-container {  
-            height: 100%;          
+            height: calc(100vh - 2 * var(--nudge-spacing-2xl));          
             overflow: hidden;
             box-shadow: 0px 2px 10px 6px rgba(0, 0, 0, 0.0196078431);
             background: var(--nudge-color-white);
@@ -15,11 +16,14 @@
             grid-template-rows: max-content 1fr;
             padding: var(--nudge-spacing-2xl) var(--nudge-spacing-xl);
             .nudge-ai-header {
-                font-size: var(--nudge-text-xxl);
+                font-size: var(--nudge-text-md);
                 font-weight: var(--nudge-font-weight-bold);
+
             }
             .nudge-ai-content {
                 margin-top: 16px;
+                height: calc(100vh - 16rem);          
+                overflow: scroll;
                 .suggestions-title {
                     font-size: var(--nudge-text-md);
                     font-weight: var(--nudge-font-weight-bold);
@@ -50,17 +54,29 @@
                             margin-top: var(--nudge-padding-margin-xl-plus);
                             padding: var(--nudge-spacing-xs) var(--nudge-spacing-xs);
                             font-size: var(--nudge-text-xs);
+                            .events-title {
+                                font-size: var(--nudge-text-xs);
+                                font-weight: var(--nudge-font-weight-bold);
+                                margin-top: var(--nudge-spacing-sm);
+                                margin-bottom: var(--nudge-spacing-sm);
+                                color: var(--nudge-color-black-shade01);
+                             }
                             .events {
                                 list-style-type: none;
                                 padding: 0px;
                                 margin: 0;
                                 li {
                                     margin-bottom: var(--nudge-spacing-xs);
-                                    font-size: var(--nudge-text-sm);
+                                    font-size: var(--nudge-text-xs);
                                     color: var(--nudge-color-black-shade02);
                                     background-color: var(--nudge-color-light-blue);
                                     border-radius: 4px;
                                     padding: 0;
+                                    p {
+                                        font-weight: var(--nudge-font-weight-bold);
+                                        color: var(--nudge-color-black-shade02);
+                                        margin: 0;
+                                    }
                                 }
                             }
                         }
@@ -80,17 +96,43 @@
                     }
                 }
             }
-            .nudge-ai-footer {                
+            .nudge-ai-footer {    
+                border: 1px solid #F1F1F1;    
+                border-radius: 8px;        
+                display: flex;
+                align-items: center;
                 .input-box {
-                    padding: var(--nudge-spacing-sm);
-                    border: 1px solid #F1F1F1;
-                    border-radius: 4px;
-                    font-size: var(--nudge-text-sm);
+                    padding: var(--nudge-spacing-xs);
+                    border: 0px;
+                    font-size: var(--nudge-text-sm); 
+                    border-radius: 8px;        
                     width: 100%;
+                    resize: none;
+                    outline: none;
+                    flex: 1;
                     &:focus {
                         outline: none;
-                        border-color: var(--nudge-color-lady-blue);
-                        box-shadow: 0 0 0 2px var(--nudge-color-blue-chalk);
+                    }
+                }
+                .icon-container {
+                    display: flex;
+                    flex-direction: column;
+                    margin: var(--nudge-spacing-xxs);
+                }
+                .icon-button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: var(--nudge-spacing-xs);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px 4px 0 0 ;
+                    background-color: var(--nudge-color-light-blue);
+                    margin-bottom: 1px;
+                    &:nth-child(2) {
+                        border-radius: 0 0 4px 4px;
+                        margin-bottom: 0px;
                     }
                 }
             }

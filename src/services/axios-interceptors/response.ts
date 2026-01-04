@@ -23,5 +23,24 @@ export const axiosResponseInterceptors = (
 export const axiosResponseErrorInterceptors = (
   error: AxiosError
 ): Promise<never> => {
+  // Handle 401 Unauthorized - redirect to login
+  if (error.response?.status === 401) {
+    localStorage.removeItem("authToken");
+    // Redirect to login page if not already there
+    if (window.location.pathname !== "/login") {
+      window.location.href = "/login";
+    }
+  }
+  
+  // Handle 403 Forbidden
+  if (error.response?.status === 403) {
+    console.error("Access forbidden:", error.response.data);
+  }
+  
+  // Handle network errors
+  if (!error.response) {
+    console.error("Network error:", error.message);
+  }
+  
   return Promise.reject(error);
 };

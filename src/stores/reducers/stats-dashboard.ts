@@ -3,7 +3,7 @@ import type {
   SummaryStatsList,
   TopPerformerDetail,
 } from "@components/stats-dashboard/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface StatsDashboardState {
   selectedStatsTab: string;
@@ -214,11 +214,11 @@ const initialState: StatsDashboardState = {
 };
 
 export const statsDashboardConfig = createSlice({
-  name: "statsDashbaordConfig",
+  name: "statsDashboardConfig",
   initialState,
   reducers: {
-    updateSelectedStatsTab: (state, { payload }) => {
-      state.selectedStatsTab = payload;
+    updateSelectedStatsTab: (state, action: PayloadAction<string>) => {
+      state.selectedStatsTab = action.payload;
     },
   },
 });

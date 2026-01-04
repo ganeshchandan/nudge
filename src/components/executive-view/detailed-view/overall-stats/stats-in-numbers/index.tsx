@@ -2,6 +2,7 @@ import "@components/executive-view/detailed-view/overall-stats/stats-in-numbers/
 import { useContext, type FC } from "react";
 import type { EngagementScores } from "@components/executive-view/types";
 import { ExecutiveContext } from "@components/executive-view/context/setup";
+import { getSentimentEmoji } from "@components/executive-view/utils/common";
 
 interface StatsInNumbersProps {
   engagementScores: EngagementScores;
@@ -24,7 +25,9 @@ export const StatsInNumbers: FC<StatsInNumbersProps> = ({
           >
             <div className="stats-in-number-header">{name}</div>
             <div className="stats-in-number-value">
-              {engagementScores[id] as any}
+              {type === "sentiment"
+                ? getSentimentEmoji(engagementScores[id] as string)
+                : (engagementScores[id] as any)}
             </div>
           </div>
         );

@@ -3,9 +3,13 @@ import type {
   OnExecutiveSelect,
 } from "@components/executive-view/types";
 import type { FC, PropsWithChildren } from "react";
-import { ExecutiveContext } from "@components/executive-view/context/setup";
+import {
+  ExecutiveContext,
+  type TypeOfView,
+} from "@components/executive-view/context/setup";
 
 interface ExecutiveContextProviderProps {
+  typeOfView: TypeOfView;
   onExecutiveSelect: OnExecutiveSelect;
   executiveViewUIFields: ExecutiveViewUIFields;
 }

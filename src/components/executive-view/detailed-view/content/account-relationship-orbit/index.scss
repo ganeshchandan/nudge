@@ -1,0 +1,51 @@
+* {
+    .executive-detailed-view {
+        .detailed-view-content {
+            .account-relationship-orbit {
+                padding: var(--nudge-padding-margin-2xl);
+                .account-relationship-orbit-header {
+                    font-weight: 600;
+                    font-size: var(--nudge-text-md);
+                    display: grid;
+                    grid-template-columns: max-content max-content;
+                    grid-gap: var(--nudge-spacing-sm);
+                    margin-bottom: 0;
+                    label {
+                        line-height: normal;
+                    }
+                    .account-relationship-orbit-actions {
+                        display: grid;
+                        grid-template-columns: max-content max-content;
+                        align-items: flex-end;
+                        grid-gap: var(--nudge-spacing-lg);
+                        .account-relationship-orbit-action-icon {
+                            height: 0.75rem;
+                            cursor: pointer;
+                            path {
+                                fill: var(--nudge-color-blue);
+                            }
+                        }
+                    }
+                }
+                .account-relationship-orbit-content {
+                    margin-top: 0;
+                    width: 100%;
+                    height: 800px;
+                    position: relative;
+                    .information-text {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        color: var(--nudge-color-black-shade02);
+                        position: absolute;
+                        top: 0.75rem;
+                        left: 0px;
+                    }
+                    .orbit-container {
+                        transform: scale(0.9);
+                        transform-origin: center;
+                    }
+                }
+            }
+        }
+    }
+}

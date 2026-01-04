@@ -1,0 +1,77 @@
+* {
+    .orbit-container {
+        position: relative;
+        margin: 0 auto;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        max-width: 100vw;
+        max-height: 100vh;
+        .orbit-level-wrapper {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .orbit-center {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .app-container {
+            padding: 0.5rem;
+        }
+
+        .controls {
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+
+        .control-toggle {
+            font-size: 0.8rem;
+        }
+
+        .orbit-container {
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .controls {
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+
+        .control-toggle {
+            font-size: 0.75rem;
+        }
+
+        .control-toggle input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+
+        .orbit-container {
+            transform: scale(0.5);
+            transform-origin: center;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .orbit-container {
+            transform: scale(0.85);
+            transform-origin: center;
+        }
+    }
+}

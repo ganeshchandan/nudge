@@ -8,4 +8,9 @@ export * from "@components/common/input";
 export * from "@components/common/back-button";
 export * from "@components/common/checkbox";
 export * from "@components/common/lists";
-export { ErrorBoundary } from "@components/common/error-boundary/index.tsx";
+export * from "@components/common/tabs";
+export * from "@components/common/knowledge-graph";
+export { ErrorBoundary } from "@components/common/error-boundary";
+export { Lifecycle } from "@components/common/lifecycle";
+
+export * from "@components/common/lifecycle/types";

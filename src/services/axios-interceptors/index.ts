@@ -7,11 +7,15 @@ import {
   axiosResponseInterceptors,
   axiosResponseErrorInterceptors,
 } from "@services/axios-interceptors/response";
+import { getApiBaseUrl } from "@config/env";
 
 /**
  * Set the base URL for all Axios HTTP requests.
  */
-// axios.defaults.baseURL = API_BASE_PATH;
+const apiBaseUrl = getApiBaseUrl();
+if (apiBaseUrl) {
+  axios.defaults.baseURL = apiBaseUrl;
+}
 
 /**
  * Attach global request interceptors.

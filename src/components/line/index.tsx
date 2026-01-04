@@ -34,6 +34,7 @@ export const Lines = () => {
           links: QUICK_LINKS,
         },
       }}
+      typeOfView="lines"
     />
   );
 };

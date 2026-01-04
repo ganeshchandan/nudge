@@ -1,0 +1,152 @@
+* {
+    .nudge-ai {
+        height: 100%;
+        overflow: hidden;
+        padding: calc(var(--nudge-padding-margin-md) + var(--nudge-padding-margin-xs)) var(--nudge-padding-margin-sm)
+            var(--nudge-padding-margin-xxl) var(--nudge-padding-margin-xl-plus);
+        position: inherit;
+        .nudge-ai-container {
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 0px 2px 10px 6px rgba(0, 0, 0, 0.0196078431);
+            background: var(--nudge-color-white);
+            border-radius: 1rem;
+            display: grid;
+            grid-template-rows: max-content 1fr max-content;
+            .nudge-ai-header {
+                padding: calc(var(--nudge-padding-margin-xl-plus) + var(--nudge-padding-margin-md));
+                padding-bottom: var(--nudge-padding-margin-lg);
+                font-size: var(--nudge-text-md);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                grid-gap: var(--nudge-spacing-xxs);
+                .nudge-ai-chat-icon {
+                    height: 1.625rem;
+                    width: 1.625rem;
+                }
+            }
+            .nudge-ai-content {
+                height: 100%;
+                padding: 0 var(--nudge-padding-margin-xxl);
+                padding-top: var(--nudge-padding-margin-lg);
+                font-size: var(--nudge-text-xs);
+                .suggestions-title {
+                    font-weight: var(--nudge-font-weight-bold);
+                    margin-bottom: var(--nudge-spacing-xs);
+                }
+                .list {
+                    list-style-type: none;
+                    padding-left: 0px;
+                    li {
+                        margin-bottom: var(--nudge-padding-margin-md);
+                        color: var(--nudge-color-black-shade02);
+                        background-color: var(--nudge-color-light-blue);
+                        border-radius: 0.25rem;
+                        padding: var(--nudge-spacing-xxs) var(--nudge-spacing-xs);
+                        width: fit-content;
+                        &.user-message {
+                            background-color: var(--nudge-color-tech-white);
+                            color: var(--nudge-color-black-shade01);
+                            width: 90%;
+                            margin-left: 10%;
+                            margin-top: var(--nudge-padding-margin-xl-plus);
+                        }
+                        &.agent-message {
+                            background-color: var(--nudge-color-light-blue);
+                            color: var(--nudge-color-black-shade02);
+                            width: 95%;
+                            margin-top: var(--nudge-padding-margin-xl-plus);
+                            padding: var(--nudge-spacing-xs) var(--nudge-spacing-xs);
+                            font-size: var(--nudge-text-xs);
+                            .events {
+                                list-style-type: none;
+                                padding: 0px;
+                                margin: 0;
+                                li {
+                                    margin-bottom: var(--nudge-spacing-xs);
+                                    color: var(--nudge-color-black-shade02);
+                                    background-color: var(--nudge-color-light-blue);
+                                    border-radius: 0.25rem;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                .helper-cta {
+                    margin-top: var(--nudge-spacing-lg);
+                    font-size: var(--nudge-text-xs);
+                    color: var(--nudge-color-lady-blue);
+                    background-color: var(--nudge-color-blue-chalk);
+                    padding: var(--nudge-spacing-xxs) var(--nudge-spacing-xs);
+                    width: fit-content;
+                    border-radius: 0.25rem;
+                    cursor: pointer;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .nudge-ai-footer {
+                padding: var(--nudge-padding-margin-xl);
+                padding-top: 0rem;
+                .nudge-ai-messenger {
+                    border: 0.0625rem solid var(--nudge-color-medium-seashell);
+                    border-radius: 0.25rem;
+                    font-size: var(--nudge-text-sm);
+                    width: 100%;
+                    color: var(--nudge-color-black-shade01);
+                    display: grid;
+                    grid-template-columns: 1fr max-content;
+                    &:focus-within {
+                        border-color: var(--nudge-color-black);
+                    }
+                    .nudge-ai-messenger-textarea {
+                        resize: none;
+                        border: none;
+                        outline: none;
+                        padding: var(--nudge-padding-margin-lg);
+                        border-radius: inherit;
+                        &::placeholder {
+                            font-size: var(--nudge-text-sm);
+                            color: var(--nudge-color-black-shade02);
+                        }
+                        &:focus {
+                            outline: none;
+                            // box-shadow: 0 0 0 2px var(--nudge-color-blue-chalk);
+                        }
+                    }
+                    .nudge-ai-messenger-actions {
+                        width: 2rem;
+                        padding: calc(var(--nudge-padding-margin-sm) + var(--nudge-padding-margin-xs));
+                        box-sizing: content-box;
+                        display: grid;
+                        grid-gap: 0.0625rem;
+                        .messenger-mic,
+                        .messenger-speech {
+                            width: 2rem;
+                            height: 2rem;
+                            background: var(--nudge-color-light-blue);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            &:first-child {
+                                border-radius: 0.25rem 0.25rem 0 0;
+                            }
+                            &:last-child {
+                                border-radius: 0 0 0.25rem 0.25rem;
+                            }
+                            .messenger-mic-icon,
+                            .messenger-speech-icon {
+                                width: 0.875rem;
+                                height: 0.875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

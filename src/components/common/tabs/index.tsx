@@ -49,6 +49,7 @@ export const NudgeTabs: FC<NudgeTabsProps> = ({
       <div className="nudge-tabs">
         {tabItems.map(({ name, id }) => (
           <div
+            key={id}
             className={`nudge-tab ${
               id === tabSelected ? "nudge-selected-tab" : ""
             }`}

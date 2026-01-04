@@ -2,7 +2,7 @@ import type {
   DetailedViewStats,
   ExecutiveCapitalDetails,
 } from "@components/executive-view/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface LeadsDashboardState {
   executiveCapitalDetails: ExecutiveCapitalDetails;
@@ -204,20 +204,20 @@ export const leadDashboardConfig = createSlice({
   name: "leadsDashboardConfig",
   initialState,
   reducers: {
-    setSelectedExecutiveID: (state, { payload }) => {
-      state.selectedExecutiveID = payload;
-      if (payload !== -1) {
+    setSelectedExecutiveID: (state, action: PayloadAction<number>) => {
+      state.selectedExecutiveID = action.payload;
+      if (action.payload !== -1) {
         const {
           name = "",
           teamName = "",
           image = "",
         } = state.executiveCapitalDetails.executiveCapitals.find(
-          ({ id }) => id === payload
+          ({ id }) => id === action.payload
         ) || {};
         state.detailedViewStats = {
           ...state.detailedViewStats,
           name,
-          id: payload,
+          id: action.payload,
           teamName,
           image,
         };

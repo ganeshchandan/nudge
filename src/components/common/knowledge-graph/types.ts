@@ -1,4 +1,4 @@
-export interface Node extends d3.SimulationNodeDatum {
+export interface Node {
   id: string;
   name: string;
   image: string;

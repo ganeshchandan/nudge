@@ -1,5 +1,10 @@
 * {
     .key-stakeholders {
+        .team-members {
+            .profile-details {
+                visibility: visible;
+            }
+        }
         .stakeholders-information-list {
             padding: calc(var(--nudge-padding-margin-2xl))
                 calc(var(--nudge-padding-margin-2xl) + var(--nudge-padding-margin-lg));

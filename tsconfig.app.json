@@ -30,8 +30,15 @@
       "@stores": ["./src/stores"],
       "@stores/*": ["./src/stores/*"],
       "@services/*": ["./src/services/*"],
-      "@tests/*": ["./src/__test__/*"]
+      "@tests/*": ["./src/__test__/*"],
+      "@config/*": ["./src/config/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   },
-  "include": ["src", "tests", "tests.setup.ts"]
+  "include": [
+    "src",
+    "tests",
+    "tests.setup.ts",
+    "src/components/inside-story/content/score-card/leads-status/where-ami/index.tsx"
+  ]
 }

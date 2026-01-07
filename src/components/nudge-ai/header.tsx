@@ -1,9 +1,19 @@
-import { NudgeChatIcon } from "@assets/images";
+import { NudgeChatHeaderIcon } from "@assets/images";
+
+import { useChatAi } from "./hooks";
 
 export const NudgeAIHeader = () => {
+  const { showHideChatAI } = useChatAi();
+
+  const onCloseClick = () => showHideChatAI(false);
+
   return (
     <div className="nudge-ai-header">
-      <NudgeChatIcon className="nudge-ai-chat-icon" /> Nudge AI
+      <NudgeChatHeaderIcon
+        className="nudge-ai-chat-icon"
+        onClick={onCloseClick}
+      />
+      Nudge AI
     </div>
   );
 };

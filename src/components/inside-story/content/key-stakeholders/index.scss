@@ -1,0 +1,21 @@
+* {
+  .key-stakeholders {
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(255, 255, 255, 0) 91.46%,
+    //   rgba(157, 126, 253, 0.12) 95.4%,
+    //   rgba(99, 180, 255, 0.4425) 101.7%
+    // );
+    .profile-icon {
+      background: unset;
+    }
+    .key-stakeholders-footer {
+      font-weight: 600;
+      font-size: var(--nudge-text-xxl);
+      line-height: 100%;
+      text-align: center;
+      color: var(--nudge-color-black-shade01);
+      padding-bottom: var(--nudge-padding-margin-xl-plus);
+    }
+  }
+}

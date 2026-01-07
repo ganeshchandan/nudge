@@ -3,3 +3,4 @@ export * from "@components/stats-dashboard/summary-nudge/summary/widgets/executi
 export * from "@components/stats-dashboard/summary-nudge/summary/widgets/stats-widget";
 export * from "@components/stats-dashboard/summary-nudge/summary/widgets/contact-widget";
 export * from "@components/stats-dashboard/summary-nudge/summary/widgets/program-view";
+export * from "@components/stats-dashboard/summary-nudge/summary/widgets/company";

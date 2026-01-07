@@ -12,7 +12,7 @@ export interface TimelineEvent {
   type: "meeting" | "escalation" | "milestone" | "recovery" | "okr" | "flag";
   label: string;
   count?: number;
-  position: "above" | "below";
+  position: "above" | "middle" | "below";
   profileImages?: string[];
   icon?: string;
   sentiment?: "positive" | "negative";

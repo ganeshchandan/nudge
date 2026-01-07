@@ -1,0 +1,21 @@
+* {
+    .key-stakeholders {
+        .stakeholders-information-list {
+            padding: calc(var(--nudge-padding-margin-2xl))
+                calc(var(--nudge-padding-margin-2xl) + var(--nudge-padding-margin-lg));
+            font-size: var(--nudge-text-sm);
+            border-top: 1px solid;
+            border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+            border-image-slice: 1;
+            .stakeholders-information-header {
+                color: var(--nudge-color-black-shade02);
+                font-weight: 600;
+                line-height: 100%;
+            }
+            .informations-lists {
+                margin-top: var(--nudge-padding-margin-xxl);
+                color: var(--nudge-color-black-shade01);
+            }
+        }
+    }
+}

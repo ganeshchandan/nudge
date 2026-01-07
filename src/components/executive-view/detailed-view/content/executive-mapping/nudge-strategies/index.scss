@@ -1,0 +1,76 @@
+* {
+    .nudge-strategy {
+        padding-left: 0.25rem;
+        .view-nudge-strategy {
+            font-weight: 600;
+            font-size: var(--nudge-text-xxs);
+            line-height: 100%;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-thickness: 0%;
+            color: var(--nudge-color-shocking-blue);
+            display: flex;
+            .view-nudge-strategy-icon {
+                height: 0.625rem;
+                margin-right: var(--nudge-padding-margin-md);
+            }
+        }
+        .view-nudge-strategies {
+            display: grid;
+            width: 100%;
+            grid-gap: var(--nudge-spacing-lg);
+            border-left: 1px dashed var(--nudge-color-purple-shade-02);
+            margin-top: var(--nudge-padding-margin-xxl);
+            padding: var(--nudge-padding-margin-md) 0;
+            .nudge-strategy-item {
+                display: flex;
+                width: 100%;
+                padding-left: var(--nudge-padding-margin-lg);
+
+                .nudge-strategy-details {
+                    display: grid;
+                    grid-gap: var(--nudge-spacing-xs);
+                    .nudge-strategy-details-label {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xxs);
+                        line-height: 100%;
+                        color: var(--nudge-color-black-shade02);
+                        position: relative;
+                        &::before {
+                            position: absolute;
+                            content: " ";
+                            height: 0.5rem;
+                            width: 0.5rem;
+                            border-radius: 50%;
+                            background: #ddd1ff;
+                            border: 1px solid #ffffff;
+                            left: calc(var(--nudge-padding-margin-lg) * -1 - 0.25rem);
+                            top: 0.0625rem;
+                        }
+                    }
+                    .nudge-strategy-details-tag {
+                        width: max-content;
+                    }
+                }
+                .nudge-strategy-profiles {
+                    position: relative;
+                    margin-left: var(--nudge-padding-margin-sm);
+                    .nudge-strategy-profile {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        // background: radial-gradient(
+                        //     129.03% 129.03% at 7.26% 9.68%,
+                        //     #034ea2 0%,
+                        //     #00c0f3 42.79%,
+                        //     #ed0677 70.95%
+                        // );
+                    }
+                }
+            }
+        }
+    }
+}

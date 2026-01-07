@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FC } from "react";
+import { useEffect, useMemo, useRef, useState, type FC } from "react";
 import "@components/common/knowledge-graph/index.scss";
 import type {
   Node,
@@ -26,6 +26,7 @@ export const KnowledgeMap: FC<KnowledgeMapProps> = ({
   nodes,
   graphConfig,
 }) => {
+  const knowledgeGraphRef = useRef<HTMLDivElement>(null);
   const { edge = {} } = graphConfig || {};
   const [graphNodes, setGraphNodes] = useState<Node[]>([]);
   const [graphEdges, setGraphEdges] = useState<Edge[]>([]);
@@ -34,11 +35,12 @@ export const KnowledgeMap: FC<KnowledgeMapProps> = ({
   useEffect(() => {
     const { edges: graphEdges, nodes: graphNodes } = getNodeAndEdgePositions(
       nodes,
-      edges
+      edges,
+      knowledgeGraphRef
     );
     setGraphNodes(graphNodes);
     setGraphEdges(graphEdges);
-  }, []);
+  }, [knowledgeGraphRef, nodes, edges]);
 
   const styles = useMemo(
     () => getGraphStylesVariables(graphConfig),
@@ -65,6 +67,7 @@ export const KnowledgeMap: FC<KnowledgeMapProps> = ({
       className="knowledge-graph"
       style={styles}
       onClick={handleOutsideClick}
+      ref={knowledgeGraphRef}
     >
       <svg className="knowledge-graph-svg">
         <Edges edges={graphEdges} edgeConfig={edge} />

@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC } from "react";
 import "@components/common/tabs/index.scss";
 
-interface NudgeTabItem {
+export interface NudgeTabItem {
   name: string;
   id: string;
 }

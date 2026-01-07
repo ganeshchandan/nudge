@@ -187,6 +187,12 @@
           bottom: calc(50% + var(--nudge-spacing-5xl) + var(--nudge-spacing-lg));
         }
 
+        &.lifecycle-events-middle {
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 6; // Above timeline bar
+        }
+
         &.lifecycle-events-below {
           top: calc(50% + var(--nudge-spacing-2xl));
         }
@@ -201,6 +207,11 @@
 
           &.lifecycle-event-below {
             flex-direction: column-reverse;
+          }
+
+          &.lifecycle-event-middle {
+            flex-direction: column;
+            transform: translate(-50%, -50%);
           }
 
           .lifecycle-event-profiles {

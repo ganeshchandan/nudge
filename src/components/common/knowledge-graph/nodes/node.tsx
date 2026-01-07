@@ -1,5 +1,5 @@
-import { APP_IMAGES } from "@assets/images/app_image";
 import type { Node } from "@components/common/knowledge-graph/types";
+import { ProfileIcon } from "@components/common";
 import { memo, useState } from "react";
 
 interface GraphNodeProps {
@@ -49,18 +49,15 @@ export const GraphNode = memo(
         onMouseDown={handleMouseDown}
         onClick={onNodeClick}
       >
-        <div
+        <ProfileIcon
           className="graph-node-image"
           style={{
             left: `calc(${x!}px - var(--graph-node-size) / 2)`,
             top: `calc(${y!}px - var(--graph-node-size) / 2)`,
             cursor: dragging ? "grabbing" : "grab",
           }}
-        >
-          <div className="inner-content">
-            <img src={APP_IMAGES[image]}></img>
-          </div>
-        </div>
+          image={image}
+        />
         <div
           className="node-label"
           style={{

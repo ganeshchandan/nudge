@@ -43,9 +43,16 @@ export const updateEdgePositionForNode = (
 export const getNodeAndEdgePositions = (
   nodes: Node[],
   edges: Edge[],
+  knowledgeGraphRef: React.RefObject<HTMLDivElement | null>,
   graphConfig?: GraphConfig
 ) => {
-  const { node, strength = -200, forceCenter = [400, 250] } = graphConfig || {};
+  let forceCenter = [533, 250];
+  const knowledgeGraph = knowledgeGraphRef.current;
+  if (knowledgeGraph) {
+    const { width, height } = knowledgeGraph.getBoundingClientRect();
+    forceCenter = [width / 2, height / 2];
+  }
+  const { node, strength = -200 } = graphConfig || {};
   const { distance } = node || {};
   const simulation = d3
     .forceSimulation(nodes)

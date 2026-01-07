@@ -23,7 +23,9 @@ export const TaskName: FC<TaskNameProps> = ({ taskName, status }) => {
     <div className="table-content-row-cell header-content-row-cell task-name-cell">
       <div className="task-name-actions">
         <NudgeCheckbox />
-        <StatusIcon className={`task-status-icon ${status}-icon`} />
+        {StatusIcon && (
+          <StatusIcon className={`task-status-icon ${status}-icon`} />
+        )}
       </div>
       <label>{taskName}</label>
     </div>

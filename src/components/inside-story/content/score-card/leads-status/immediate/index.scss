@@ -1,0 +1,40 @@
+* {
+    .score-card-page {
+        .leads-status {
+            .leads-status-cards {
+                .leads-status-card {
+                    .immediate-tab {
+                        padding: 0 var(--nudge-padding-margin-xl-plus);
+                        font-size: var(--nudge-text-xs);
+                        color: var(--nudge-color-black-shade02);
+                        .immediate-header {
+                            padding: var(--nudge-padding-margin-lg) 0;
+                            font-weight: 600;
+                            color: var(--nudge-color-black-shade01);
+                        }
+                        .information-block {
+                            .information-block-header {
+                                margin-bottom: var(--nudge-padding-margin-lg);
+                                color: var(--nudge-color-black-shade01);
+                            }
+                        }
+                        .nudge-tag {
+                            width: max-content;
+                            margin-top: var(--nudge-padding-margin-xl);
+                        }
+                        .analyzed-sources-link {
+                            font-weight: 600;
+                            font-size: var(--nudge-text-xxs);
+                            line-height: 100%;
+                            text-decoration: underline;
+                            text-decoration-style: solid;
+                            text-decoration-skip-ink: auto;
+                            color: var(--nudge-color-shocking-blue);
+                            margin-top: var(--nudge-padding-margin-xxl);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

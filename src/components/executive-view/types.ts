@@ -92,3 +92,11 @@ export interface EngagementField {
   name: string;
   isClickAble: boolean;
 }
+
+export interface NudgeProfileStrategy {
+  id: number;
+  rating: number;
+  meetingName: string;
+  tag: string;
+  persons: string[];
+}

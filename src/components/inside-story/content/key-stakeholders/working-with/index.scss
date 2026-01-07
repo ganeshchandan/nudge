@@ -1,0 +1,77 @@
+* {
+    .key-stakeholders {
+        .key-stakeholders-working-with {
+            .key-stakeholders-with-header {
+                padding: 0 var(--nudge-padding-margin-xl);
+                font-weight: 600;
+                font-size: var(--nudge-text-md);
+                line-height: 100%;
+                color: var(--nudge-color-black-shade01);
+                display: grid;
+                grid-gap: var(--nudge-spacing-xs);
+
+                .key-stakeholders-with-sub-header {
+                    font-weight: 400;
+                    font-size: var(--nudge-text-xs);
+                    line-height: 0.625rem;
+                    color: var(--nudge-color-black-shade01);
+                }
+            }
+            .key-stakeholders-working-with-cards {
+                padding: calc(var(--nudge-padding-margin-2xl) + var(--nudge-padding-margin-md))
+                    var(--nudge-padding-margin-2xl);
+                padding-bottom: 5.938rem;
+                display: flex;
+                grid-gap: calc(var(--nudge-padding-margin-2xl) + var(--nudge-padding-margin-md));
+
+                .key-stakeholders-working-with-card {
+                    width: 25rem;
+                    background-image: url("@assets/images/app_image/key-stake-holders-bg.png");
+                    border: 1px solid #d3e5ff;
+                    box-shadow: 0px 0px 20px 0px #00000014;
+                    height: 26.875rem;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 2rem;
+                    padding: 9.313rem var(--nudge-padding-margin-xxl) var(--nudge-padding-margin-xl-plus)
+                        var(--nudge-padding-margin-xxl);
+                    font-size: var(--nudge-text-sm);
+                    display: grid;
+                    grid-template-rows: max-content max-content 1fr;
+                    align-items: self-end;
+                    &:last-child {
+                        transform: translateY(3.125rem);
+                    }
+
+                    .profile-icon {
+                        height: 3.75rem;
+                        width: 3.75rem;
+                        background: unset;
+                    }
+                    .description {
+                        font-weight: 500;
+                        line-height: 1.25rem;
+                        letter-spacing: -0.1px;
+                        color: var(--nudge-color-black);
+                        padding-top: var(--nudge-padding-margin-xl);
+                    }
+                    .key-stakeholder-details {
+                        .key-stakeholder-name {
+                            font-weight: 700;
+                            font-style: Bold;
+                            line-height: 100%;
+                            color: #7547ff;
+                        }
+                        .key-stakeholder-position,
+                        .key-stakeholder-action {
+                            font-weight: 400;
+                            line-height: 100%;
+                            color: var(--nudge-color-black-shade02);
+                            margin-top: var(--nudge-padding-margin-sm);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

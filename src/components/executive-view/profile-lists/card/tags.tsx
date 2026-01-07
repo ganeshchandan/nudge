@@ -1,4 +1,4 @@
-import { NudegeTag } from "@components/common";
+import { NudgeTag } from "@components/common";
 import type { FC } from "react";
 
 interface ExecutiveViewCardTagsProps {
@@ -11,7 +11,7 @@ export const ExecutiveViewCardTags: FC<ExecutiveViewCardTagsProps> = ({
   return (
     <div className="executive-capital-tags">
       {tags.map((tag) => (
-        <NudegeTag className="executive-card-tags" key={tag} tagName={tag} />
+        <NudgeTag className="executive-card-tags" key={tag} tagName={tag} />
       ))}
     </div>
   );

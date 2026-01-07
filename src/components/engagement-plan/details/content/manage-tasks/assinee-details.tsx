@@ -1,5 +1,5 @@
 import {
-  NudegeTag,
+  NudgeTag,
   OverflowContainer,
   ProfileDetails,
 } from "@components/common";
@@ -24,10 +24,10 @@ export const AssineeDetails = () => {
           />
         </ManageTaskTitleContent>
         <ManageTaskTitleContent title="Priority">
-          <NudegeTag tagName={"High"} className="plan-priority" />
+          <NudgeTag tagName={"High"} className="plan-priority" />
         </ManageTaskTitleContent>
         <ManageTaskTitleContent title="Status">
-          <NudegeTag tagName={"In Progress"} className="plan-status" />
+          <NudgeTag tagName={"In Progress"} className="plan-status" />
         </ManageTaskTitleContent>
         <ManageTaskTitleContent title="Due Date">
           <div className="plan-due-date">Sep 28, 2025</div>

@@ -15,9 +15,16 @@ export const ProfileDetails: FC<ProfileDetailsProps> = ({
   teamName,
   className = "",
 }) => {
+  // Check if imageUrl is a URL or an APP_IMAGES key
+  const imageSrc = imageUrl.startsWith("http") || imageUrl.startsWith("/") 
+    ? imageUrl 
+    : APP_IMAGES[imageUrl] || imageUrl;
+
   return (
     <div className={`profile-details ${className}`}>
-      <img src={APP_IMAGES[imageUrl]} className="profile-details-image" />
+      <div className="profile-details-image-wrapper">
+        <img src={imageSrc} className="profile-details-image" alt={name} />
+      </div>
       <div className="profile-details-name-company">
         <div className="profile-details-name">{name}</div>
         {teamName && (

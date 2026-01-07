@@ -7,10 +7,21 @@ import {
   NONE_STRING,
   SAMPLE_TASK_DATA,
 } from "@components/engagement-plan/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchTaskDetails } from "@services/tasks";
 
 export const TaskListTableContent = () => {
   const [selectedTask, setSelectedTask] = useState<number>(1);
+  const [_, setTasklists] = useState<any>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetchTaskDetails("695d0df5fd1cf15d1f6be3ac");
+      setTasklists(response);
+    };
+
+    fetchData();
+  }, []);
 
   const handleSelectTask: React.MouseEventHandler<HTMLDivElement> = (event) => {
     const id = Number(event.currentTarget.dataset.taskid);

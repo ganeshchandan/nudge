@@ -4,6 +4,7 @@ import {
   StatsDashboardReducer,
   LeadsDashboardReducer,
   LineDashboardReducer,
+  AiChatReducers,
 } from "@stores/reducers";
 
 const reducer = combineReducers({
@@ -11,6 +12,7 @@ const reducer = combineReducers({
   statsDashboard: StatsDashboardReducer,
   leadsDashboard: LeadsDashboardReducer,
   lineDashboard: LineDashboardReducer,
+  aiChat: AiChatReducers,
 });
 
 export type RootState = ReturnType<typeof reducer>;

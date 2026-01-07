@@ -26,6 +26,7 @@ export const ExecutiveViewCardDetails: FC<ExecutiveViewCardDetailsProps> = ({
               <Component
                 executiveCapitalDetails={detailsStats[id] as any}
                 showProgress={showProgress}
+                label={name}
               />
             )}
           </ExecutiveViewDetailItem>

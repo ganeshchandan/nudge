@@ -3,6 +3,10 @@ import "@components/common/lifecycle/index.scss";
 import type { LifecycleProps } from "./types";
 import { EventItem } from "./event-item";
 
+// Constants
+const ARROW_INDICATOR = " >>>";
+const MILESTONE_INDICES = [2]; // Indices where milestone arrows should appear
+
 export const Lifecycle: FC<LifecycleProps> = ({
   startDate,
   endDate,
@@ -11,9 +15,12 @@ export const Lifecycle: FC<LifecycleProps> = ({
   className = "",
 }) => {
   const totalDays = useMemo(() => {
-    return Math.ceil(
-      (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
-    );
+    const diff = endDate.getTime() - startDate.getTime();
+    if (diff <= 0) {
+      console.warn("Lifecycle: endDate must be after startDate");
+      return 1; // Prevent division by zero
+    }
+    return Math.ceil(diff / (1000 * 60 * 60 * 24));
   }, [startDate, endDate]);
 
   const monthMarkers = useMemo(() => {
@@ -68,25 +75,32 @@ export const Lifecycle: FC<LifecycleProps> = ({
 
   const eventsByPosition = useMemo(() => {
     const above: typeof events = [];
+    const middle: typeof events = [];
     const below: typeof events = [];
     events.forEach((event) => {
       if (event.position === "above") {
         above.push(event);
+      } else if (event.position === "middle") {
+        middle.push(event);
       } else {
         below.push(event);
       }
     });
-    return { above, below };
+    return { above, middle, below };
   }, [events]);
 
   return (
-    <div className={`lifecycle-container ${className}`}>
+    <div 
+      className={`lifecycle-container ${className}`}
+      role="region"
+      aria-label="Timeline lifecycle view"
+    >
       {/* Emoji indicators on the left */}
-      <div className="lifecycle-sentiment-indicators">
-        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-positive">
+      <div className="lifecycle-sentiment-indicators" aria-hidden="true">
+        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-positive" aria-label="Positive sentiment">
           ⭐
         </div>
-        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-negative">
+        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-negative" aria-label="Negative sentiment">
           😔
         </div>
       </div>
@@ -94,7 +108,7 @@ export const Lifecycle: FC<LifecycleProps> = ({
       {/* Main timeline */}
       <div className="lifecycle-timeline-wrapper">
         {/* Month markers */}
-        <div className="lifecycle-month-markers">
+        <div className="lifecycle-month-markers" role="list" aria-label="Month markers">
           {monthMarkersWithPositions.map((markerData, index) => {
             const isFirst = index === 0;
             const isLast = index === monthMarkersWithPositions.length - 1;
@@ -103,6 +117,8 @@ export const Lifecycle: FC<LifecycleProps> = ({
                     key={index}
                     className="lifecycle-month-marker"
                     style={{ left: `${markerData.position}%` }}
+                    role="listitem"
+                    aria-label={formatMonthLabel(markerData.date)}
                   >
                     <div className={`lifecycle-month-marker-line ${isFirst ? 'lifecycle-month-marker-line-first' : ''}`} />
                 <div
@@ -132,6 +148,8 @@ export const Lifecycle: FC<LifecycleProps> = ({
               style={{ 
                 left: `calc(${getDatePosition(segments[0].startDate)}% + 2.5rem)` 
               }}
+              aria-label="Timeline start"
+              role="img"
             />
           )}
           
@@ -142,10 +160,14 @@ export const Lifecycle: FC<LifecycleProps> = ({
                 key={segment.id}
                 className={`lifecycle-segment lifecycle-segment-${segment.color}`}
                 style={segment.styles}
+                role="region"
+                aria-label={`Timeline segment ${index + 1}: ${segment.label || segment.color}`}
               >
                 {/* Arrow markers for milestones */}
-                {(index === 2 || index === segmentsWithStyles.length - 1) && (
-                  <div className="lifecycle-segment-arrows">{" >>>"}</div>
+                {(MILESTONE_INDICES.includes(index) || index === segmentsWithStyles.length - 1) && (
+                  <div className="lifecycle-segment-arrows" aria-hidden="true">
+                    {ARROW_INDICATOR}
+                  </div>
                 )}
               </div>
             ))}
@@ -159,6 +181,18 @@ export const Lifecycle: FC<LifecycleProps> = ({
               key={event.id}
               event={event}
               position="above"
+              getDatePosition={getDatePosition}
+            />
+          ))}
+        </div>
+
+        {/* Events on timeline (middle) */}
+        <div className="lifecycle-events lifecycle-events-middle">
+          {eventsByPosition.middle.map((event) => (
+            <EventItem
+              key={event.id}
+              event={event}
+              position="middle"
               getDatePosition={getDatePosition}
             />
           ))}

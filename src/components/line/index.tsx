@@ -62,7 +62,7 @@ export const Lines = () => {
         cardCapitalDetails: EXECUTIVE_CAPITAL_DETAILS,
         engagementFields: ENGAGEMENT_FIELDS,
         quickLinks: {
-          headerName: "Profile Category",
+          headerName: "Account category",
           links: QUICK_LINKS,
         },
       }}

@@ -12,62 +12,34 @@ export interface LineDashboardState {
   detailedViewStats: DetailedViewStats;
   selectedExecutiveID: number;
   companyIdMap: Record<number, string>; // Maps executive ID to company_id
+  companyOtherFields?: Array<{
+    field_name: string;
+    field_value: string | string[] | any;
+  }>; // Stores other_fields from company dossier
 }
 
 const initialState: LineDashboardState = {
   selectedExecutiveID: -1,
   companyIdMap: {},
+  companyOtherFields: [],
   executiveCapitalDetails: {
     executiveCapitals: [],
     overallStats: {
-      dipsFlagged: "02",
-      competitorEntry: "01",
-      uniqueOffering: "02",
+      dipsFlagged: "",
+      competitorEntry: "",
+      uniqueOffering: "",
     },
   },
   detailedViewStats: {
-    id: 124,
-    image: "userIcon2",
-    name: "Murdo Gordon",
-    teamName: "EVP Global Commercial Ops | Amgen",
+    id: -1,
+    image: "",
+    name: "",
+    teamName: "",
     engagementScores: {
-      sentiment: "none",
-      accountRelationship: "weak",
+      sentiment: "",
+      accountRelationship: "",
     },
-    oneMinuteSummary: [
-      {
-        header: "",
-        content:
-          "Need to make an impression in 1 go we may not get many chances",
-      },
-      { header: "", content: "Must avoid over indexing on USA only thinking" },
-      {
-        header: "",
-        content:
-          "Summarize thoughts in first 10 min (insight → opportunity → implication for Amgen) then elaborate",
-      },
-      {
-        header: "",
-        content:
-          "Driven by numbers and quantifiable actions- Looks for “Financial Sense”",
-      },
-      {
-        header: "",
-        content:
-          "Quick Turnarounds / Bold Decisions (he is known for his bold pricing strategies)",
-      },
-      {
-        header: "",
-        content:
-          "Believes in scale - APAC focused for growthon his mind & seems his personal agenda",
-      },
-      {
-        header: "",
-        content: "Favouritism with empowerment of close trusted team",
-      }
-      
-      
-    ],
+    oneMinuteSummary: [],
   },
 };
 
@@ -150,14 +122,54 @@ export const lineDashboardConfig = createSlice({
       // Map dossier fields to detailedViewStats based on API response structure
       const { dossier } = action.payload;
       
-      // Map one_minute_summary if available
-      if (dossier.one_minute_summary && Array.isArray(dossier.one_minute_summary)) {
-        const oneMinuteSummary: OneMinuteSummary[] = dossier.one_minute_summary.map((item: any) => {
-          const header = typeof item === 'string' ? "" : (item.header || item.title || "").trim();
-          const content = typeof item === 'string' ? item.trim() : (item.content || item.description || "").trim();
-          return { header, content };
-        });
-        state.detailedViewStats.oneMinuteSummary = oneMinuteSummary;
+      // Store other_fields from company dossier
+      if (dossier.other_fields && Array.isArray(dossier.other_fields)) {
+        state.companyOtherFields = dossier.other_fields;
+        
+        // Extract one_minute_summary from other_fields
+        const oneMinuteSummaryField = dossier.other_fields.find(
+          (field) => field.field_name === "one_minute_summary"
+        );
+        
+        if (oneMinuteSummaryField && Array.isArray(oneMinuteSummaryField.field_value)) {
+          const oneMinuteSummary: OneMinuteSummary[] = oneMinuteSummaryField.field_value
+            .map((item: any) => {
+              // Handle case where item is a string
+              if (typeof item === 'string') {
+                return {
+                  header: "",
+                  content: item.trim(),
+                };
+              }
+              // Handle case where item is an object
+              return {
+                header: (item.header || item.title || "").trim(),
+                content: (item.content || item.description || "").trim(),
+              };
+            });
+          
+          state.detailedViewStats.oneMinuteSummary = oneMinuteSummary;
+        } else {
+          // Fallback: check for one_minute_summary at root level
+          if (dossier.one_minute_summary && Array.isArray(dossier.one_minute_summary)) {
+            const oneMinuteSummary: OneMinuteSummary[] = dossier.one_minute_summary.map((item: any) => {
+              const header = typeof item === 'string' ? "" : (item.header || item.title || "").trim();
+              const content = typeof item === 'string' ? item.trim() : (item.content || item.description || "").trim();
+              return { header, content };
+            });
+            state.detailedViewStats.oneMinuteSummary = oneMinuteSummary;
+          }
+        }
+      } else {
+        // If other_fields not available, try root level one_minute_summary
+        if (dossier.one_minute_summary && Array.isArray(dossier.one_minute_summary)) {
+          const oneMinuteSummary: OneMinuteSummary[] = dossier.one_minute_summary.map((item: any) => {
+            const header = typeof item === 'string' ? "" : (item.header || item.title || "").trim();
+            const content = typeof item === 'string' ? item.trim() : (item.content || item.description || "").trim();
+            return { header, content };
+          });
+          state.detailedViewStats.oneMinuteSummary = oneMinuteSummary;
+        }
       }
       
       // Map other fields as needed based on API response structure

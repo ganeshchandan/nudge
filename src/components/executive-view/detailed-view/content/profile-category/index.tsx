@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import React, { type FC, useEffect, useState } from "react";
 import "@components/executive-view/detailed-view/content/profile-category/index.scss";
 
 interface ProfileCategoryItem {
@@ -11,9 +11,9 @@ interface ProfileCategoryProps {
   selectedQuickLinkId?: string;
 }
 
-export const ProfileCategory: FC<ProfileCategoryProps> = ({
-  otherFields = [],
-  selectedQuickLinkId,
+export const ProfileCategory: FC<ProfileCategoryProps> = ({ 
+  otherFields = [], 
+  selectedQuickLinkId 
 }) => {
   // Find the field that matches the selected quick link
   const selectedField = React.useMemo(() => {
@@ -22,42 +22,29 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
     }
 
     // Try to match by field_name (converting to various formats)
-    const normalizedQuickLinkId = selectedQuickLinkId
-      .toLowerCase()
-      .replace(/\s+/g, "_");
-
-    return (
-      otherFields.find((field) => {
-        const normalizedFieldName = field.field_name.toLowerCase();
-        // Match exact field_name, or check if field_name contains the quick link id
-        return (
-          normalizedFieldName === normalizedQuickLinkId ||
-          normalizedFieldName.includes(normalizedQuickLinkId) ||
-          normalizedQuickLinkId.includes(normalizedFieldName)
-        );
-      }) || otherFields[0]
-    );
+    const normalizedQuickLinkId = selectedQuickLinkId.toLowerCase().replace(/\s+/g, '_');
+    
+    return otherFields.find(field => {
+      const normalizedFieldName = field.field_name.toLowerCase();
+      // Match exact field_name, or check if field_name contains the quick link id
+      return normalizedFieldName === normalizedQuickLinkId || 
+             normalizedFieldName.includes(normalizedQuickLinkId) ||
+             normalizedQuickLinkId.includes(normalizedFieldName);
+    }) || otherFields[0];
   }, [selectedQuickLinkId, otherFields]);
 
-  const renderFieldValue = (
-    value: string | string[] | any
-  ): React.ReactNode => {
+  const renderFieldValue = (value: string | string[] | any): React.ReactNode => {
     // Handle empty arrays
     if (Array.isArray(value) && value.length === 0) {
       return <div className="empty-field">No data available</div>;
     }
 
     // Handle string values
-    if (typeof value === "string") {
+    if (typeof value === 'string') {
       // Check if it's a URL
-      if (value.startsWith("http://") || value.startsWith("https://")) {
+      if (value.startsWith('http://') || value.startsWith('https://')) {
         return (
-          <a
-            href={value}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="field-link"
-          >
+          <a href={value} target="_blank" rel="noopener noreferrer" className="field-link">
             {value}
           </a>
         );
@@ -66,11 +53,7 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
     }
 
     // Handle array of strings
-    if (
-      Array.isArray(value) &&
-      value.length > 0 &&
-      typeof value[0] === "string"
-    ) {
+    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'string') {
       return (
         <ul className="field-list">
           {value.map((item, index) => (
@@ -81,20 +64,14 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
     }
 
     // Handle array of objects (like GT_tags)
-    if (
-      Array.isArray(value) &&
-      value.length > 0 &&
-      typeof value[0] === "object"
-    ) {
+    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
       return (
         <div className="field-object-list">
           {value.map((item: any, index: number) => (
             <div key={index} className="field-object-item">
               {Object.entries(item).map(([key, val]) => (
                 <div key={key} className="field-object-field">
-                  <span className="field-object-key">
-                    {formatFieldName(key)}:
-                  </span>
+                  <span className="field-object-key">{formatFieldName(key)}:</span>
                   <span className="field-object-value">{String(val)}</span>
                 </div>
               ))}
@@ -105,7 +82,7 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
     }
 
     // Fallback: JSON stringify for any other object
-    if (typeof value === "object" && value !== null) {
+    if (typeof value === 'object' && value !== null) {
       return <pre className="field-json">{JSON.stringify(value, null, 2)}</pre>;
     }
 
@@ -115,9 +92,9 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
   const formatFieldName = (fieldName: string): string => {
     // Convert snake_case to Title Case
     return fieldName
-      .split("_")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(" ");
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
   };
 
   return (
@@ -141,3 +118,4 @@ export const ProfileCategory: FC<ProfileCategoryProps> = ({
     </div>
   );
 };
+

@@ -11,6 +11,7 @@ interface QuickLinksProps {
   className?: string;
   headerName: string;
   quickLinks: QuickLink[];
+  selectedId?: string;
   onLinkSelect?: (quickLink: string) => void;
 }
 
@@ -18,12 +19,23 @@ export const QuickLinks: FC<QuickLinksProps> = ({
   className = "",
   headerName,
   quickLinks,
+  selectedId: controlledSelectedId,
   onLinkSelect,
 }) => {
-  const [selectedId, setSelectedId] = useState<string>(quickLinks[0]?.id);
+  const [internalSelectedId, setInternalSelectedId] = useState<string>(quickLinks[0]?.id || "");
   const [indicatorTop, setIndicatorTop] = useState<number>(0);
 
+  // Use controlled selectedId if provided, otherwise use internal state
+  const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId;
+
   const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  // Sync internal state when quickLinks change
+  useEffect(() => {
+    if (quickLinks.length > 0 && !quickLinks.find(link => link.id === selectedId)) {
+      setInternalSelectedId(quickLinks[0].id);
+    }
+  }, [quickLinks, selectedId]);
 
   useEffect(() => {
     const selectedEl = itemRefs.current[selectedId];
@@ -34,7 +46,9 @@ export const QuickLinks: FC<QuickLinksProps> = ({
   }, [selectedId]);
 
   const onSelect = (id: string) => {
-    setSelectedId(id);
+    if (controlledSelectedId === undefined) {
+      setInternalSelectedId(id);
+    }
     onLinkSelect?.(id);
   };
 

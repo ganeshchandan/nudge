@@ -34,56 +34,6 @@ export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
   },
 ];
 
-export const ENGAGEMENT_FIELDS: EngagementField[] = [
-  {
-    type: "sentiment",
-    id: "sentiment",
-    name: "Sentiment",
-    isClickAble: false,
-  },
-  {
-    type: "status-text",
-    id: "accountRelationship",
-    name: "Account Relationship",
-    isClickAble: false,
-  },
-];
+export const ENGAGEMENT_FIELDS: EngagementField[] = [];
 
-export const QUICK_LINKS: QuickLink[] = [
-  {
-    name: "1 Minute Summary",
-    id: "1MinuteSummary",
-  },
-  {
-    name: "Personal Life",
-    id: "PersonalLife",
-  },
-  {
-    name: "Summits he attends",
-    id: "summitsheattends",
-  },
-  {
-    name: "Him at Amgen",
-    id: "himAtAmgen",
-  },
-  {
-    name: "Personality Traits",
-    id: "personalityTraits",
-  },
-  {
-    name: "Themes of interest",
-    id: "themesofinterest",
-  },
-  {
-    name: "Who influences him ?",
-    id: "whoinfluenceshim",
-  },
-  {
-    name: "Version History",
-    id: "versionHistory",
-  },
-  {
-    name: "Notes",
-    id: "notes",
-  },
-];
+export const QUICK_LINKS: QuickLink[] = [];

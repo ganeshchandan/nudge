@@ -18,9 +18,10 @@ export interface Profile {
 export type ProfilesResponse = Profile[];
 
 // Use proxy in development, direct URL in production
-const PROFILES_API_URL = import.meta.env.DEV
-  ? "/api/v2/api/profiles/" // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/profiles/"; // Direct URL in production
+const PROFILES_API_URL = "/api/v2/api/profiles/";
+// import.meta.env.DEV
+//   ? "/api/v2/api/profiles/" // Use Vite proxy: /api -> http://54.83.73.24:8000
+//   : "http://54.83.73.24:8000/v2/api/profiles/"; // Direct URL in production
 
 /**
  * Fetches profiles data from the API

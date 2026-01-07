@@ -110,7 +110,7 @@ export const InternalComponent: FC = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return null;
   }
 
   return <KnowledgeMap nodes={nodes} edges={edges} />;

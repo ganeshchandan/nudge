@@ -2,8 +2,9 @@ import axios from "@services/axios-interceptors";
 
 // Use proxy in development, direct URL in production
 const API_BASE_URL = "/api/v2/api/network-intelligence";
-// ? "/api/v2/api/network-intelligence"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-// : "http://54.83.73.24:8000/v2/api/network-intelligence";  // Direct URL in production
+// import.meta.env.DEV
+//   ? "/api/v2/api/network-intelligence"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+//   : "http://54.83.73.24:8000/v2/api/network-intelligence";  // Direct URL in production
 
 export interface NetworkIntelligencePerson {
   id: string;

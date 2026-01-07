@@ -91,7 +91,7 @@ export const ExternalComponent: FC = () => {
         setEdges(graphEdges);
       } catch (err) {
         console.error("Failed to load network intelligence data:", err);
-        setError("Failed to load network data");
+        // Don't display error message to user
       } finally {
         setLoading(false);
       }
@@ -104,8 +104,9 @@ export const ExternalComponent: FC = () => {
     return <div>Loading network data...</div>;
   }
 
+  // Don't display error message
   if (error) {
-    return <div>Error: {error}</div>;
+    return null;
   }
 
   return (

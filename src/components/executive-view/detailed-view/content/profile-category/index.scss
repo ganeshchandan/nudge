@@ -1,7 +1,8 @@
 .profile-category-container {
   display: flex;
-  height: 100%;
-  min-height: 400px;
+  height: 30%;
+  margin: var(--nudge-spacing-xl);
+  margin-bottom: 0;
 
   .profile-category-content {
     flex: 1;
@@ -12,10 +13,10 @@
     .profile-category-content-wrapper {
       display: flex;
       flex-direction: column;
-      gap: var(--nudge-spacing-md);
+      gap: var(--nudge-spacing-xs);
 
       .profile-category-content-title {
-        font-size: var(--nudge-text-md);
+        font-size: var(--nudge-text-sm);
         font-weight: 600;
         color: var(--nudge-color-text-primary);
         padding-bottom: var(--nudge-spacing-sm);
@@ -24,13 +25,14 @@
       }
 
       .profile-category-content-text {
-        font-size: var(--nudge-text-sm);
+        font-size: var(--nudge-text-xs);
         color: var(--nudge-color-text-primary);
         line-height: 1.6;
         word-wrap: break-word;
 
         .field-text {
           white-space: pre-wrap;
+          font-size: var(--nudge-text-xs);
         }
 
         .field-link {
@@ -46,10 +48,11 @@
           list-style: disc;
           padding-left: var(--nudge-spacing-lg);
           margin: 0;
-          font-size: var(--nudge-text-sm);
+          font-size: var(--nudge-text-xs);
 
           li {
-            margin-bottom: var(--nudge-spacing-xs);
+            margin-bottom: 0;
+            line-height: 1.4;
           }
         }
 
@@ -71,12 +74,12 @@
 
               .field-object-key {
                 font-weight: 600;
-                font-size: var(--nudge-text-sm);
+                font-size: var(--nudge-text-xs);
                 min-width: 120px;
               }
 
               .field-object-value {
-                font-size: var(--nudge-text-sm);
+                font-size: var(--nudge-text-xs);
                 color: var(--nudge-color-text-secondary);
               }
             }
@@ -89,11 +92,11 @@
           border-radius: var(--nudge-border-radius-sm);
           overflow-x: auto;
           font-family: monospace;
-          font-size: var(--nudge-text-sm);
+          font-size: var(--nudge-text-xs);
         }
 
         .empty-field {
-          font-size: var(--nudge-text-sm);
+          font-size: var(--nudge-text-xs);
           color: var(--nudge-color-text-secondary);
           font-style: italic;
         }

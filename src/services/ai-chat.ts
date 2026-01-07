@@ -8,7 +8,7 @@ interface ChatResponse {
 }
 
 const CHAT_API_URL = import.meta.env.DEV
-  ? "/api/v2/api/chatbot/chat"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+  ? "/api/v2/api/chatbot/chat" // Use Vite proxy: /api -> http://54.83.73.24:8000
   : "http://54.83.73.24:8000/v2/api/chatbot/chat";
 
 export const getChatMessage = async (question: string): Promise<string> => {
@@ -41,7 +41,7 @@ export const getChatMessage = async (question: string): Promise<string> => {
           "http://54.83.73.24:8000/v2/api/chatbot/chat",
           {
             question,
-            conversation_id: "",
+            conversation_id: "string",
             conversation_history: [],
           },
           {

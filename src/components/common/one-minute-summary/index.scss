@@ -1,16 +1,21 @@
 * {
   .one-minute-summary {
     width: 100%;
+    height: 100%;
     padding: var(--nudge-padding-margin-xl);
     padding-right: calc(var(--nudge-padding-margin-xl) + var(--nudge-spacing-lg));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .one-minute-summary-title {
       font-size: var(--nudge-text-md);
-      font-weight: var(--nudge-font-weight-bold);
+      font-weight: 600;
       color: var(--nudge-color-black-shade01);
       margin: 0 0 var(--nudge-spacing-lg) 0;
+      line-height: normal;
     }
-
 
     .one-minute-summary-card {
       background: var(--nudge-color-magnolia-heart);

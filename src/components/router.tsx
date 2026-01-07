@@ -4,22 +4,38 @@ import { PublicRoute } from "@components/router-guards";
 import { NudgeDashboard } from "@components/dashboard";
 
 // Lazy load route components for code splitting
-const StatsDashboard = lazy(() => import("@components/stats-dashboard").then(m => ({ default: m.StatsDashboard })));
-const LoginPage = lazy(() => import("@components/login").then(m => ({ default: m.LoginPage })));
-const Leads = lazy(() => import("@components/leads").then(m => ({ default: m.Leads })));
-const Lines = lazy(() => import("@components/line").then(m => ({ default: m.Lines })));
-const EngagementPlan = lazy(() => import("@components/engagement-plan").then(m => ({ default: m.EngagementPlan })));
+const StatsDashboard = lazy(() =>
+  import("@components/stats-dashboard").then((m) => ({
+    default: m.StatsDashboard,
+  }))
+);
+const LoginPage = lazy(() =>
+  import("@components/login").then((m) => ({ default: m.LoginPage }))
+);
+const Leads = lazy(() =>
+  import("@components/leads").then((m) => ({ default: m.Leads }))
+);
+const Lines = lazy(() =>
+  import("@components/line").then((m) => ({ default: m.Lines }))
+);
+const EngagementPlan = lazy(() =>
+  import("@components/engagement-plan").then((m) => ({
+    default: m.EngagementPlan,
+  }))
+);
 
 // Loading fallback component
 const LoadingFallback = () => (
-  <div style={{ 
-    display: "flex", 
-    justifyContent: "center", 
-    alignItems: "center", 
-    height: "100vh",
-    fontSize: "1rem",
-    color: "var(--nudge-color-black-shade02)"
-  }}>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      fontSize: "1rem",
+      color: "var(--nudge-color-black-shade02)",
+    }}
+  >
     Loading...
   </div>
 );

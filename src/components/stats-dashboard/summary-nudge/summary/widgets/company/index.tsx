@@ -35,7 +35,7 @@ export const CompanyWidget: FC<CompanyWidgetProps> = ({
     // Store selected company name and navigate to leads page
     dispatch(setSelectedCompany(name));
     if (name === "Bayer") {
-      navigate("/dashboard/line");
+      navigate("/dashboard/lens");
     } else {
       navigate("/dashboard/leads");
     }
@@ -47,8 +47,10 @@ export const CompanyWidget: FC<CompanyWidgetProps> = ({
       ? image
       : APP_IMAGES[name.toLowerCase()] || image;
 
+  console.log(companyProfile);
+
   return (
-    <NudgeWidget className={`company-widget image-${index}`}>
+    <NudgeWidget className={`company-widget image-${index % 5}`}>
       <div className="company-widget-content" onClick={onCompanyClick}>
         <div className="company-widget-icon">
           <img src={imageSrc} alt={name} />

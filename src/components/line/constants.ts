@@ -9,20 +9,7 @@ import type {
   OverallStatsField,
 } from "@components/executive-view/types";
 
-export const OVERALL_STATS_FIELDS: OverallStatsField[] = [
-  {
-    name: "Dips Flagged",
-    id: "dipsFlagged",
-  },
-  {
-    name: "Competitor Entry ",
-    id: "competitorEntry",
-  },
-  {
-    name: "Unique Offering",
-    id: "uniqueOffering",
-  },
-];
+export const OVERALL_STATS_FIELDS: OverallStatsField[] = [];
 
 export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
   {

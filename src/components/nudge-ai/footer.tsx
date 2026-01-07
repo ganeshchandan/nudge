@@ -10,6 +10,7 @@ export const NudgeAIFooter: FC<NudgeAIFooterProps> = () => {
   const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
+
   const handleSend = () => {
     if (!message.trim()) return;
 

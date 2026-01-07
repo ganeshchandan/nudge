@@ -1,4 +1,4 @@
-import { type FC, useState } from "react";
+import { type FC } from "react";
 import "@components/inside-story/content/index.scss";
 import { OrganizationalOverview } from "./organizational-overview";
 import { DigitalFocus } from "./digital-focus";
@@ -27,8 +27,16 @@ const categories: QuickLink[] = [
   { name: "Engagement Roadmap", id: "engagementRoadmap" },
 ];
 
-export const InsideStoryContent: FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("scoreCard");
+interface InsideStoryContentProps {
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const InsideStoryContent: FC<InsideStoryContentProps> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => {
+  // const [selectedCategory, setSelectedCategory] = useState<string>("scoreCard");
 
   const renderContent = () => {
     switch (selectedCategory) {

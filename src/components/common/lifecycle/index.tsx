@@ -163,27 +163,72 @@ export const Lifecycle: FC<LifecycleProps> = ({
                 role="region"
                 aria-label={`Timeline segment ${index + 1}: ${segment.label || segment.color}`}
               >
-                {/* Arrow markers for milestones */}
-                {(MILESTONE_INDICES.includes(index) || index === segmentsWithStyles.length - 1) && (
-                  <div className="lifecycle-segment-arrows" aria-hidden="true">
-                    {ARROW_INDICATOR}
-                  </div>
-                )}
               </div>
             ))}
           </div>
+
+          {/* Flag icon at end */}
+          <div
+            className="lifecycle-timeline-end-flag"
+            style={{ 
+              left: `calc(${getDatePosition(endDate)}% + 1.5rem)` 
+            }}
+            aria-label="Timeline end"
+            role="img"
+          >
+            🚩
+          </div>
         </div>
 
-        {/* Events above timeline */}
+        {/* Events above timeline - grouped by date for vertical stacking */}
         <div className="lifecycle-events lifecycle-events-above">
-          {eventsByPosition.above.map((event) => (
-            <EventItem
-              key={event.id}
-              event={event}
-              position="above"
-              getDatePosition={getDatePosition}
-            />
-          ))}
+          {(() => {
+            // Group events by date (rounded to month for stacking)
+            const eventsByDate = new Map<string, typeof eventsByPosition.above>();
+            eventsByPosition.above.forEach((event) => {
+              const dateKey = `${event.date.getFullYear()}-${event.date.getMonth()}`;
+              if (!eventsByDate.has(dateKey)) {
+                eventsByDate.set(dateKey, []);
+              }
+              eventsByDate.get(dateKey)!.push(event);
+            });
+
+            // Sort events within each group: "meetings-logged" first, then participant names
+            eventsByDate.forEach((groupedEvents) => {
+              groupedEvents.sort((a, b) => {
+                // Meetings logged events first
+                if (a.type === "meetings-logged" && b.type !== "meetings-logged") return -1;
+                if (a.type !== "meetings-logged" && b.type === "meetings-logged") return 1;
+                return 0;
+              });
+            });
+
+            // Render grouped events
+            const renderedGroups: JSX.Element[] = [];
+            eventsByDate.forEach((groupedEvents, dateKey) => {
+              const basePosition = getDatePosition(groupedEvents[0].date);
+              renderedGroups.push(
+                <div
+                  key={`group-${dateKey}`}
+                  className="lifecycle-event-group-wrapper"
+                  style={{ 
+                    left: `${basePosition}%`,
+                  }}
+                >
+                  {groupedEvents.map((event, index) => (
+                    <EventItem
+                      key={event.id}
+                      event={event}
+                      position="above"
+                      getDatePosition={getDatePosition}
+                    />
+                  ))}
+                </div>
+              );
+            });
+
+            return renderedGroups;
+          })()}
         </div>
 
         {/* Events on timeline (middle) */}
@@ -198,25 +243,61 @@ export const Lifecycle: FC<LifecycleProps> = ({
           ))}
         </div>
 
-        {/* Events below timeline */}
+        {/* Events below timeline - grouped by date for vertical stacking */}
         <div className="lifecycle-events lifecycle-events-below">
-          {eventsByPosition.below.map((event) => (
-            <EventItem
-              key={event.id}
-              event={event}
-              position="below"
-              getDatePosition={getDatePosition}
-            />
-          ))}
+          {(() => {
+            // Group events by date (rounded to month for stacking)
+            const eventsByDate = new Map<string, typeof eventsByPosition.below>();
+            eventsByPosition.below.forEach((event) => {
+              const dateKey = `${event.date.getFullYear()}-${event.date.getMonth()}`;
+              if (!eventsByDate.has(dateKey)) {
+                eventsByDate.set(dateKey, []);
+              }
+              eventsByDate.get(dateKey)!.push(event);
+            });
+
+            // Sort events within each group: participant names first, then "meetings-logged"
+            eventsByDate.forEach((groupedEvents) => {
+              groupedEvents.sort((a, b) => {
+                // Participant names first
+                if (a.showParticipantNames && !b.showParticipantNames) return -1;
+                if (!a.showParticipantNames && b.showParticipantNames) return 1;
+                // Then meetings logged
+                if (a.type === "meetings-logged" && b.type !== "meetings-logged") return 1;
+                if (a.type !== "meetings-logged" && b.type === "meetings-logged") return -1;
+                return 0;
+              });
+            });
+
+            // Render grouped events
+            const renderedGroups: JSX.Element[] = [];
+            eventsByDate.forEach((groupedEvents, dateKey) => {
+              const basePosition = getDatePosition(groupedEvents[0].date);
+              renderedGroups.push(
+                <div
+                  key={`group-below-${dateKey}`}
+                  className="lifecycle-event-group-wrapper"
+                  style={{ 
+                    left: `${basePosition}%`,
+                  }}
+                >
+                  {groupedEvents.map((event, index) => (
+                    <EventItem
+                      key={event.id}
+                      event={event}
+                      position="below"
+                      getDatePosition={getDatePosition}
+                    />
+                  ))}
+                </div>
+              );
+            });
+
+            return renderedGroups;
+          })()}
         </div>
       </div>
 
-      {/* Scroll indicator at bottom */}
-      <div className="lifecycle-scroll-indicator">
-        <div className="lifecycle-scroll-indicator-line" />
-        <div className="lifecycle-scroll-indicator-dot" />
-        <div className="lifecycle-scroll-indicator-line" />
-      </div>
     </div>
   );
 };

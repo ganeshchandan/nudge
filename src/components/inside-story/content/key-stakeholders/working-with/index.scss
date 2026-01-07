@@ -39,6 +39,17 @@
                     display: grid;
                     grid-template-rows: max-content max-content 1fr;
                     align-items: self-end;
+                    position: relative;
+
+                    &::after {
+                        content: " ";
+                        background-image: url(/src/assets/images/app_image/tick-image.png);
+                        width: 78.0000000000003px;
+                        height: 58.50000000000022px;
+                        position: absolute;
+                        right: 30px;
+                        bottom: 55px;
+                    }
                     &:last-child {
                         transform: translateY(3.125rem);
                     }

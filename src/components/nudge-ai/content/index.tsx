@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC, useEffect, useRef } from "react";
 import { SUGGESTIONS } from "@components/nudge-ai/constants";
 import { OverflowContainer } from "@components/common";
 import { useSelector } from "react-redux";
@@ -8,6 +8,15 @@ interface NudgeAIContentProps {}
 
 export const NudgeAIContent: FC<NudgeAIContentProps> = () => {
   const { messages } = useSelector((state: RootState) => state.aiChat);
+
+  // Ref for the last message element
+  const bottomRef = useRef<HTMLLIElement | null>(null);
+
+  // Scroll to bottom whenever messages change
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <OverflowContainer>
       <div className="nudge-ai-content">
@@ -16,15 +25,16 @@ export const NudgeAIContent: FC<NudgeAIContentProps> = () => {
           {SUGGESTIONS.map((suggestion) => (
             <li key={suggestion.id}>{suggestion.text}</li>
           ))}
-          {messages.map(({ type, message }) => (
-            <li className={`${type}-message`}>{message}</li>
+          {messages.map(({ type, message }, idx) => (
+            <li
+              key={idx}
+              className={`${type}-message`}
+              ref={idx === messages.length - 1 ? bottomRef : null} // attach ref to last message
+            >
+              {message}
+            </li>
           ))}
         </ul>
-        {/* {HELPERS.map((helper) => (
-            <p className="helper-cta" key={helper.id}>
-              {helper.text}
-            </p>
-          ))} */}
       </div>
     </OverflowContainer>
   );

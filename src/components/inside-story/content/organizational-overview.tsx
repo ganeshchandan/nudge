@@ -1,12 +1,12 @@
 import { type FC } from "react";
-import { RegionalDonutChart } from "./regional-donut-chart";
+import { RevenueDonutChart } from "./revenue-donut-chart";
 
 export const OrganizationalOverview: FC = () => {
   return (
     <div className="organizational-overview">
       <h2 className="section-title">Organizational Overview</h2>
       <div className="overview-content">
-        <RegionalDonutChart />
+        <RevenueDonutChart />
         <div className="key-changes">
           <ul className="changes-list">
             <li>

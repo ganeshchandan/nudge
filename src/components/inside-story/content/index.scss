@@ -1,8 +1,25 @@
 * {
+  p,
+  div {
+    font-family: IBM Plex Sans;
+  }
+  .product-connector {
+    font-size: var(--nudge-text-lg);
+    font-weight: 600;
+    color: #7547ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 9px;
+    height: 10px;
+    margin: 0 5px;
+  }
   .inside-story-main-content {
     // overflow-y: auto;
     // overflow-x: hidden;
-    // height: 100%;
+    height: 100%;
 
     .inside-story-main {
       display: flex;
@@ -10,15 +27,15 @@
       gap: 0;
 
       .inside-story-main-title {
-        color: var(--Black, #343434);
-        font-family: "IBM Plex Sans";
+        color: #343434;
+        font-family: "IBM Plex Sans", sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        letter-spacing: -0.1px;
         margin: 0 0 32px 0;
-        padding-left: 16px;
+        padding-left: 32px;
+        letter-spacing: -0.1px;
       }
       .inside-story-content {
         display: grid;
@@ -61,9 +78,10 @@
     }
 
     .account-plan-category-header {
+      font-family: "IBM Plex Sans", sans-serif;
       font-weight: 600;
-      font-size: var(--nudge-text-xs);
-      color: var(--nudge-color-black-shade01);
+      font-size: 12px;
+      color: #343434;
       padding-bottom: var(--nudge-padding-margin-xl-plus);
       text-transform: uppercase;
       letter-spacing: -0.1px;
@@ -77,10 +95,11 @@
       align-content: flex-start;
 
       .category-item {
+        font-family: "IBM Plex Sans", sans-serif;
         font-weight: 400;
-        font-size: var(--nudge-text-xs);
-        line-height: 0.625rem;
-        color: var(--nudge-color-black-shade02);
+        font-size: 12px;
+        line-height: normal;
+        color: #707070;
         height: 2rem;
         display: flex;
         align-items: center;
@@ -91,7 +110,7 @@
 
         &.active {
           font-weight: 500;
-          color: var(--nudge-color-black-shade01);
+          color: #343434;
         }
 
         &:hover {
@@ -107,15 +126,16 @@
       border: none;
       background: transparent;
       color: #1e53ff;
+      font-family: "IBM Plex Sans", sans-serif;
       font-weight: 400;
-      font-size: var(--nudge-text-xs);
+      font-size: 12px;
       text-transform: none;
       text-decoration: underline;
       padding: 0;
       text-align: left;
       cursor: pointer;
-      letter-spacing: -0.1px;
       line-height: 12px;
+      letter-spacing: -0.1px;
 
       &:hover {
         opacity: 0.8;
@@ -124,7 +144,8 @@
   }
 
   .section-title {
-    font-size: var(--nudge-text-sm);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
     font-weight: 600;
     color: #707070;
     margin: 0 0 10px 0;
@@ -134,14 +155,17 @@
 
   // Organizational Overview
   .organizational-overview {
-    margin-bottom: 48px;
+    padding-bottom: var(--nudge-padding-margin-xxl);
     margin-left: 3rem;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+    border-image-slice: 1;
 
     .overview-content {
       display: flex;
       gap: 48px;
-      align-items: flex-start;
-
+      align-items: center;
+      margin-top: var(--nudge-padding-margin-xxl);
       .key-changes {
         flex: 1;
 
@@ -152,16 +176,19 @@
           padding-left: 21px;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 0;
+          font-family: "IBM Plex Sans", sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          letter-spacing: -0.1px;
 
           li {
-            font-size: var(--nudge-text-sm);
+            font-size: 14px;
             color: #343434;
-            line-height: 20px;
+            line-height: 1.8;
             padding-left: 0;
             position: relative;
             margin-bottom: 0;
-            letter-spacing: -0.1px;
             list-style: disc;
 
             .highlight-purple {
@@ -203,14 +230,12 @@
         font-size: var(--nudge-text-xs);
         font-weight: 600;
         fill: #343434;
-        letter-spacing: -0.1px;
         font-family: "IBM Plex Sans", sans-serif;
       }
 
       .chart-center-text-small {
         font-size: var(--nudge-text-xs);
         fill: #707070;
-        letter-spacing: -0.1px;
         font-family: "IBM Plex Sans", sans-serif;
       }
     }
@@ -280,7 +305,6 @@
           font-weight: 400;
           font-size: var(--nudge-text-xs);
           line-height: normal;
-          letter-spacing: -0.1px;
           margin-bottom: 0;
           white-space: nowrap;
         }
@@ -290,7 +314,6 @@
           font-weight: 600;
           font-size: var(--nudge-text-xs);
           line-height: normal;
-          letter-spacing: -0.1px;
           white-space: nowrap;
         }
 
@@ -336,13 +359,14 @@
 
   // Digital Focus
   .digital-focus {
-    margin-bottom: 48px;
     margin-left: 3rem;
+    padding: var(--nudge-padding-margin-xxl) 0;
 
     .digital-focus-content {
       .investment-amount {
+        font-family: "IBM Plex Sans", sans-serif;
         font-size: 50px;
-        font-weight: 600;
+        font-weight: 400;
         color: #343434;
         margin-bottom: 10px;
         line-height: normal;
@@ -350,23 +374,28 @@
       }
 
       .investment-description {
-        font-size: var(--nudge-text-xs);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
         color: #343434;
         line-height: 18px;
         margin: 0;
-        letter-spacing: -0.1px;
         max-width: 698px;
+        letter-spacing: -0.1px;
       }
     }
   }
 
   // Key Partners
   .key-partners {
-    margin-bottom: 48px;
+    padding: var(--nudge-padding-margin-xxl) 0;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+    border-image-slice: 1;
     margin-left: 3rem;
 
     .section-title {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .partners-grid {
@@ -381,6 +410,8 @@
         gap: 0;
         height: 53px;
         min-width: 0;
+        font-family: IBM Plex Sans;
+        font-weight: 400;
 
         .partner-logo {
           height: 17px;
@@ -397,11 +428,13 @@
         }
 
         .partner-focus {
+          font-family: "IBM Plex Sans", sans-serif;
           font-size: 10.5px;
+          font-weight: 400;
           color: #343434;
           line-height: normal;
-          letter-spacing: -0.1px;
           white-space: normal;
+          letter-spacing: -0.1px;
         }
       }
     }
@@ -409,7 +442,10 @@
 
   // Pipeline & Therapy
   .pipeline-therapy {
-    margin-bottom: 48px;
+    padding: var(--nudge-padding-margin-xxl) 0;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+    border-image-slice: 1;
     margin-left: 3rem;
 
     .section-title {
@@ -418,18 +454,24 @@
 
     .pipeline-content {
       .pipeline-subtitle {
-        font-size: var(--nudge-text-sm);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
         color: #343434;
         margin-bottom: 0;
-        margin-top: 10px;
+        margin-top: 20px;
+        margin-left: 0.625rem;
         letter-spacing: -0.1px;
       }
 
       .peak-sale-label {
-        font-size: var(--nudge-text-xs);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
         color: #707070;
         margin-bottom: 11px;
         margin-top: 10px;
+        margin-left: 0.625rem;
         letter-spacing: -0.1px;
       }
 
@@ -439,17 +481,17 @@
         margin-bottom: 0;
         flex-wrap: wrap;
         align-items: center;
-        margin-top: 54px;
+        margin-top: 0.625rem;
         margin-left: 10px;
 
         .product-card {
-          background:
-            linear-gradient(
-              rgba(99, 180, 255, 0.59) 4.5045%,
-              rgba(157, 126, 253, 0.16) 27.157%,
-              rgba(255, 255, 255, 0) 49.55%
-            ),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%);
+          background: linear-gradient(
+            180deg,
+            rgba(99, 180, 255, 0.59) -4.5%,
+            rgba(157, 126, 253, 0.16) 27.16%,
+            rgba(255, 255, 255, 0) 49.55%
+          );
+
           border: 1px solid #dee2ff;
           border-radius: 16px;
           padding: 21px;
@@ -462,46 +504,33 @@
           justify-content: space-between;
 
           .product-name {
-            font-size: var(--nudge-text-xs);
+            font-family: "IBM Plex Sans", sans-serif;
+            font-size: 12px;
             font-weight: 500;
             margin-bottom: 0;
             color: #343434;
             line-height: 10px;
-            letter-spacing: -0.1px;
             margin-top: 0;
+            letter-spacing: -0.1px;
           }
 
           .product-peak-sale {
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 700;
             font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 0;
-            line-height: normal;
-            color: #343434;
+            line-height: 100%;
             letter-spacing: -0.1px;
-            margin-top: auto;
-            margin-bottom: auto;
+            vertical-align: middle;
+            color: #343434;
           }
 
           .product-year {
-            font-size: var(--nudge-text-xs);
-            color: #707070;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 400;
+            font-size: 12px;
             line-height: 10px;
             letter-spacing: -0.1px;
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-
-          .product-connector {
-            font-size: var(--nudge-text-lg);
-            font-weight: 600;
-            color: #343434;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            width: 9px;
-            height: 10px;
-            margin: 0 5px;
+            color: #707070;
           }
         }
       }
@@ -516,15 +545,20 @@
           margin: 0;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 0;
+          font-family: "IBM Plex Sans", sans-serif;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 1.2;
+          letter-spacing: -0.1px;
 
           li {
-            font-size: var(--nudge-text-sm);
+            font-size: 12px;
             color: #343434;
-            line-height: 20px;
+            line-height: 1.2;
             padding-left: 21px;
             position: relative;
-            letter-spacing: -0.1px;
+            margin-bottom: 10px;
 
             &::before {
               content: "•";
@@ -540,7 +574,10 @@
 
   // Strategic Implications
   .strategic-implications {
-    margin-bottom: 48px;
+    padding: var(--nudge-padding-margin-xxl) 0;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+    border-image-slice: 1;
     margin-left: 3rem;
 
     .section-title {
@@ -557,12 +594,15 @@
       margin-top: 10px;
 
       li {
-        font-size: var(--nudge-text-sm);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
         color: #343434;
-        line-height: 20px;
+        line-height: 1.2;
         padding-left: 21px;
         position: relative;
         letter-spacing: -0.1px;
+        margin-bottom: 10px;
 
         &::before {
           content: "•";

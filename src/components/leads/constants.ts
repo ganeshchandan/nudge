@@ -40,20 +40,7 @@ export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
   },
 ];
 
-export const ENGAGEMENT_FIELDS: EngagementField[] = [
-  {
-    type: "number",
-    id: "activeEngagements",
-    name: "Active Engagements",
-    isClickAble: true,
-  },
-  {
-    type: "percentage",
-    id: "engagementScore",
-    name: "Engagement Score",
-    isClickAble: false,
-  },
-];
+export const ENGAGEMENT_FIELDS: EngagementField[] = [];
 
 export const QUICK_LINKS: QuickLink[] = [
   {

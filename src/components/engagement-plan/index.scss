@@ -6,6 +6,10 @@
             var(--nudge-padding-margin-xxl) var(--nudge-padding-margin-xl-plus);
         position: relative;
 
+        .profile-details {
+            visibility: hidden;
+        }
+
         // &::before {
         //     content: " ";
         //     position: absolute;

@@ -17,6 +17,8 @@ export interface CompanyData {
   executive_summary_report: string;
   model_used?: string;
   generated_at?: string;
+  company_logo_url: string;
+  company: string;
 }
 
 export type CompaniesResponse = CompanyData[];

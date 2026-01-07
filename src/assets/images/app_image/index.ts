@@ -16,7 +16,7 @@ import company3 from "@assets/images/app_image/company_3.png";
 import company4 from "@assets/images/app_image/company_4.png";
 import amgen from "@assets/images/app_image/amgen.png";
 import bayer from "@assets/images/app_image/bayer.png";
-import Pfizer from "@assets/images/app_image/Pfizer.png";
+// import Pfizer from "@assets/images/app_image/Pfizer.png";
 import gilead from "@assets/images/app_image/gilead.png";
 
 import assignee1 from "@assets/images/app_image/assignee_1.png";

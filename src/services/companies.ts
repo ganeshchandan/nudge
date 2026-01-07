@@ -22,10 +22,10 @@ export interface CompanyData {
 export type CompaniesResponse = CompanyData[];
 
 // Use proxy in development, direct URL in production
-const COMPANIES_API_URL = "/api/v2/api/companies/";
-// import.meta.env.DEV
-//   ? "/api/v2/api/companies/"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-//   : "http://54.83.73.24:8000/v2/api/companies/";  // Direct URL in production
+const COMPANIES_API_URL = 
+  import.meta.env.DEV 
+    ? "/api/v2/api/companies/"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+    : "http://54.83.73.24:8000/v2/api/companies/";  // Direct URL in production
 
 /**
  * Fetches companies data from the API
@@ -61,3 +61,4 @@ export const fetchCompanies = async (): Promise<CompaniesResponse> => {
     throw error;
   }
 };
+

@@ -8,19 +8,17 @@ export interface CompanyDossier {
 }
 
 // Use proxy in development, direct URL in production
-const COMPANY_DOSSIER_API_BASE_URL = "/api/v2/api/company-dossier";
-// import.meta.env.DEV
-//   ? "/api/v2/api/company-dossier"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-//   : "http://54.83.73.24:8000/v2/api/company-dossier";  // Direct URL in production
+const COMPANY_DOSSIER_API_BASE_URL = 
+  import.meta.env.DEV 
+    ? "/api/v2/api/company-dossier"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+    : "http://54.83.73.24:8000/v2/api/company-dossier";  // Direct URL in production
 
 /**
  * Fetches company dossier from the API
  * @param companyId - The company ID to fetch dossier for
  * @returns Promise with company dossier data
  */
-export const fetchCompanyDossier = async (
-  companyId: string
-): Promise<CompanyDossier> => {
+export const fetchCompanyDossier = async (companyId: string): Promise<CompanyDossier> => {
   try {
     const url = `${COMPANY_DOSSIER_API_BASE_URL}/${companyId}`;
     const response = await axios.get<CompanyDossier>(url, {
@@ -49,3 +47,4 @@ export const fetchCompanyDossier = async (
     throw error;
   }
 };
+

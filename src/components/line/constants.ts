@@ -56,34 +56,34 @@ export const QUICK_LINKS: QuickLink[] = [
   },
   {
     name: "Personal Life",
-    id: "Personal Life",
+    id: "PersonalLife",
   },
   {
     name: "Summits he attends",
-    id: "Summits he attends",
+    id: "summitsheattends",
   },
   {
     name: "Him at Amgen",
-    id: "",
+    id: "himAtAmgen",
   },
   {
     name: "Personality Traits",
-    id: "",
+    id: "personalityTraits",
   },
   {
     name: "Themes of interest",
-    id: "",
+    id: "themesofinterest",
   },
   {
     name: "Who influences him ?",
-    id: "",
+    id: "whoinfluenceshim",
   },
   {
     name: "Version History",
-    id: "",
+    id: "versionHistory",
   },
   {
     name: "Notes",
-    id: "",
+    id: "notes",
   },
 ];

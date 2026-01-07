@@ -13,12 +13,17 @@ export interface LeadsDashboardState {
   selectedExecutiveID: number;
   selectedCompany: string | null;
   profileIdMap: Record<number, string>; // Maps executive ID to profile_id
+  profileOtherFields?: Array<{
+    field_name: string;
+    field_value: string | string[] | any;
+  }>; // Stores other_fields from profile details
 }
 
 const initialState: LeadsDashboardState = {
   selectedExecutiveID: -1,
   selectedCompany: null,
   profileIdMap: {},
+  profileOtherFields: [],
   executiveCapitalDetails: {
     executiveCapitals: [],
     overallStats: {
@@ -102,44 +107,99 @@ export const leadDashboardConfig = createSlice({
     },
     updateProfileDetails: (state, action: PayloadAction<ProfileDetails>) => {
       console.log("updateProfileDetails - API response:", action.payload);
-      console.log("updateProfileDetails - one_minute_summary:", action.payload.one_minute_summary);
       
-      // Map one minute summary from API response to detailedViewStats
-      if (action.payload.one_minute_summary && Array.isArray(action.payload.one_minute_summary)) {
-        console.log("Processing one_minute_summary array, length:", action.payload.one_minute_summary.length);
+      // Store other_fields from profile details
+      if (action.payload.other_fields && Array.isArray(action.payload.other_fields)) {
+        state.profileOtherFields = action.payload.other_fields;
         
-        const oneMinuteSummary: OneMinuteSummary[] = action.payload.one_minute_summary
-          .map((item: any) => {
-            // Handle case where item is a string
-            if (typeof item === 'string') {
+        // Extract one_minute_summary from other_fields
+        const oneMinuteSummaryField = action.payload.other_fields.find(
+          (field) => field.field_name === "one_minute_summary"
+        );
+        
+        if (oneMinuteSummaryField && Array.isArray(oneMinuteSummaryField.field_value)) {
+          console.log("Processing one_minute_summary from other_fields, length:", oneMinuteSummaryField.field_value.length);
+          
+          const oneMinuteSummary: OneMinuteSummary[] = oneMinuteSummaryField.field_value
+            .map((item: any) => {
+              // Handle case where item is a string
+              if (typeof item === 'string') {
+                return {
+                  header: "",
+                  content: item.trim(),
+                };
+              }
+              // Handle case where item is an object
               return {
-                header: "",
-                content: item.trim(),
+                header: (item.header || item.title || "").trim(),
+                content: (item.content || item.description || "").trim(),
               };
-            }
-            // Handle case where item is an object
-            return {
-              header: (item.header || item.title || "").trim(),
-              content: (item.content || item.description || "").trim(),
+            });
+          
+          console.log("Mapped oneMinuteSummary:", oneMinuteSummary);
+          
+          // Update detailedViewStats with the mapped one minute summary
+          state.detailedViewStats = {
+            ...state.detailedViewStats,
+            oneMinuteSummary,
+          };
+        } else {
+          // Fallback: check for one_minute_summary at root level
+          if (action.payload.one_minute_summary && Array.isArray(action.payload.one_minute_summary)) {
+            const oneMinuteSummary: OneMinuteSummary[] = action.payload.one_minute_summary
+              .map((item: any) => {
+                if (typeof item === 'string') {
+                  return {
+                    header: "",
+                    content: item.trim(),
+                  };
+                }
+                return {
+                  header: (item.header || item.title || "").trim(),
+                  content: (item.content || item.description || "").trim(),
+                };
+              });
+            
+            state.detailedViewStats = {
+              ...state.detailedViewStats,
+              oneMinuteSummary,
             };
-          });
-        
-        console.log("Mapped oneMinuteSummary:", oneMinuteSummary);
-        
-        // Update detailedViewStats with the mapped one minute summary (even if empty array)
-        state.detailedViewStats = {
-          ...state.detailedViewStats,
-          oneMinuteSummary,
-        };
-        
-        console.log("Updated state.detailedViewStats.oneMinuteSummary:", state.detailedViewStats.oneMinuteSummary);
+          } else {
+            // No one_minute_summary found, set to empty array
+            state.detailedViewStats = {
+              ...state.detailedViewStats,
+              oneMinuteSummary: [],
+            };
+          }
+        }
       } else {
-        console.log("No one_minute_summary in response or not an array");
-        // If no one_minute_summary in response, set to empty array
-        state.detailedViewStats = {
-          ...state.detailedViewStats,
-          oneMinuteSummary: [],
-        };
+        state.profileOtherFields = [];
+        // If no other_fields, check root level
+        if (action.payload.one_minute_summary && Array.isArray(action.payload.one_minute_summary)) {
+          const oneMinuteSummary: OneMinuteSummary[] = action.payload.one_minute_summary
+            .map((item: any) => {
+              if (typeof item === 'string') {
+                return {
+                  header: "",
+                  content: item.trim(),
+                };
+              }
+              return {
+                header: (item.header || item.title || "").trim(),
+                content: (item.content || item.description || "").trim(),
+              };
+            });
+          
+          state.detailedViewStats = {
+            ...state.detailedViewStats,
+            oneMinuteSummary,
+          };
+        } else {
+          state.detailedViewStats = {
+            ...state.detailedViewStats,
+            oneMinuteSummary: [],
+          };
+        }
       }
     },
     setSelectedCompany: (state, action: PayloadAction<string | null>) => {

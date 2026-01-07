@@ -2,6 +2,10 @@ import axios from "@services/axios-interceptors";
 
 // Define the profile details response interface based on API structure
 export interface ProfileDetails {
+  _id?: string;
+  created_at?: string;
+  updated_at?: string;
+  profile_id?: string;
   one_minute_summary?: Array<{
     header?: string;
     content?: string;
@@ -9,23 +13,25 @@ export interface ProfileDetails {
     description?: string;
     [key: string]: any;
   }>;
+  other_fields?: Array<{
+    field_name: string;
+    field_value: string | string[] | any;
+  }>;
   [key: string]: any;
 }
 
 // Use proxy in development, direct URL in production
-const PROFILE_DETAILS_API_BASE_URL = "/api/v2/api/profile_details";
-// import.meta.env.DEV
-//   ? "/api/v2/api/profile_details"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-//   : "http://54.83.73.24:8000/v2/api/profile_details";  // Direct URL in production
+const PROFILE_DETAILS_API_BASE_URL = 
+  import.meta.env.DEV 
+    ? "/api/v2/api/profile_details"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+    : "http://54.83.73.24:8000/v2/api/profile_details";  // Direct URL in production
 
 /**
  * Fetches profile details from the API
  * @param profileId - The profile ID to fetch details for
  * @returns Promise with profile details data
  */
-export const fetchProfileDetails = async (
-  profileId: string
-): Promise<ProfileDetails> => {
+export const fetchProfileDetails = async (profileId: string): Promise<ProfileDetails> => {
   try {
     const url = `${PROFILE_DETAILS_API_BASE_URL}/${profileId}`;
     const response = await axios.get<ProfileDetails>(url, {
@@ -54,3 +60,4 @@ export const fetchProfileDetails = async (
     throw error;
   }
 };
+

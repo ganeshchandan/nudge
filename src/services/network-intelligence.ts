@@ -1,71 +1,103 @@
 import axios from "@services/axios-interceptors";
 
-export interface NetworkNode {
+// Use proxy in development, direct URL in production
+const API_BASE_URL = import.meta.env.DEV
+  ? "/api/v2/api/network-intelligence"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+  : "http://54.83.73.24:8000/v2/api/network-intelligence";  // Direct URL in production
+
+export interface NetworkIntelligencePerson {
   id: string;
   name: string;
   headline?: string;
   location?: string;
   current_role?: string;
-  network_type: "external" | "Internal";
-  type?: string;
 }
 
 export interface NetworkIntelligenceResponse {
-  nodes: {
-    Person: NetworkNode[];
-    Organization: NetworkNode[];
-    Institution: NetworkNode[];
-  };
+  person: NetworkIntelligencePerson;
+  connected_people: NetworkIntelligencePerson[];
+  connected_organizations: Array<{
+    id: string;
+    name: string;
+    type: string;
+  }>;
+  connected_institutions: any[];
   relationships: any[];
-  summary: {
-    total_people: number;
-    total_organizations: number;
-    total_institutions: number;
-    total_relationships: number;
-  };
+  total_connections: number;
 }
 
-// Use proxy in development, direct URL in production
-const NETWORK_INTELLIGENCE_API_URL = "/api/v2/api/network-intelligence/get-all";
-// import.meta.env.DEV
-//   ? "/api/v2/api/network-intelligence/get-all"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-//   : "http://54.83.73.24:8000/v2/api/network-intelligence/get-all";  // Direct URL in production
-
-/**
- * Fetches network intelligence data from the API
- * @returns Promise with network intelligence data
- */
-export const fetchNetworkIntelligence =
-  async (): Promise<NetworkIntelligenceResponse> => {
-    try {
-      const response = await axios.get<NetworkIntelligenceResponse>(
-        NETWORK_INTELLIGENCE_API_URL,
-        {
+export const fetchNetworkIntelligence = async (
+  personId: string
+): Promise<NetworkIntelligenceResponse> => {
+  try {
+    const url = `${API_BASE_URL}/person/${personId}`;
+    const response = await axios.get<NetworkIntelligenceResponse>(url, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      timeout: 10000, // 10 second timeout
+    });
+    return response.data;
+  } catch (error) {
+    // If proxy fails in dev, try direct URL as fallback
+    if (import.meta.env.DEV) {
+      try {
+        const fallbackUrl = `http://54.83.73.24:8000/v2/api/network-intelligence/person/${personId}`;
+        const fallbackResponse = await axios.get<NetworkIntelligenceResponse>(fallbackUrl, {
           headers: {
             "Content-Type": "application/json",
           },
-          timeout: 10000, // 10 second timeout
-        }
-      );
-      return response.data;
-    } catch (error) {
-      // If proxy fails in dev, try direct URL as fallback
-      if (import.meta.env.DEV) {
-        try {
-          const fallbackResponse = await axios.get<NetworkIntelligenceResponse>(
-            "http://54.83.73.24:8000/v2/api/network-intelligence/get-all",
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-              timeout: 10000,
-            }
-          );
-          return fallbackResponse.data;
-        } catch (fallbackError) {
-          throw fallbackError;
-        }
+          timeout: 10000,
+        });
+        return fallbackResponse.data;
+      } catch (fallbackError) {
+        console.error("Error fetching network intelligence:", fallbackError);
+        throw fallbackError;
       }
-      throw error;
     }
-  };
+    console.error("Error fetching network intelligence:", error);
+    throw error;
+  }
+};
+
+// Council relationships response can have similar structure or different
+export interface CouncilRelationshipsResponse {
+  person?: NetworkIntelligencePerson;
+  connected_people?: NetworkIntelligencePerson[];
+  relationships?: any[];
+  [key: string]: any; // Allow for flexibility in response structure
+}
+
+export const fetchCouncilRelationships = async (
+  personId: string
+): Promise<CouncilRelationshipsResponse> => {
+  try {
+    const url = `${API_BASE_URL}/search-council-relationships/${personId}`;
+    const response = await axios.get<CouncilRelationshipsResponse>(url, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      timeout: 10000, // 10 second timeout
+    });
+    return response.data;
+  } catch (error) {
+    // If proxy fails in dev, try direct URL as fallback
+    if (import.meta.env.DEV) {
+      try {
+        const fallbackUrl = `http://54.83.73.24:8000/v2/api/network-intelligence/search-council-relationships/${personId}`;
+        const fallbackResponse = await axios.get<CouncilRelationshipsResponse>(fallbackUrl, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 10000,
+        });
+        return fallbackResponse.data;
+      } catch (fallbackError) {
+        console.error("Error fetching council relationships:", fallbackError);
+        throw fallbackError;
+      }
+    }
+    console.error("Error fetching council relationships:", error);
+    throw error;
+  }
+};

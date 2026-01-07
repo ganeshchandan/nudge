@@ -13,7 +13,12 @@
         position: relative;
         width: 100%;
         height: 500px;
+        min-height: 500px;
+        padding: var(--nudge-padding-margin-lg) var(--nudge-spacing-xl) var(--nudge-spacing-xl);
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .knowledge-graph-svg {
             position: absolute;
             width: 100%;

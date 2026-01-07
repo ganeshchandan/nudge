@@ -1,0 +1,113 @@
+.profile-category-container {
+  display: flex;
+  height: 100%;
+  min-height: 400px;
+
+  .profile-category-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    .profile-category-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--nudge-spacing-md);
+
+      .profile-category-content-title {
+        font-size: var(--nudge-text-md);
+        font-weight: 600;
+        color: var(--nudge-color-text-primary);
+        padding-bottom: var(--nudge-spacing-sm);
+        border-bottom: 1px solid var(--nudge-color-border);
+        line-height: normal;
+      }
+
+      .profile-category-content-text {
+        font-size: var(--nudge-text-sm);
+        color: var(--nudge-color-text-primary);
+        line-height: 1.6;
+        word-wrap: break-word;
+
+        .field-text {
+          white-space: pre-wrap;
+        }
+
+        .field-link {
+          color: var(--nudge-color-primary);
+          text-decoration: underline;
+          
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .field-list {
+          list-style: disc;
+          padding-left: var(--nudge-spacing-lg);
+          margin: 0;
+          font-size: var(--nudge-text-sm);
+
+          li {
+            margin-bottom: var(--nudge-spacing-xs);
+          }
+        }
+
+        .field-object-list {
+          display: flex;
+          flex-direction: column;
+          gap: var(--nudge-spacing-md);
+
+          .field-object-item {
+            padding: var(--nudge-spacing-md);
+            background-color: var(--nudge-color-bg-secondary, #f5f5f5);
+            border-radius: var(--nudge-border-radius-sm);
+            border: 1px solid var(--nudge-color-border);
+
+            .field-object-field {
+              display: flex;
+              gap: var(--nudge-spacing-sm);
+              margin-bottom: var(--nudge-spacing-xs);
+
+              .field-object-key {
+                font-weight: 600;
+                font-size: var(--nudge-text-sm);
+                min-width: 120px;
+              }
+
+              .field-object-value {
+                font-size: var(--nudge-text-sm);
+                color: var(--nudge-color-text-secondary);
+              }
+            }
+          }
+        }
+
+        .field-json {
+          background-color: var(--nudge-color-bg-secondary, #f5f5f5);
+          padding: var(--nudge-spacing-md);
+          border-radius: var(--nudge-border-radius-sm);
+          overflow-x: auto;
+          font-family: monospace;
+          font-size: var(--nudge-text-sm);
+        }
+
+        .empty-field {
+          font-size: var(--nudge-text-sm);
+          color: var(--nudge-color-text-secondary);
+          font-style: italic;
+        }
+      }
+    }
+
+    .profile-category-content-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: var(--nudge-color-text-secondary);
+      font-size: var(--nudge-text-md);
+    }
+  }
+}
+

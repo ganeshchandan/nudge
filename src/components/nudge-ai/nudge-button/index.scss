@@ -1,0 +1,19 @@
+* {
+    .nudge-chat {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        transition: all 1s ease-in-out;
+        cursor: pointer;
+        &.hide-button {
+            right: -4rem;
+        }
+        .nudge-chat-icon {
+            height: 2.875rem;
+            width: 2.875rem;
+        }
+    }
+}

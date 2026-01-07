@@ -1,11 +1,15 @@
-import type { FC } from "react";
+import { type FC, useState } from "react";
 import "@components/executive-view/detailed-view/content/executive-mapping/index.scss";
 import { EditIcon, ExpandIcon } from "@assets/images";
-import { NudgeTabs } from "@components/common/tabs";
+import { NudgeTabs } from "@components/common";
+import { InternalComponent } from "./internal";
+import { ExternalComponent } from "./external";
 
 interface ExecutiveMappingProps {}
 
 export const ExecutiveMapping: FC<ExecutiveMappingProps> = () => {
+  const [selectedTab, setSelectedTab] = useState<string>("internal");
+
   return (
     <div className="executive-mapping">
       <div className="executive-mapping-header">
@@ -21,7 +25,14 @@ export const ExecutiveMapping: FC<ExecutiveMappingProps> = () => {
             { name: "External", id: "external" },
             { name: "Internal", id: "internal" },
           ]}
-          selectedTab={"external"}
+          selectedTab={selectedTab}
+          onTabChange={setSelectedTab}
+          contents={{
+            external: {
+              Component: ExternalComponent,
+            },
+            internal: { Component: InternalComponent },
+          }}
         />
       </div>
     </div>

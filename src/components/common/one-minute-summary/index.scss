@@ -1,0 +1,44 @@
+* {
+  .one-minute-summary {
+    width: 100%;
+    padding: var(--nudge-padding-margin-xl);
+    padding-right: calc(var(--nudge-padding-margin-xl) + var(--nudge-spacing-lg));
+
+    .one-minute-summary-title {
+      font-size: var(--nudge-text-md);
+      font-weight: var(--nudge-font-weight-bold);
+      color: var(--nudge-color-black-shade01);
+      margin: 0 0 var(--nudge-spacing-lg) 0;
+    }
+
+
+    .one-minute-summary-card {
+      background: var(--nudge-color-magnolia-heart);
+      border-radius: var(--nudge-padding-margin-sm);
+      padding: var(--nudge-padding-margin-xs) var(--nudge-padding-margin-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .one-minute-summary-card-title {
+        font-size: var(--nudge-text-sm);
+        font-weight: var(--nudge-font-weight-bold);
+        color: var(--nudge-color-black-shade01);
+        margin: 0 0 var(--nudge-spacing-xxs) 0;
+        line-height: 1.3;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .one-minute-summary-card-description {
+        font-size: var(--nudge-text-xs);
+        font-weight: var(--nudge-font-weight-normal);
+        color: var(--nudge-color-black-shade02);
+        margin: 0;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}

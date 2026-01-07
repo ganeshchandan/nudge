@@ -1,0 +1,21 @@
+* {
+  .inside-story-page {
+    height: 100%;
+    overflow: hidden;
+    padding: var(--nudge-padding-margin-xl);
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    gap: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    .overflow-container {
+      height: 100%;
+    }
+  }
+}

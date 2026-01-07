@@ -4,25 +4,27 @@ import {
   StatsDashboardReducer,
   LeadsDashboardReducer,
   LineDashboardReducer,
+  AiChatReducers,
 } from "@stores/reducers";
-
-export type RootState = ReturnType<typeof store.getState>;
 
 const reducer = combineReducers({
   applicationConfig: AppConfigReducer,
   statsDashboard: StatsDashboardReducer,
   leadsDashboard: LeadsDashboardReducer,
   lineDashboard: LineDashboardReducer,
+  aiChat: AiChatReducers,
 });
 
-export const setupStore = (preloadedState: Partial<RootState>) =>
+export type RootState = ReturnType<typeof reducer>;
+
+export const setupStore = (preloadedState?: Partial<RootState>) =>
   configureStore({
     reducer,
     preloadedState,
   });
 
 export const store = configureStore({
-  reducer: reducer,
+  reducer,
 });
 
 export type AppDispatch = typeof store.dispatch;

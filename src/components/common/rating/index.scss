@@ -1,0 +1,20 @@
+* {
+    .nudge-rating {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: max-content;
+        grid-gap: 0.125rem;
+        .nudge-rating-icon {
+            height: 0.625rem;
+            width: 0.625rem;
+            path {
+                fill: var(--nudge-color-sweet-grey);
+            }
+            &.rating-selected {
+                path {
+                    fill: var(--nudge-color-fire);
+                }
+            }
+        }
+    }
+}

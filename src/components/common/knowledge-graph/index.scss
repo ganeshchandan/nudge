@@ -1,0 +1,91 @@
+@keyframes nudge-dashboard {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    .knowledge-graph {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        .knowledge-graph-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .graph-node-context-menu {
+            width: calc(var(--graph-node-size) + 50px);
+            height: calc(var(--graph-node-size) + 50px);
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0px 0px 4px 0px #e1d6ff;
+            background: linear-gradient(0.96deg, #ffffff 1.23%, rgba(255, 255, 255, 0) 28.27%);
+            display: grid;
+            align-content: center;
+            justify-content: flex-end;
+            background: var(--nudge-color-white);
+            will-change: opacity;
+            opacity: 0;
+            animation-name: nudge-dashboard;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+            &::before {
+                content: " ";
+                position: absolute;
+                width: 70%;
+                height: 104%;
+                transform: rotate(170deg) translateX(10px);
+                background: var(--nudge-color-white);
+                opacity: 1;
+            }
+            .context-menu-icon {
+                height: 1rem;
+                cursor: pointer;
+                position: absolute;
+                &.speakaer-icon {
+                    top: 40%;
+                    right: 0.5rem;
+                }
+                &.drill-down-icon {
+                    top: 70%;
+                    right: 1.125rem;
+                }
+            }
+        }
+        .graph-node {
+            user-select: none;
+            width: max-content;
+            display: grid;
+            justify-items: center;
+            grid-gap: var(--nudge-spacing-xxs);
+            left: calc(var(--graph-node-position) - var(--graph-node-size) / 2);
+
+            .graph-node-image {
+                position: absolute;
+                z-index: 2;
+                width: var(--graph-node-size);
+                height: var(--graph-node-size);
+                border-radius: 50%;
+            }
+            .node-label {
+                position: absolute;
+                font-weight: 400;
+                font-size: 0.625rem;
+                line-height: 0.625rem;
+                color: var(--nudge-color-black-shade02);
+                width: fit-content;
+                text-align: center;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

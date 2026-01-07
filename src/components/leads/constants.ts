@@ -2,27 +2,14 @@ import type { QuickLink } from "@components/common";
 import {
   ExecutiveViewDetailList,
   ExecutiveViewDetailRatings,
-} from "@components/executive-view/content/lists/card/details";
+} from "@components/executive-view/profile-lists/card/details";
 import type {
   OverallStatsField,
   ExecutiveCardCapitalDetail,
   EngagementField,
 } from "@components/executive-view/types";
 
-export const OVERALL_STATS_FIELDS: OverallStatsField[] = [
-  {
-    name: "At Risk",
-    id: "atRisk",
-  },
-  {
-    name: "Top Connections",
-    id: "topConnections",
-  },
-  {
-    name: "Performing Verticals",
-    id: "performingVerticals",
-  },
-];
+export const OVERALL_STATS_FIELDS: OverallStatsField[] = [];
 
 export const EXECUTIVE_CAPITAL_DETAILS: ExecutiveCardCapitalDetail[] = [
   {

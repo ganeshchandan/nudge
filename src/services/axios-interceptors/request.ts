@@ -10,6 +10,12 @@ import type { InternalAxiosRequestConfig, AxiosError } from "axios";
 export const axiosRequestInterceptors = (
   config: InternalAxiosRequestConfig
 ): InternalAxiosRequestConfig => {
+  const token = localStorage.getItem("authToken");
+  
+  if (token && config.headers) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  
   return config;
 };
 

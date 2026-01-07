@@ -1,0 +1,19 @@
+* {
+    .doughnut-chart {
+        transform: rotate(-90deg);
+        .doughnut-chart-track {
+            fill: transparent;
+            transition: all 0.7s ease-in-out;
+            stroke: var(--nudge-color-sweet-grey);
+        }
+        .doughnut-chart-progress {
+            fill: transparent;
+            transition: all 0.7s ease-in-out;
+            stroke-linecap: round;
+        }
+        .doughnut-chart-text {
+            transform: rotate(90deg) translateY(-100%);
+            fill: var(--nudge-color-black-shade02);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+* {
+    .profile-icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(
+            129.03% 129.03% at 7.26% 9.68%,
+            rgba(3, 78, 162, 0.5) 0%,
+            rgba(0, 192, 243, 0.5) 42.79%,
+            rgba(237, 6, 119, 0.5) 70.95%
+        );
+        .profile-icon-image {
+            border-radius: inherit;
+            width: calc(100% - 0.25rem);
+            height: calc(100% - 0.25rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background-color: var(--nudge-color-white);
+            overflow: hidden;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}

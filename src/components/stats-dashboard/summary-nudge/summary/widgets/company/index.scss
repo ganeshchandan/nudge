@@ -1,0 +1,93 @@
+* {
+    .company-widget {
+        padding: 0rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 25rem;
+        &.image-0 {
+            background-image: url("@assets/dasboard-background/Amzen.png");
+        }
+        &.image-1 {
+            background-image: url("@assets/dasboard-background/Bayer.png");
+        }
+        &.image-2 {
+            background-image: url("@assets/dasboard-background/Lilly.png");
+        }
+        &.image-3 {
+            background-image: url("@assets/dasboard-background/J&J.png");
+        }
+        &.image-4 {
+            background-image: url("@assets/dasboard-background/Pfizer.png");
+        }
+        .company-widget-content {
+            cursor: pointer;
+            height: 100%;
+            .company-widget-icon {
+                padding: 0.625rem;
+                border-radius: inherit;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                height: 3rem;
+
+                img {
+                    height: 2rem;
+                    object-fit: contain;
+                }
+            }
+            .company-profile-stats {
+                display: grid;
+                grid-template-columns: repeat(3, max-content);
+                padding: var(--nudge-padding-margin-xl);
+                grid-gap: 3.75rem;
+                justify-content: center;
+                border-bottom: 0.0625rem solid;
+                border-image-source: linear-gradient(90deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+                border-image-slice: 1;
+                .company-profile-stats-item {
+                    display: grid;
+                    grid-gap: var(--nudge-spacing-xxs);
+                    justify-content: center;
+                    justify-items: center;
+                    .company-profile-stats-item-value {
+                        font-weight: 700;
+                        font-size: var(--nudge-text-xxl);
+                        line-height: 100%;
+                        color: var(--nudge-color-black-shade01);
+                    }
+                    .company-profile-stats-item-name {
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xs);
+                        line-height: 100%;
+                        color: var(--nudge-color-black-shade01);
+                    }
+                }
+            }
+            .company-person-profiles {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin: var(--nudge-padding-margin-sm) 0;
+                padding: var(--nudge-padding-margin-lg) 0;
+                .company-person-profile {
+                    padding: 0 var(--nudge-padding-margin-xl);
+                    &:first-child {
+                        border-right: 0.0625rem solid;
+                        border-image-source: linear-gradient(180deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+                        border-image-slice: 1;
+                    }
+                    .company-person-profile-details {
+                        height: 1.875rem;
+                        grid-gap: var(--nudge-spacing-xs);
+                        .profile-details-name-company {
+                            grid-gap: var(--nudge-spacing-xxs);
+                            .profile-details-name,
+                            .profile-details-name-team {
+                                font-size: var(--nudge-text-xxs);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

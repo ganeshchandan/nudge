@@ -40,8 +40,12 @@
                 .registered-email-id {
                     width: calc(100% - 3rem);
                     margin: var(--nudge-padding-margin-xl-plus) auto;
-                    label {
+                    label,
+                    .form-control {
                         color: var(--nudge-color-white);
+                    }
+                    .form-control {
+                        border: 0.0625rem solid var(--nudge-color-azureish-white);
                     }
                 }
                 .login-proced {
@@ -49,6 +53,10 @@
                     margin: auto;
                     margin-bottom: var(--nudge-padding-margin-xl-plus);
                     margin-top: calc(var(--nudge-padding-margin-xs) + var(--nudge-padding-margin-md));
+                    &:not(.nudge-button-disabled) {
+                        background-color: var(--nudge-color-shocking-blue);
+                        border-color: var(--nudge-color-shocking-blue);
+                    }
                 }
                 .login-magic-code-form {
                     &.is-code-error {
@@ -103,6 +111,10 @@
                         width: calc(100% - 3rem);
                         margin: auto;
                         margin-bottom: var(--nudge-padding-margin-xl-plus);
+                        &:not(.nudge-button-disabled) {
+                            background-color: var(--nudge-color-shocking-blue);
+                            border-color: var(--nudge-color-shocking-blue);
+                        }
                     }
                 }
             }

@@ -1,23 +1,33 @@
 import { useEffect, useState, type FC } from "react";
 import "@components/common/tabs/index.scss";
 
-interface NudgeTabItem {
+export interface NudgeTabItem {
   name: string;
   id: string;
 }
 
 interface NudgeTabsProps {
+  className?: string;
   tabItems: NudgeTabItem[];
   selectedTab: string;
   onTabChange?: (selectedTab: string) => void;
   isContentRequired?: boolean;
+  contents?: Record<
+    string,
+    {
+      Component: FC<any>;
+      props?: Record<string, any>;
+    }
+  >;
 }
 
 export const NudgeTabs: FC<NudgeTabsProps> = ({
+  className = "",
   tabItems,
   selectedTab,
   onTabChange,
   isContentRequired = true,
+  contents = {},
 }) => {
   const [tabSelected, setTabSelected] = useState<string>("");
 
@@ -32,11 +42,14 @@ export const NudgeTabs: FC<NudgeTabsProps> = ({
     onTabChange?.(selectedTab);
   };
 
+  const { Component, props = {} } = contents[tabSelected] || {};
+
   return (
-    <div className="nudge-tabs-container">
+    <div className={`nudge-tabs-container ${className}`}>
       <div className="nudge-tabs">
         {tabItems.map(({ name, id }) => (
           <div
+            key={id}
             className={`nudge-tab ${
               id === tabSelected ? "nudge-selected-tab" : ""
             }`}
@@ -46,7 +59,11 @@ export const NudgeTabs: FC<NudgeTabsProps> = ({
           </div>
         ))}
       </div>
-      {isContentRequired && <div className="nudge-tab-content"></div>}
+      {isContentRequired && Component && (
+        <div className="nudge-tab-content">
+          <Component {...props} selectedTab={selectedTab} />
+        </div>
+      )}
     </div>
   );
 };

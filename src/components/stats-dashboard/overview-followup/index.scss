@@ -4,7 +4,7 @@
             padding: var(--nudge-padding-margin-xl) var(--nudge-padding-margin-xl-plus) var(--nudge-padding-margin-xl)
                 var(--nudge-padding-margin-xxl);
             display: grid;
-            grid-template-columns: 1fr 5.5rem;
+            grid-template-columns: 1fr;
             grid-gap: var(--nudge-spacing-xl);
             .stats-dashboard-overview,
             .stats-dashboard-followup {

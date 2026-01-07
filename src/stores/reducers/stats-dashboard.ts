@@ -1,14 +1,17 @@
 import type {
+  CompanyProfile,
   StatsDashboardOverview,
   SummaryStatsList,
   TopPerformerDetail,
 } from "@components/stats-dashboard/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { CompanySummaryData } from "@services/company-summary";
 
 export interface StatsDashboardState {
   selectedStatsTab: string;
   statsDashboardOverviews: StatsDashboardOverview[];
   followUp: string;
+  companyProfiles: CompanyProfile[];
   accountSummary: {
     executiveMetrics: {
       engageement: SummaryStatsList[];
@@ -30,33 +33,7 @@ export interface StatsDashboardState {
 
 const initialState: StatsDashboardState = {
   selectedStatsTab: "overview",
-  statsDashboardOverviews: [
-    {
-      type: "noofRFPs",
-      value: "10",
-      label: "No. of RFPs",
-    },
-    {
-      type: "warning",
-      value: "04",
-      label: "Task at Risk",
-    },
-    {
-      type: "escalations",
-      value: "03",
-      label: "Escalations",
-    },
-    {
-      type: "eventClosing",
-      value: "06",
-      label: "Event Closing ",
-    },
-    {
-      type: "remainder",
-      value: "04",
-      label: "Reminders",
-    },
-  ],
+  statsDashboardOverviews: [],
   followUp: "02",
   accountSummary: {
     executiveMetrics: {
@@ -211,18 +188,122 @@ const initialState: StatsDashboardState = {
       },
     ],
   },
+  companyProfiles: [],
 };
 
 export const statsDashboardConfig = createSlice({
-  name: "statsDashbaordConfig",
+  name: "statsDashboardConfig",
   initialState,
   reducers: {
-    updateSelectedStatsTab: (state, { payload }) => {
-      state.selectedStatsTab = payload;
+    updateSelectedStatsTab: (state, action: PayloadAction<string>) => {
+      state.selectedStatsTab = action.payload;
+    },
+    updateCompanySummary: (
+      state,
+      action: PayloadAction<{
+        account_plans: number;
+        tasks_at_risk: number;
+        escalations: number;
+        event_closing: number;
+        reminders: number;
+      }>
+    ) => {
+      const { account_plans, tasks_at_risk, escalations, event_closing, reminders } =
+        action.payload;
+
+      // Update statsDashboardOverviews with API data
+      state.statsDashboardOverviews = [
+        {
+          type: "noofRFPs",
+          value: account_plans.toString(),
+          label: "Account Plans",
+        },
+        {
+          type: "warning",
+          value: tasks_at_risk.toString().padStart(2, "0"),
+          label: "Task at Risk",
+        },
+        {
+          type: "escalations",
+          value: escalations.toString().padStart(2, "0"),
+          label: "Escalations",
+        },
+        {
+          type: "eventClosing",
+          value: event_closing.toString().padStart(2, "0"),
+          label: "Event Closing ",
+        },
+        {
+          type: "remainder",
+          value: reminders.toString().padStart(2, "0"),
+          label: "Reminders",
+        },
+      ];
+    },
+    updateCompanyProfiles: (
+      state,
+      action: PayloadAction<CompanySummaryData[]>
+    ) => {
+      // Map API data to CompanyProfile format
+      state.companyProfiles = action.payload.map((company, index) => {
+        const counts = company.relationship_status_counts;
+        const hot = counts.Hot || 0;
+        const warm = counts.Warm || 0;
+        const cold = counts.Cold || 0;
+
+        // Use company_logo_url from API if available, otherwise fallback to default
+        const getImageKey = (): string => {
+          if (company.company_logo_url) {
+            return company.company_logo_url;
+          }
+          // Fallback to default company image if no logo URL provided
+          return `company${((index % 4) + 1)}`;
+        };
+
+        // Map assignees to internal/external person profiles
+        // First assignee -> internalPerson, second assignee -> externalPerson
+        const internalPerson = company.assignees && company.assignees.length > 0
+          ? {
+              name: company.assignees[0].name,
+              image: company.assignees[0].profile_picture_url,
+              position: company.assignees[0].title,
+            }
+          : {
+              name: "Not Available",
+              image: "userIcon2",
+              position: "N/A",
+            };
+
+        const externalPerson = company.assignees && company.assignees.length > 1
+          ? {
+              name: company.assignees[1].name,
+              image: company.assignees[1].profile_picture_url,
+              position: company.assignees[1].title,
+            }
+          : {
+              name: "Not Available",
+              image: "userIcon3",
+              position: "N/A",
+            };
+
+        return {
+          _id: `${index + 1}`,
+          name: company.company, // Use company name as-is from API
+          image: getImageKey(),
+          profileStats: {
+            hot: hot.toString().padStart(2, "0"),
+            warm: warm.toString().padStart(2, "0"),
+            cold: cold.toString().padStart(2, "0"),
+          },
+          internalPerson,
+          externalPerson,
+        };
+      });
     },
   },
 });
 
-export const { updateSelectedStatsTab } = statsDashboardConfig.actions;
+export const { updateSelectedStatsTab, updateCompanySummary, updateCompanyProfiles } =
+  statsDashboardConfig.actions;
 
 export const StatsDashboardReducer = statsDashboardConfig.reducer;

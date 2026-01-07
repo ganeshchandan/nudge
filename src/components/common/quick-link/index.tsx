@@ -11,12 +11,14 @@ interface QuickLinksProps {
   className?: string;
   headerName: string;
   quickLinks: QuickLink[];
+  onLinkSelect?: (quickLink: string) => void;
 }
 
 export const QuickLinks: FC<QuickLinksProps> = ({
   className = "",
   headerName,
   quickLinks,
+  onLinkSelect,
 }) => {
   const [selectedId, setSelectedId] = useState<string>(quickLinks[0]?.id);
   const [indicatorTop, setIndicatorTop] = useState<number>(0);
@@ -30,6 +32,11 @@ export const QuickLinks: FC<QuickLinksProps> = ({
       setIndicatorTop(top);
     }
   }, [selectedId]);
+
+  const onSelect = (id: string) => {
+    setSelectedId(id);
+    onLinkSelect?.(id);
+  };
 
   return (
     <div className={`quick-links-container ${className}`}>
@@ -45,7 +52,7 @@ export const QuickLinks: FC<QuickLinksProps> = ({
               itemRefs.current[id] = el;
             }}
             className={`quick-link ${id === selectedId ? "active" : ""}`}
-            onClick={() => setSelectedId(id)}
+            onClick={() => onSelect(id)}
           >
             {name}
           </div>

@@ -1,25 +1,40 @@
 import "@components/stats-dashboard/summary-nudge/summary/index.scss";
-import { SummaryLists } from "@components/stats-dashboard/summary-nudge/summary/lists";
 import type { RootState } from "@stores";
 import { useSelector } from "react-redux";
+
 import {
-  TopPerformers,
-  SummaryStatsWidget,
-  ExecutiveMetricsContent,
   ContactWidget,
-  ProgramView,
+  CompanyWidget,
 } from "@components/stats-dashboard/summary-nudge/summary/widgets";
+import { OverflowContainer } from "@components/common";
 
 export const StatsDashboardSummary = () => {
-  const { accountLevelScore, programLevelScore } = useSelector(
-    (state: RootState) => state.statsDashboard.accountSummary
+  const { companyProfiles } = useSelector(
+    (state: RootState) => state.statsDashboard
   );
   return (
     <div className="stats-dashboard-summary">
       <div className="stats-dashboard-summary-header">
-        Account Program Summary
+        Program Scorecard Summary
       </div>
-      <div className="scroll-div">
+      <OverflowContainer>
+        <div className="stats-dashboard-summary-content">
+          {companyProfiles.map((companyProfile, index) => (
+            <CompanyWidget
+              key={companyProfile._id}
+              companyProfile={companyProfile}
+              index={index}
+            />
+          ))}
+          <ContactWidget />
+        </div>
+      </OverflowContainer>
+    </div>
+  );
+};
+
+{
+  /* <div className="scroll-div">
         <div className="stats-dashboard-summary-content">
           <div className="summary-content-column">
             <SummaryStatsWidget widgetKey={"executiveMetrics"} value={"56.375"}>
@@ -52,7 +67,5 @@ export const StatsDashboardSummary = () => {
             <ProgramView />
           </div>
         </div>
-      </div>
-    </div>
-  );
-};
+      </div> */
+}

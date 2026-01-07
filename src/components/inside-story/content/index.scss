@@ -1,0 +1,576 @@
+* {
+  .inside-story-main-content {
+    // overflow-y: auto;
+    // overflow-x: hidden;
+    // height: 100%;
+
+    .inside-story-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+      .inside-story-main-title {
+        color: var(--Black, #343434);
+        font-family: "IBM Plex Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.1px;
+        margin: 0 0 32px 0;
+        padding-left: 16px;
+      }
+      .inside-story-content {
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+
+  // Account Plan Category Sidebar
+  .account-plan-category {
+    height: 100%;
+    display: grid;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    grid-template-rows: max-content 1fr max-content;
+    min-width: 144px;
+    max-height: 100vh;
+    border-left: 1px solid var(--nudge-color-medium-seashell);
+    margin-left: 70px;
+
+    .selected-indicator-container {
+      border-left: 1px solid;
+      border-image-source: linear-gradient(0deg, #ffffff 0%, #c9b8ff 46.63%, #ffffff 100%);
+      border-image-slice: 1;
+      position: absolute;
+      left: 0.0625rem;
+      height: 100%;
+
+      .selected-indicator {
+        position: absolute;
+        height: 1rem;
+        width: 0.188rem;
+        background: var(--nudge-color-purple-shade-02);
+        border-radius: 0.25rem;
+        left: -2px;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .account-plan-category-header {
+      font-weight: 600;
+      font-size: var(--nudge-text-xs);
+      color: var(--nudge-color-black-shade01);
+      padding-bottom: var(--nudge-padding-margin-xl-plus);
+      text-transform: uppercase;
+      letter-spacing: -0.1px;
+    }
+
+    .account-plan-category-list {
+      display: grid;
+      height: 100%;
+      overflow: auto;
+      grid-gap: var(--nudge-spacing-lg);
+      align-content: flex-start;
+
+      .category-item {
+        font-weight: 400;
+        font-size: var(--nudge-text-xs);
+        line-height: 0.625rem;
+        color: var(--nudge-color-black-shade02);
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        padding: 0 var(--nudge-padding-margin-xl-plus);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        letter-spacing: -0.1px;
+
+        &.active {
+          font-weight: 500;
+          color: var(--nudge-color-black-shade01);
+        }
+
+        &:hover {
+          background-color: var(--nudge-color-blue-chalk);
+        }
+      }
+    }
+
+    .download-dossier-button {
+      margin-top: auto;
+      margin-bottom: 0;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #1e53ff;
+      font-weight: 400;
+      font-size: var(--nudge-text-xs);
+      text-transform: none;
+      text-decoration: underline;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      letter-spacing: -0.1px;
+      line-height: 12px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .section-title {
+    font-size: var(--nudge-text-sm);
+    font-weight: 600;
+    color: #707070;
+    margin: 0 0 10px 0;
+    line-height: normal;
+    letter-spacing: -0.1px;
+  }
+
+  // Organizational Overview
+  .organizational-overview {
+    margin-bottom: 48px;
+    margin-left: 3rem;
+
+    .overview-content {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+
+      .key-changes {
+        flex: 1;
+
+        .changes-list {
+          list-style: disc;
+          padding: 0;
+          margin: 0;
+          padding-left: 21px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          li {
+            font-size: var(--nudge-text-sm);
+            color: #343434;
+            line-height: 20px;
+            padding-left: 0;
+            position: relative;
+            margin-bottom: 0;
+            letter-spacing: -0.1px;
+            list-style: disc;
+
+            .highlight-purple {
+              color: #7547ff;
+              font-weight: 400;
+            }
+
+            span:not(.highlight-purple) {
+              color: #343434;
+            }
+
+            &:not(:last-child) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Regional Donut Chart
+  .regional-donut-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--nudge-spacing-md);
+    flex-shrink: 0;
+    width: 260px;
+    height: 221px;
+    position: relative;
+
+    svg {
+      width: 154px;
+      height: 154px;
+      margin-left: 58px;
+      margin-top: 41px;
+
+      .chart-center-text-large {
+        font-size: var(--nudge-text-xs);
+        font-weight: 600;
+        fill: #343434;
+        letter-spacing: -0.1px;
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      .chart-center-text-small {
+        font-size: var(--nudge-text-xs);
+        fill: #707070;
+        letter-spacing: -0.1px;
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+    }
+
+    .chart-legend {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      .legend-dot {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        display: block;
+
+        // Dot positions from Figma
+        &.legend-dot-1 {
+          // EMEA dot
+          left: 188px;
+          top: 186px;
+        }
+
+        &.legend-dot-2 {
+          // USA dot
+          left: 209px;
+          top: 62px;
+        }
+
+        &.legend-dot-3 {
+          // China dot
+          left: 29px;
+          top: 183px;
+        }
+
+        &.legend-dot-4 {
+          // LatAm dot
+          left: 29px;
+          top: 29px;
+        }
+
+        &.legend-dot-5 {
+          // Others dot
+          left: 114px;
+          top: 5px;
+        }
+
+        &.legend-dot-6 {
+          // Japan dot
+          left: 0px;
+          top: 97px;
+        }
+      }
+
+      .legend-item {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: var(--nudge-text-xs);
+        height: 44px;
+        gap: 0;
+        width: auto;
+
+        .legend-label {
+          color: #707070;
+          font-weight: 400;
+          font-size: var(--nudge-text-xs);
+          line-height: normal;
+          letter-spacing: -0.1px;
+          margin-bottom: 0;
+          white-space: nowrap;
+        }
+
+        .legend-percentage {
+          color: #343434;
+          font-weight: 600;
+          font-size: var(--nudge-text-xs);
+          line-height: normal;
+          letter-spacing: -0.1px;
+          white-space: nowrap;
+        }
+
+        // Text positions from Figma - aligned with dots
+        &.legend-item-1 {
+          // EMEA - align with dot at 188px, label starts at 203px (15px offset)
+          left: 203px;
+          top: 177px;
+        }
+
+        &.legend-item-2 {
+          // USA - align with dot at 209px, label starts at 224px (15px offset)
+          left: 224px;
+          top: 57px;
+        }
+
+        &.legend-item-3 {
+          // China - align with dot at 29px, label starts at 44px (15px offset)
+          left: 44px;
+          top: 177px;
+        }
+
+        &.legend-item-4 {
+          // LatAm - align with dot at 29px, label starts at 42px (13px offset)
+          left: 42px;
+          top: 24px;
+        }
+
+        &.legend-item-5 {
+          // Others - align with dot at 114px, label starts at 127px (13px offset)
+          left: 127px;
+          top: 0;
+        }
+
+        &.legend-item-6 {
+          // Japan - align with dot at 0px, label starts at 14px (14px offset)
+          left: 14px;
+          top: 92px;
+        }
+      }
+    }
+  }
+
+  // Digital Focus
+  .digital-focus {
+    margin-bottom: 48px;
+    margin-left: 3rem;
+
+    .digital-focus-content {
+      .investment-amount {
+        font-size: 50px;
+        font-weight: 600;
+        color: #343434;
+        margin-bottom: 10px;
+        line-height: normal;
+        letter-spacing: -0.1px;
+      }
+
+      .investment-description {
+        font-size: var(--nudge-text-xs);
+        color: #343434;
+        line-height: 18px;
+        margin: 0;
+        letter-spacing: -0.1px;
+        max-width: 698px;
+      }
+    }
+  }
+
+  // Key Partners
+  .key-partners {
+    margin-bottom: 48px;
+    margin-left: 3rem;
+
+    .section-title {
+      margin-bottom: 10px;
+    }
+
+    .partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+
+      .partner-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: 53px;
+        min-width: 0;
+
+        .partner-logo {
+          height: 17px;
+          width: auto;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+
+          // Placeholder for logo images
+          font-size: var(--nudge-text-xs);
+          font-weight: 600;
+          color: #343434;
+          text-transform: uppercase;
+        }
+
+        .partner-focus {
+          font-size: 10.5px;
+          color: #343434;
+          line-height: normal;
+          letter-spacing: -0.1px;
+          white-space: normal;
+        }
+      }
+    }
+  }
+
+  // Pipeline & Therapy
+  .pipeline-therapy {
+    margin-bottom: 48px;
+    margin-left: 3rem;
+
+    .section-title {
+      margin-bottom: 0;
+    }
+
+    .pipeline-content {
+      .pipeline-subtitle {
+        font-size: var(--nudge-text-sm);
+        color: #343434;
+        margin-bottom: 0;
+        margin-top: 10px;
+        letter-spacing: -0.1px;
+      }
+
+      .peak-sale-label {
+        font-size: var(--nudge-text-xs);
+        color: #707070;
+        margin-bottom: 11px;
+        margin-top: 10px;
+        letter-spacing: -0.1px;
+      }
+
+      .products-row {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 54px;
+        margin-left: 10px;
+
+        .product-card {
+          background:
+            linear-gradient(
+              rgba(99, 180, 255, 0.59) 4.5045%,
+              rgba(157, 126, 253, 0.16) 27.157%,
+              rgba(255, 255, 255, 0) 49.55%
+            ),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%);
+          border: 1px solid #dee2ff;
+          border-radius: 16px;
+          padding: 21px;
+          color: #343434;
+          flex: 0 0 166px;
+          position: relative;
+          height: 111px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .product-name {
+            font-size: var(--nudge-text-xs);
+            font-weight: 500;
+            margin-bottom: 0;
+            color: #343434;
+            line-height: 10px;
+            letter-spacing: -0.1px;
+            margin-top: 0;
+          }
+
+          .product-peak-sale {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 0;
+            line-height: normal;
+            color: #343434;
+            letter-spacing: -0.1px;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+
+          .product-year {
+            font-size: var(--nudge-text-xs);
+            color: #707070;
+            line-height: 10px;
+            letter-spacing: -0.1px;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          .product-connector {
+            font-size: var(--nudge-text-lg);
+            font-weight: 600;
+            color: #343434;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 9px;
+            height: 10px;
+            margin: 0 5px;
+          }
+        }
+      }
+
+      .strategies {
+        margin-top: 54px;
+        margin-left: 10px;
+
+        .strategies-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          li {
+            font-size: var(--nudge-text-sm);
+            color: #343434;
+            line-height: 20px;
+            padding-left: 21px;
+            position: relative;
+            letter-spacing: -0.1px;
+
+            &::before {
+              content: "•";
+              position: absolute;
+              left: 0;
+              color: #343434;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Strategic Implications
+  .strategic-implications {
+    margin-bottom: 48px;
+    margin-left: 3rem;
+
+    .section-title {
+      margin-bottom: 10px;
+    }
+
+    .implications-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+
+      li {
+        font-size: var(--nudge-text-sm);
+        color: #343434;
+        line-height: 20px;
+        padding-left: 21px;
+        position: relative;
+        letter-spacing: -0.1px;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #343434;
+        }
+      }
+    }
+  }
+}

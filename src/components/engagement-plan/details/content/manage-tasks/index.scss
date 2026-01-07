@@ -1,0 +1,69 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-details-tabs {
+                .engagement-plan-manage-tasks {
+                    padding: var(--nudge-padding-margin-xl-plus) var(--nudge-padding-margin-xxl);
+                    display: grid;
+                    grid-template-rows: 1fr max-content;
+                    grid-gap: var(--nudge-spacing-xxs);
+                    height: 100%;
+                    .manage-tasks-title-content {
+                        display: grid;
+                        grid-gap: var(--nudge-spacing-md);
+                        .manage-tasks-title {
+                            font-weight: 400;
+                            font-size: var(--nudge-text-xs);
+                            line-height: 100%;
+                        }
+                        .mange-task-profile-details {
+                            height: 1.5rem;
+                            .profile-details-name {
+                                font-weight: 400;
+                                font-size: var(--nudge-text-xs);
+                                line-height: 100%;
+                            }
+                        }
+                    }
+                    .reviewer-details {
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        .plan-mark-complete-button {
+                            height: 1.75rem;
+                            font-weight: 600;
+                            font-size: var(--nudge-text-xxs);
+                        }
+                    }
+                    .assinee-details {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        align-content: flex-start;
+                        grid-gap: var(--nudge-spacing-3xl);
+                        padding-bottom: var(--nudge-padding-margin-lg);
+                        .plan-due-date {
+                            font-weight: 400;
+                            font-size: var(--nudge-text-xs);
+                            line-height: normal;
+                            color: var(--nudge-color-black-shade01);
+                        }
+                        .plan-priority,
+                        .plan-status {
+                            width: max-content;
+                            font-weight: 400;
+                            font-size: var(--nudge-text-xs);
+                            color: var(--nudge-color-black-shade01);
+                            height: 1.125rem;
+                        }
+                        .plan-priority {
+                            background-color: var(--nudge-color-red-shade-01);
+                        }
+                        .plan-status {
+                            background-color: var(--nudge-color-moccasin);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

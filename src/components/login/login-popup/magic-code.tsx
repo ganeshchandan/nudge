@@ -47,26 +47,6 @@ export const LoginMagicCode: FC<LoginMagicCodeProps> = () => {
     }
   };
 
-  // const onKeyDown = (e: any, index: number) => {
-  //   if (e.key === "Backspace") {
-  //     e.preventDefault(); // prevent default browser behavior
-  //     const newValues = [...magicCodes];
-
-  //     if (magicCodes[index] === "") {
-  //       // move focus to previous input
-  //       if (index > 0) {
-  //         inputsRef.current[index - 1].focus();
-  //         newValues[index - 1] = "";
-  //       }
-  //     } else {
-  //       // clear current input
-  //       newValues[index] = "";
-  //     }
-
-  //     setMagicCodes(newValues);
-  //   }
-  // };
-
   return (
     <div className={`login-magic-code-form ${isError ? "is-code-error" : ""}`}>
       <div className="login-magic-codes">
@@ -80,7 +60,6 @@ export const LoginMagicCode: FC<LoginMagicCodeProps> = () => {
             type="text"
             onChange={(e) => handleInput(i, e.target.value)}
             value={magicCodes[i] || "*"}
-            // onKeyDown={(event) => onKeyDown(event, i)}
           />
         ))}
       </div>

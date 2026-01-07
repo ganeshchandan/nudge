@@ -24,3 +24,23 @@ export interface TopPerformerDetail {
   awardName: string;
   personImage: string;
 }
+
+export interface CompanyProfilePerson {
+  name: string;
+  image: string;
+  position: string;
+}
+export interface CompanyProfileStats {
+  hot: string;
+  warm: string;
+  cold: string;
+}
+
+export interface CompanyProfile {
+  _id: string;
+  name: string;
+  image: string;
+  profileStats: CompanyProfileStats;
+  internalPerson: CompanyProfilePerson;
+  externalPerson: CompanyProfilePerson;
+}

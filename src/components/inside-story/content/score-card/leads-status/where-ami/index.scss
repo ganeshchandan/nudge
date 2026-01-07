@@ -1,0 +1,30 @@
+* {
+    .score-card-page {
+        .leads-status {
+            .leads-status-cards {
+                .leads-status-card {
+                    .where-am-i {
+                        padding: 0 var(--nudge-padding-margin-xl-plus);
+                        .nudge-tag {
+                            width: max-content;
+                            margin: var(--nudge-padding-margin-lg) 0;
+                        }
+                        .where-am-i-info {
+                            font-weight: 400;
+                            font-size: var(--nudge-text-xxs);
+                            padding: 0 var(--nudge-padding-margin-xl-plus);
+                            color: var(--nudge-color-black-shade02);
+                            margin-bottom: var(--nudge-padding-margin-2xl);
+                            li {
+                                margin-bottom: var(--nudge-padding-margin-lg);
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

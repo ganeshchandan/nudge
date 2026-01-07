@@ -1,150 +1,26 @@
 import type {
   DetailedViewStats,
   ExecutiveCapitalDetails,
+  OneMinuteSummary,
 } from "@components/executive-view/types";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { Profile } from "@services/profiles";
+import type { ProfileDetails } from "@services/profile-details";
 
 export interface LeadsDashboardState {
   executiveCapitalDetails: ExecutiveCapitalDetails;
   detailedViewStats: DetailedViewStats;
   selectedExecutiveID: number;
+  selectedCompany: string | null;
+  profileIdMap: Record<number, string>; // Maps executive ID to profile_id
 }
 
 const initialState: LeadsDashboardState = {
   selectedExecutiveID: -1,
+  selectedCompany: null,
+  profileIdMap: {},
   executiveCapitalDetails: {
-    executiveCapitals: [
-      {
-        id: 124,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 2,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-        tags: ["Nudge Recommended", "Influencer"],
-      },
-      {
-        id: 125,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 3,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-        tags: ["Nudge Recommended", "Influencer"],
-      },
-      {
-        id: 126,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 2,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-      },
-      {
-        id: 127,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 3,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-        tags: ["Nudge Recommended", "Influencer"],
-      },
-      {
-        id: 128,
-        image: "userIcon2",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 2,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-      },
-      {
-        id: 129,
-        image: "userIcon3",
-        name: "Murdo Gordon",
-        teamName: "EVP Global Commercial Ops | Amgen",
-        detailsStats: {
-          personaQuadrant: [{ name: "Change Agent" }],
-          behaviouralTrait: [
-            { name: "Risk Appetite" },
-            { name: "Openness to Innovation" },
-          ],
-          influenceMapping: 3,
-          networkIntelligence: 2,
-          conferenceIntelligence: [
-            {
-              name: "Panelist",
-              progress: "up",
-            },
-          ],
-        },
-        tags: ["Nudge Recommended", "Influencer"],
-      },
-    ],
+    executiveCapitals: [],
     overallStats: {
       atRisk: "04",
       topConnections: "08",
@@ -152,51 +28,15 @@ const initialState: LeadsDashboardState = {
     },
   },
   detailedViewStats: {
-    id: 124,
-    image: "userIcon2",
-    name: "Murdo Gordon",
-    teamName: "EVP Global Commercial Ops | Amgen",
+    id: -1,
+    image: "",
+    name: "",
+    teamName: "",
     engagementScores: {
-      activeEngagements: "02",
-      engagementScore: "82%",
+      activeEngagements: "",
+      engagementScore: "",
     },
-    oneMinuteSummary: [
-      {
-        header: "",
-        content:
-          "Need to make an impression in 1 go we may not get many chances",
-      },
-      { header: "", content: "Must avoid over indexing on USA only thinking" },
-      {
-        header: "",
-        content:
-          "Summarize thoughts in first 10 min (insight → opportunity → implication for Amgen) then elaborate",
-      },
-      {
-        header: "",
-        content:
-          "Driven by numbers and quantifiable actions- Looks for “Financial Sense”",
-      },
-      {
-        header: "",
-        content:
-          "Quick Turnarounds / Bold Decisions (he is known for his bold pricing strategies)",
-      },
-      {
-        header: "",
-        content:
-          "Believes in scale - APAC focused for growthon his mind & seems his personal agenda",
-      },
-      {
-        header: "",
-        content: "Favouritism with empowerment of close trusted team",
-      },
-      {
-        header: "",
-        content:
-          "Measured & Purposeful Talking ? Too much jargons , fluff may put him off Keen observer",
-      },
-    ],
+    oneMinuteSummary: [],
   },
 };
 
@@ -204,27 +44,110 @@ export const leadDashboardConfig = createSlice({
   name: "leadsDashboardConfig",
   initialState,
   reducers: {
-    setSelectedExecutiveID: (state, { payload }) => {
-      state.selectedExecutiveID = payload;
-      if (payload !== -1) {
+    setSelectedExecutiveID: (state, action: PayloadAction<number>) => {
+      state.selectedExecutiveID = action.payload;
+      if (action.payload !== -1) {
         const {
           name = "",
           teamName = "",
           image = "",
         } = state.executiveCapitalDetails.executiveCapitals.find(
-          ({ id }) => id === payload
+          ({ id }) => id === action.payload
         ) || {};
         state.detailedViewStats = {
           ...state.detailedViewStats,
           name,
-          id: payload,
+          id: action.payload,
           teamName,
           image,
+          // Keep existing oneMinuteSummary, it will be updated by updateProfileDetails
+          oneMinuteSummary: state.detailedViewStats.oneMinuteSummary || [],
         };
       }
+    },
+    updateProfiles: (state, action: PayloadAction<Profile[]>) => {
+      // Map API profiles to ExecutiveStats format
+      state.executiveCapitalDetails.executiveCapitals = action.payload.map(
+        (profile, index) => {
+          // Use index + 1 as id since profile_id is a string hash
+          const id = index + 1;
+          
+          // Store mapping of id to profile_id
+          state.profileIdMap[id] = profile.profile_id;
+
+          return {
+            id,
+            image: profile.user_profile_image,
+            name: profile.display_name,
+            teamName: `${profile.title} | ${profile.organization}`,
+            detailsStats: {
+              personaQuadrant: profile.persona_quadrant
+                ? [{ name: profile.persona_quadrant }]
+                : [],
+              behaviouralTrait: profile.behavioral_traits.map((trait) => ({
+                name: trait,
+              })),
+              // Set default values for fields not in API
+              influenceMapping: undefined,
+              networkIntelligence: undefined,
+              conferenceIntelligence: undefined,
+            },
+            tags: undefined,
+          };
+        }
+      );
+
+      // Keep existing overallStats as API doesn't provide this
+      // You can update this later if API provides overall stats
+    },
+    updateProfileDetails: (state, action: PayloadAction<ProfileDetails>) => {
+      console.log("updateProfileDetails - API response:", action.payload);
+      console.log("updateProfileDetails - one_minute_summary:", action.payload.one_minute_summary);
+      
+      // Map one minute summary from API response to detailedViewStats
+      if (action.payload.one_minute_summary && Array.isArray(action.payload.one_minute_summary)) {
+        console.log("Processing one_minute_summary array, length:", action.payload.one_minute_summary.length);
+        
+        const oneMinuteSummary: OneMinuteSummary[] = action.payload.one_minute_summary
+          .map((item: any) => {
+            // Handle case where item is a string
+            if (typeof item === 'string') {
+              return {
+                header: "",
+                content: item.trim(),
+              };
+            }
+            // Handle case where item is an object
+            return {
+              header: (item.header || item.title || "").trim(),
+              content: (item.content || item.description || "").trim(),
+            };
+          });
+        
+        console.log("Mapped oneMinuteSummary:", oneMinuteSummary);
+        
+        // Update detailedViewStats with the mapped one minute summary (even if empty array)
+        state.detailedViewStats = {
+          ...state.detailedViewStats,
+          oneMinuteSummary,
+        };
+        
+        console.log("Updated state.detailedViewStats.oneMinuteSummary:", state.detailedViewStats.oneMinuteSummary);
+      } else {
+        console.log("No one_minute_summary in response or not an array");
+        // If no one_minute_summary in response, set to empty array
+        state.detailedViewStats = {
+          ...state.detailedViewStats,
+          oneMinuteSummary: [],
+        };
+      }
+    },
+    setSelectedCompany: (state, action: PayloadAction<string | null>) => {
+      state.selectedCompany = action.payload;
     },
   },
 });
 
-export const { setSelectedExecutiveID } = leadDashboardConfig.actions;
+export const { setSelectedExecutiveID, updateProfiles, setSelectedCompany, updateProfileDetails } =
+  leadDashboardConfig.actions;
 export const LeadsDashboardReducer = leadDashboardConfig.reducer;

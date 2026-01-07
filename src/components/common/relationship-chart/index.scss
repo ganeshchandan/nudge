@@ -1,0 +1,82 @@
+.relationship-chart-container {
+  padding: var(--nudge-padding-margin-sm) var(--nudge-padding-margin-2xl) var(--nudge-padding-margin-2xl);
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+
+  .relationship-chart-svg {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    min-width: 800px;
+    transform: scale(0.75);
+    transform-origin: center center;
+
+    .relationship-chart-node-border {
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    }
+
+    .relationship-chart-node-circle {
+      transition: all 0.3s ease-in-out;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+      
+      &:hover {
+        stroke-width: 1;
+        stroke: #9c27b0;
+      }
+    }
+
+    .relationship-chart-node-image {
+      pointer-events: none;
+    }
+
+    .relationship-chart-node-name {
+      pointer-events: none;
+      font-family: inherit;
+    }
+
+    .relationship-chart-node-title {
+      pointer-events: none;
+      font-family: inherit;
+    }
+
+    .relationship-chart-node-company {
+      pointer-events: none;
+      font-family: inherit;
+    }
+
+    .relationship-chart-node-additional {
+      pointer-events: none;
+      font-family: inherit;
+    }
+
+    .relationship-chart-node-button {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        fill: #f3e5f5;
+        stroke-width: 2;
+      }
+    }
+
+    .relationship-chart-node-button-text {
+      pointer-events: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    g {
+      &:hover {
+        .relationship-chart-node-circle {
+          stroke-width: 4;
+          filter: drop-shadow(0 4px 16px rgba(156, 39, 176, 0.3));
+        }
+      }
+    }
+  }
+}
+

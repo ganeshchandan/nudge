@@ -1,0 +1,97 @@
+* {
+    .engagement-plan-dashboard {
+        .engagement-plan {
+            .engagement-plan-content {
+                .engagement-plan-details {
+                    .engagement-details-content {
+                        height: calc(100% - 4.125rem);
+                        margin-top: var(--nudge-padding-margin-lg);
+                        background: var(--nudge-color-magnolia-heart);
+                        border-radius: 0.5rem;
+                        padding: 0 var(--nudge-padding-margin-xl-plus);
+                        padding-top: var(--nudge-padding-margin-lg);
+                        .engagement-details-tabs {
+                            grid-template-rows: 2.5rem 1fr;
+                            .nudge-tabs {
+                                border-bottom: 0.0625rem solid;
+                                border-image-source: linear-gradient(90deg, #f1ebff 0%, #c9b8ff 46.63%, #f1ebff 100%);
+                                border-image-slice: 1;
+                                .nudge-tab {
+                                    display: flex;
+                                    align-items: center;
+                                    &::before {
+                                        bottom: -0.125rem;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                            .engagement-plan-assets {
+                                height: 100%;
+                                overflow: hidden;
+                                display: grid;
+                                grid-template-rows: 1fr max-content;
+                                padding: var(--nudge-padding-margin-md) 0;
+                                .engagement-plan-assets-list {
+                                    padding: 0 var(--nudge-padding-margin-md);
+                                    .engagement-plan-asset {
+                                        display: grid;
+                                        grid-template-columns: max-content 1fr max-content;
+                                        align-items: center;
+                                        height: 2.875rem;
+                                        padding: 0 var(--nudge-padding-margin-xl);
+                                        color: var(--nudge-color-black-shade01);
+                                        .asset-folder-icon {
+                                            height: 1rem;
+                                            path {
+                                                stroke: var(--nudge-color-blue);
+                                            }
+                                        }
+                                        .file-name {
+                                            font-weight: 400;
+                                            font-size: var(--nudge-text-xs);
+                                            line-height: 0.625rem;
+                                            padding: 0 var(--nudge-padding-margin-lg);
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                        }
+                                        .asset-download-icon {
+                                            height: 0.875rem;
+                                            cursor: pointer;
+                                            &:hover {
+                                                transform: scale(1.1);
+                                            }
+                                            path {
+                                                fill: var(--nudge-color-blue);
+                                            }
+                                        }
+                                    }
+                                }
+                                .upload-assets {
+                                    font-weight: 400;
+                                    font-size: var(--nudge-text-xs);
+                                    line-height: 0.625rem;
+                                    color: var(--nudge-color-black-shade01);
+                                    padding-bottom: var(--nudge-padding-margin-md);
+                                    display: flex;
+                                    grid-gap: var(--nudge-padding-margin-lg);
+                                    align-items: center;
+                                    .asset-upload-icon {
+                                        height: 0.875rem;
+                                        transform: rotate(180deg);
+                                        &:hover {
+                                            transform: scale(1.1);
+                                        }
+                                        path {
+                                            fill: var(--nudge-color-blue);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

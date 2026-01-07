@@ -28,6 +28,10 @@
                 color: var(--nudge-color-black-shade01);
                 border-color: var(--nudge-color-input-border);
 
+                &.is-invalid {
+                    box-shadow: none;
+                }
+
                 &:not(:placeholder-shown),
                 &:focus {
                     padding-top: 1.625rem;

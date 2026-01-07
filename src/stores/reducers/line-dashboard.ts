@@ -96,14 +96,25 @@ export const lineDashboardConfig = createSlice({
             ? company.executive_summary[0].statement.substring(0, 50) + "..."
             : company.company_name;
 
-          // Use company logo or default image based on index
-          const imageIndex = (index % 4) + 1;
-          const image = `company${imageIndex}`;
+          // Use company logo: hardcode Gilead and Amgen from assets based on company name
+          const companyNameLower = (company.company || company.company_name || "").toLowerCase();
+          let image: string;
+          
+          if (companyNameLower.includes("gilead")) {
+            image = "gilead sciences"; // Maps to Pfizer logo in APP_IMAGES
+          } else if (companyNameLower.includes("amgen")) {
+            image = "amgen";
+          } else if (company.company_logo_url) {
+            image = company.company_logo_url;
+          } else {
+            const imageIndex = (index % 4) + 1;
+            image = `company${imageIndex}`;
+          }
 
           return {
             id,
             image,
-            name: company.company_name,
+            name: company.company || company.company_name,
             teamName,
             detailsStats: {
               strategicPosture,

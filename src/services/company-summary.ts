@@ -35,13 +35,14 @@ export interface CompanySummaryResponse {
 }
 
 // Use proxy in development, direct URL in production
-const COMPANY_SUMMARY_AGGREGATE_API_URL = import.meta.env.DEV
-  ? "/api/v2/api/dashboard/company-summary/aggregate" // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/dashboard/company-summary/aggregate"; // Direct URL in production
+const COMPANY_SUMMARY_AGGREGATE_API_URL =
+  "/api/v2/api/dashboard/company-summary/aggregate";
+// ? "/api/v2/api/dashboard/company-summary/aggregate" // Use Vite proxy: /api -> http://54.83.73.24:8000
+// : "http://54.83.73.24:8000/v2/api/dashboard/company-summary/aggregate"; // Direct URL in production
 
-const COMPANY_SUMMARY_API_URL = import.meta.env.DEV
-  ? "/api/v2/api/dashboard/company-summary" // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/dashboard/company-summary"; // Direct URL in production
+const COMPANY_SUMMARY_API_URL = "/api/v2/api/dashboard/company-summary";
+// ? "/api/v2/api/dashboard/company-summary" // Use Vite proxy: /api -> http://54.83.73.24:8000
+// : "http://54.83.73.24:8000/v2/api/dashboard/company-summary"; // Direct URL in production
 
 /**
  * Fetches company summary aggregate data from the API

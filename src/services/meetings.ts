@@ -34,9 +34,9 @@ export interface MeetingsResponse {
 }
 
 // Use proxy in development, direct URL in production
-const MEETINGS_API_URL = import.meta.env.DEV
-  ? "/api/v2/api/meetings/list" // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/meetings/list"; // Direct URL in production
+const MEETINGS_API_URL = "/api/v2/api/meetings/list";
+// ? "/api/v2/api/meetings/list" // Use Vite proxy: /api -> http://54.83.73.24:8000
+// : "http://54.83.73.24:8000/v2/api/meetings/list"; // Direct URL in production
 
 /**
  * Fetches meetings list from the API

@@ -1,9 +1,9 @@
 import axios from "@services/axios-interceptors";
 
 // Use proxy in development, direct URL in production
-const API_BASE_URL = import.meta.env.DEV
-  ? "/api/v2/api/network-intelligence"  // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/network-intelligence";  // Direct URL in production
+const API_BASE_URL = "/api/v2/api/network-intelligence";
+// ? "/api/v2/api/network-intelligence"  // Use Vite proxy: /api -> http://54.83.73.24:8000
+// : "http://54.83.73.24:8000/v2/api/network-intelligence";  // Direct URL in production
 
 export interface NetworkIntelligencePerson {
   id: string;
@@ -43,12 +43,15 @@ export const fetchNetworkIntelligence = async (
     if (import.meta.env.DEV) {
       try {
         const fallbackUrl = `http://54.83.73.24:8000/v2/api/network-intelligence/person/${personId}`;
-        const fallbackResponse = await axios.get<NetworkIntelligenceResponse>(fallbackUrl, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          timeout: 10000,
-        });
+        const fallbackResponse = await axios.get<NetworkIntelligenceResponse>(
+          fallbackUrl,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            timeout: 10000,
+          }
+        );
         return fallbackResponse.data;
       } catch (fallbackError) {
         console.error("Error fetching network intelligence:", fallbackError);
@@ -85,12 +88,15 @@ export const fetchCouncilRelationships = async (
     if (import.meta.env.DEV) {
       try {
         const fallbackUrl = `http://54.83.73.24:8000/v2/api/network-intelligence/search-council-relationships/${personId}`;
-        const fallbackResponse = await axios.get<CouncilRelationshipsResponse>(fallbackUrl, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          timeout: 10000,
-        });
+        const fallbackResponse = await axios.get<CouncilRelationshipsResponse>(
+          fallbackUrl,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            timeout: 10000,
+          }
+        );
         return fallbackResponse.data;
       } catch (fallbackError) {
         console.error("Error fetching council relationships:", fallbackError);

@@ -13,9 +13,10 @@ export interface TaskLists {
 }
 
 // Use proxy in development, direct URL in production
-const PROFILE_DETAILS_API_BASE_URL = import.meta.env.DEV
-  ? "/api/v2/api/engagement-plan" // Use Vite proxy: /api -> http://54.83.73.24:8000
-  : "http://54.83.73.24:8000/v2/api/engagement-plan"; // Direct URL in production
+const PROFILE_DETAILS_API_BASE_URL = "/api/v2/api/engagement-plan";
+// import.meta.env.DEV
+//   ? "/api/v2/api/engagement-plan" // Use Vite proxy: /api -> http://54.83.73.24:8000
+//   : "http://54.83.73.24:8000/v2/api/engagement-plan"; // Direct URL in production
 
 /**
  * Fetches profile details from the API

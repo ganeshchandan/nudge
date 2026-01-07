@@ -1,11 +1,11 @@
-import { type FC, useMemo, useCallback } from "react";
+import { type FC, useMemo, useCallback, type JSX } from "react";
 import "@components/common/lifecycle/index.scss";
 import type { LifecycleProps } from "./types";
 import { EventItem } from "./event-item";
 
-// Constants
-const ARROW_INDICATOR = " >>>";
-const MILESTONE_INDICES = [2]; // Indices where milestone arrows should appear
+// // Constants
+// const ARROW_INDICATOR = " >>>";
+// const MILESTONE_INDICES = [2]; // Indices where milestone arrows should appear
 
 export const Lifecycle: FC<LifecycleProps> = ({
   startDate,
@@ -45,11 +45,14 @@ export const Lifecycle: FC<LifecycleProps> = ({
     return `${month} ${year}`;
   }, []);
 
-  const getDatePosition = useCallback((date: Date): number => {
-    const daysFromStart =
-      (date.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
-    return (daysFromStart / totalDays) * 100;
-  }, [startDate, totalDays]);
+  const getDatePosition = useCallback(
+    (date: Date): number => {
+      const daysFromStart =
+        (date.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+      return (daysFromStart / totalDays) * 100;
+    },
+    [startDate, totalDays]
+  );
 
   const monthMarkersWithPositions = useMemo(() => {
     return monthMarkers.map((marker) => ({
@@ -90,17 +93,23 @@ export const Lifecycle: FC<LifecycleProps> = ({
   }, [events]);
 
   return (
-    <div 
+    <div
       className={`lifecycle-container ${className}`}
       role="region"
       aria-label="Timeline lifecycle view"
     >
       {/* Emoji indicators on the left */}
       <div className="lifecycle-sentiment-indicators" aria-hidden="true">
-        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-positive" aria-label="Positive sentiment">
+        <div
+          className="lifecycle-sentiment-indicator lifecycle-sentiment-positive"
+          aria-label="Positive sentiment"
+        >
           ⭐
         </div>
-        <div className="lifecycle-sentiment-indicator lifecycle-sentiment-negative" aria-label="Negative sentiment">
+        <div
+          className="lifecycle-sentiment-indicator lifecycle-sentiment-negative"
+          aria-label="Negative sentiment"
+        >
           😔
         </div>
       </div>
@@ -108,19 +117,27 @@ export const Lifecycle: FC<LifecycleProps> = ({
       {/* Main timeline */}
       <div className="lifecycle-timeline-wrapper">
         {/* Month markers */}
-        <div className="lifecycle-month-markers" role="list" aria-label="Month markers">
+        <div
+          className="lifecycle-month-markers"
+          role="list"
+          aria-label="Month markers"
+        >
           {monthMarkersWithPositions.map((markerData, index) => {
             const isFirst = index === 0;
             const isLast = index === monthMarkersWithPositions.length - 1;
             return (
-                  <div
-                    key={index}
-                    className="lifecycle-month-marker"
-                    style={{ left: `${markerData.position}%` }}
-                    role="listitem"
-                    aria-label={formatMonthLabel(markerData.date)}
-                  >
-                    <div className={`lifecycle-month-marker-line ${isFirst ? 'lifecycle-month-marker-line-first' : ''}`} />
+              <div
+                key={index}
+                className="lifecycle-month-marker"
+                style={{ left: `${markerData.position}%` }}
+                role="listitem"
+                aria-label={formatMonthLabel(markerData.date)}
+              >
+                <div
+                  className={`lifecycle-month-marker-line ${
+                    isFirst ? "lifecycle-month-marker-line-first" : ""
+                  }`}
+                />
                 <div
                   className={`lifecycle-month-marker-label ${
                     isLast
@@ -145,14 +162,16 @@ export const Lifecycle: FC<LifecycleProps> = ({
           {segments.length > 0 && (
             <div
               className="lifecycle-timeline-start-circle"
-              style={{ 
-                left: `calc(${getDatePosition(segments[0].startDate)}% + 2.5rem)` 
+              style={{
+                left: `calc(${getDatePosition(
+                  segments[0].startDate
+                )}% + 2.5rem)`,
               }}
               aria-label="Timeline start"
               role="img"
             />
           )}
-          
+
           {/* Segments container with clipping */}
           <div className="lifecycle-segments-container">
             {segmentsWithStyles.map((segment, index) => (
@@ -161,17 +180,18 @@ export const Lifecycle: FC<LifecycleProps> = ({
                 className={`lifecycle-segment lifecycle-segment-${segment.color}`}
                 style={segment.styles}
                 role="region"
-                aria-label={`Timeline segment ${index + 1}: ${segment.label || segment.color}`}
-              >
-              </div>
+                aria-label={`Timeline segment ${index + 1}: ${
+                  segment.label || segment.color
+                }`}
+              ></div>
             ))}
           </div>
 
           {/* Flag icon at end */}
           <div
             className="lifecycle-timeline-end-flag"
-            style={{ 
-              left: `calc(${getDatePosition(endDate)}% + 1.5rem)` 
+            style={{
+              left: `calc(${getDatePosition(endDate)}% + 1.5rem)`,
             }}
             aria-label="Timeline end"
             role="img"
@@ -184,7 +204,10 @@ export const Lifecycle: FC<LifecycleProps> = ({
         <div className="lifecycle-events lifecycle-events-above">
           {(() => {
             // Group events by date (rounded to month for stacking)
-            const eventsByDate = new Map<string, typeof eventsByPosition.above>();
+            const eventsByDate = new Map<
+              string,
+              typeof eventsByPosition.above
+            >();
             eventsByPosition.above.forEach((event) => {
               const dateKey = `${event.date.getFullYear()}-${event.date.getMonth()}`;
               if (!eventsByDate.has(dateKey)) {
@@ -197,8 +220,16 @@ export const Lifecycle: FC<LifecycleProps> = ({
             eventsByDate.forEach((groupedEvents) => {
               groupedEvents.sort((a, b) => {
                 // Meetings logged events first
-                if (a.type === "meetings-logged" && b.type !== "meetings-logged") return -1;
-                if (a.type !== "meetings-logged" && b.type === "meetings-logged") return 1;
+                if (
+                  a.type === "meetings-logged" &&
+                  b.type !== "meetings-logged"
+                )
+                  return -1;
+                if (
+                  a.type !== "meetings-logged" &&
+                  b.type === "meetings-logged"
+                )
+                  return 1;
                 return 0;
               });
             });
@@ -211,11 +242,11 @@ export const Lifecycle: FC<LifecycleProps> = ({
                 <div
                   key={`group-${dateKey}`}
                   className="lifecycle-event-group-wrapper"
-                  style={{ 
+                  style={{
                     left: `${basePosition}%`,
                   }}
                 >
-                  {groupedEvents.map((event, index) => (
+                  {groupedEvents.map((event) => (
                     <EventItem
                       key={event.id}
                       event={event}
@@ -247,7 +278,10 @@ export const Lifecycle: FC<LifecycleProps> = ({
         <div className="lifecycle-events lifecycle-events-below">
           {(() => {
             // Group events by date (rounded to month for stacking)
-            const eventsByDate = new Map<string, typeof eventsByPosition.below>();
+            const eventsByDate = new Map<
+              string,
+              typeof eventsByPosition.below
+            >();
             eventsByPosition.below.forEach((event) => {
               const dateKey = `${event.date.getFullYear()}-${event.date.getMonth()}`;
               if (!eventsByDate.has(dateKey)) {
@@ -260,11 +294,20 @@ export const Lifecycle: FC<LifecycleProps> = ({
             eventsByDate.forEach((groupedEvents) => {
               groupedEvents.sort((a, b) => {
                 // Participant names first
-                if (a.showParticipantNames && !b.showParticipantNames) return -1;
+                if (a.showParticipantNames && !b.showParticipantNames)
+                  return -1;
                 if (!a.showParticipantNames && b.showParticipantNames) return 1;
                 // Then meetings logged
-                if (a.type === "meetings-logged" && b.type !== "meetings-logged") return 1;
-                if (a.type !== "meetings-logged" && b.type === "meetings-logged") return -1;
+                if (
+                  a.type === "meetings-logged" &&
+                  b.type !== "meetings-logged"
+                )
+                  return 1;
+                if (
+                  a.type !== "meetings-logged" &&
+                  b.type === "meetings-logged"
+                )
+                  return -1;
                 return 0;
               });
             });
@@ -277,11 +320,11 @@ export const Lifecycle: FC<LifecycleProps> = ({
                 <div
                   key={`group-below-${dateKey}`}
                   className="lifecycle-event-group-wrapper"
-                  style={{ 
+                  style={{
                     left: `${basePosition}%`,
                   }}
                 >
-                  {groupedEvents.map((event, index) => (
+                  {groupedEvents.map((event) => (
                     <EventItem
                       key={event.id}
                       event={event}
@@ -297,8 +340,6 @@ export const Lifecycle: FC<LifecycleProps> = ({
           })()}
         </div>
       </div>
-
     </div>
   );
 };
-

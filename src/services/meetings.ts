@@ -5,6 +5,7 @@ import axios from "axios";
 export interface Meeting {
   _id: string;
   meeting_key: string;
+  meeting_type: string;
   topic: string;
   agenda: string;
   start_time: string;

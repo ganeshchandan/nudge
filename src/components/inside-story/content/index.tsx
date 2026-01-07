@@ -47,6 +47,72 @@ export const InsideStoryContent: FC<InsideStoryContentProps> = ({
       case "oneMinuteSummary":
         return <OneMinuteSummary />;
       case "insideStory":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">Inside Story</h1>
+            <div className="inside-story-content">
+              <OrganizationalOverview />
+              <DigitalFocus />
+              <KeyPartners />
+              <PipelineTherapy />
+              <StrategicImplications />
+            </div>
+          </div>
+        );
+      case "focusArea":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">Focus Area</h1>
+            <div className="inside-story-content">
+              {/* Focus Area content */}
+            </div>
+          </div>
+        );
+      case "whatChanged":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">What Changed</h1>
+            <div className="inside-story-content">
+              {/* What Changed content */}
+            </div>
+          </div>
+        );
+      case "engagementJourney":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">Engagement Journey</h1>
+            <div className="inside-story-content">
+              {/* Engagement Journey content */}
+            </div>
+          </div>
+        );
+      case "swotAnalysis":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">SWOT Analysis</h1>
+            <div className="inside-story-content">
+              {/* SWOT Analysis content */}
+            </div>
+          </div>
+        );
+      case "potentialOpportunities":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">Potential Opportunities</h1>
+            <div className="inside-story-content">
+              {/* Potential Opportunities content */}
+            </div>
+          </div>
+        );
+      case "engagementRoadmap":
+        return (
+          <div className="inside-story-main">
+            <h1 className="inside-story-main-title">Engagement Roadmap</h1>
+            <div className="inside-story-content">
+              {/* Engagement Roadmap content */}
+            </div>
+          </div>
+        );
       default:
         return (
           <div className="inside-story-main">

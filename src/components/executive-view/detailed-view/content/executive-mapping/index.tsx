@@ -8,7 +8,7 @@ import { ExternalComponent } from "./external";
 interface ExecutiveMappingProps {}
 
 export const ExecutiveMapping: FC<ExecutiveMappingProps> = () => {
-  const [selectedTab, setSelectedTab] = useState<string>("internal");
+  const [selectedTab, setSelectedTab] = useState<string>("external");
 
   return (
     <div className="executive-mapping">

@@ -19,13 +19,15 @@
                     align-items: center;
 
                     .account-relationship-label {
-                        font-size: var(--nudge-text-sm);
-                        color: var(--nudge-color-black-shade01);
-                        font-weight: var(--nudge-font-weight-medium);
+                        font-weight: 400;
+                        font-size: var(--nudge-text-xxs);
+                        line-height: 0.625rem;
                     }
 
                     .account-relationship-indicator {
-                        font-size: var(--nudge-text-md);
+                        font-size: var(--nudge-text-sm);
+                        font-weight: 500;
+                        margin-top: var(--nudge-padding-margin-md);
                     }
                 }
 
@@ -35,7 +37,7 @@
                     gap: var(--nudge-spacing-sm);
 
                     .manage-task-label {
-                        font-size: var(--nudge-text-sm);
+                        font-size: var(--nudge-text-xs);
                         color: var(--nudge-color-black-shade01);
                         font-weight: var(--nudge-font-weight-medium);
                     }

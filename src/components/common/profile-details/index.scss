@@ -4,6 +4,7 @@
         grid-gap: var(--nudge-padding-margin-lg);
         align-items: center;
         height: 3.438rem;
+        visibility: hidden;
         .profile-details-image-wrapper {
             position: relative;
             width: 2rem;
@@ -12,7 +13,7 @@
             padding: 2px;
             background: linear-gradient(135deg, #9c27b0, #2196f3, #4caf50);
             flex-shrink: 0;
-            
+
             .profile-details-image {
                 width: 100%;
                 height: 100%;

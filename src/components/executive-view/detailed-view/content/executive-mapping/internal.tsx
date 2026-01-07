@@ -17,7 +17,7 @@ export const InternalComponent: FC = () => {
         setLoading(true);
         setError(null);
         const data = await fetchCouncilRelationships(PERSON_ID);
-        
+
         // Transform API data to nodes and edges
         // Handle different possible response structures
         const graphNodes: Node[] = [];
@@ -47,14 +47,14 @@ export const InternalComponent: FC = () => {
             });
 
             graphEdges.push({
-              source: data.person.id,
+              source: data.person?.id || "",
               target: person.id,
             });
           });
         } else if (data.relationships && Array.isArray(data.relationships)) {
           // If response has relationships array structure
           const personIds = new Set<string>();
-          
+
           data.relationships.forEach((rel: any) => {
             if (rel.source) personIds.add(rel.source.id || rel.source);
             if (rel.target) personIds.add(rel.target.id || rel.target);
@@ -66,16 +66,19 @@ export const InternalComponent: FC = () => {
           Array.from(personIds).forEach((personId, index) => {
             graphNodes.push({
               id: personId,
-              name: typeof personId === 'string' ? personId : `Person ${index + 1}`,
+              name:
+                typeof personId === "string" ? personId : `Person ${index + 1}`,
               image: `assignee${(index % 4) + 1}`,
             });
           });
 
           // Create edges from relationships
           data.relationships.forEach((rel: any) => {
-            const sourceId = rel.source?.id || rel.source || rel.person1?.id || rel.person1;
-            const targetId = rel.target?.id || rel.target || rel.person2?.id || rel.person2;
-            
+            const sourceId =
+              rel.source?.id || rel.source || rel.person1?.id || rel.person1;
+            const targetId =
+              rel.target?.id || rel.target || rel.person2?.id || rel.person2;
+
             if (sourceId && targetId) {
               graphEdges.push({
                 source: sourceId,
